@@ -1,0 +1,2920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C4FFF7D-CDAC-4F16-B400-882E41F7745E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DDE.Web</RootNamespace>
+    <AssemblyName>DDE.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\..\DIPL\ERP\Sarathi\20\Sarathi.Web\Sarathi.Web\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\tpsl\tpsl\bin\com.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\9.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Synchronization, Version=1.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data, Version=2.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
+    <Reference Include="QRCoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\SSDC\Desktop\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddExaminer.aspx" />
+    <Content Include="Admin\adminlogin.aspx" />
+    <Content Include="Admin\AdmitCardList1.aspx" />
+    <Content Include="Admin\AdmitCardList2.aspx" />
+    <Content Include="Admin\AllotApplications.aspx" />
+    <Content Include="Admin\AutoFillExamForm.aspx" />
+    <Content Include="Admin\AwardSheetPrac.aspx" />
+    <Content Include="Admin\BlankMarksheet.aspx" />
+    <Content Include="Admin\BlockUnblockInstrument.aspx" />
+    <Content Include="Admin\ChangeSLMCourse.aspx" />
+    <Content Include="Admin\CheckEligibilityStatus.aspx" />
+    <Content Include="Admin\ClearSIStatus.aspx" />
+    <Content Include="Admin\CoveringLetterDegree.aspx" />
+    <Content Include="Admin\CreateDateSheet.aspx" />
+    <Content Include="Admin\CreateInstrument.aspx" />
+    <Content Include="Admin\CreateQuestion.aspx" />
+    <Content Include="Admin\CreateSLM.aspx" />
+    <Content Include="Admin\CustomiseExamReport.aspx" />
+    <Content Include="Admin\Degree.aspx" />
+    <Content Include="Admin\DegreeLetter.aspx" />
+    <Content Include="Admin\DegreeND.aspx" />
+    <Content Include="Admin\DegreePR.aspx" />
+    <Content Include="Admin\DistributeAmount.aspx" />
+    <Content Include="Admin\DStudentRegistration.aspx" />
+    <Content Include="Admin\EnterNewSLMStock.aspx" />
+    <Content Include="Admin\FillDec12Marks.aspx" />
+    <Content Include="Admin\FillDegreeInfo.aspx" />
+    <Content Include="Admin\FillMigrationInfo.aspx" />
+    <Content Include="Admin\FillProjectMarks.aspx" />
+    <Content Include="Admin\FillSCFee.aspx" />
+    <Content Include="Admin\FindVLByNo.aspx" />
+    <Content Include="Admin\GenerateQRCodeForCMS.aspx" />
+    <Content Include="Admin\GenerateQRCodeForDegree.aspx" />
+    <Content Include="Admin\GenerateQRCodeForTS.aspx" />
+    <Content Include="Admin\GenerateQuestionPaper.aspx" />
+    <Content Include="Admin\GenerateQuestionPaper1.aspx" />
+    <Content Include="Admin\images\adsig.png" />
+    <Content Include="Admin\images\Anil2.png" />
+    <Content Include="Admin\images\COE3.png" />
+    <Content Include="Admin\images\COE4.jpg" />
+    <Content Include="Admin\images\COE4.png" />
+    <Content Include="Admin\images\ddelogo3.png" />
+    <Content Include="Admin\images\ddelogo4.png" />
+    <Content Include="Admin\images\ddelogo5.png" />
+    <Content Include="Admin\images\FORMAT-DDE.jpg" />
+    <Content Include="Admin\images\FORMAT-DDE2.jpg" />
+    <Content Include="Admin\images\left_send.png" />
+    <Content Include="Admin\images\logo-svsu.png" />
+    <Content Include="Admin\images\logo-svsu2.png" />
+    <Content Include="Admin\images\N1.jpg" />
+    <Content Include="Admin\images\naac_logo.png" />
+    <Content Include="Admin\images\PKS.png" />
+    <Content Include="Admin\images\PKS1.png" />
+    <Content Include="Admin\images\Priyanka2.png" />
+    <Content Include="Admin\images\RA1.png" />
+    <Content Include="Admin\images\RA2.png" />
+    <Content Include="Admin\images\right_send.png" />
+    <Content Include="Admin\images\send.png" />
+    <Content Include="Admin\images\show-icon.png" />
+    <Content Include="Admin\images\sig.png" />
+    <Content Include="Admin\images\sig2.png" />
+    <Content Include="Admin\images\tenor.gif" />
+    <Content Include="Admin\images\Y1.jpg" />
+    <Content Include="Admin\IssueProspectus.aspx" />
+    <Content Include="Admin\LinkRLToInstrument.aspx" />
+    <Content Include="Admin\MigrationLetter.aspx" />
+    <Content Include="Admin\ProcessSLMLetter.aspx" />
+    <Content Include="Admin\PublishDateSheet.aspx" />
+    <Content Include="Admin\PublishListsOfSLMLetter.aspx" />
+    <Content Include="Admin\PublishMarkSheetBySC2.aspx" />
+    <Content Include="Admin\PublishMarkSheetBySC3.aspx" />
+    <Content Include="Admin\PublishMarkSheetBySC4.aspx" />
+    <Content Include="Admin\PublishMarkSheetBySC5.aspx" />
+    <Content Include="Admin\PublishPasswordEC.aspx" />
+    <Content Include="Admin\PublishQP.aspx" />
+    <Content Include="Admin\PublishRefundByINo.aspx" />
+    <Content Include="Admin\PublishRefundLetter.aspx" />
+    <Content Include="Admin\PublishSLMListofSLMLetter.aspx" />
+    <Content Include="Admin\PublishStudentListofSLMLetter.aspx" />
+    <Content Include="Admin\ReceiveAssignment.aspx" />
+    <Content Include="Admin\ReceiveDocuments.aspx" />
+    <Content Include="Admin\ReceivePPFee.aspx" />
+    <Content Include="Admin\ReceiveProjects.aspx" />
+    <Content Include="Admin\RefundByINo.aspx" />
+    <Content Include="Admin\RefundLetter.aspx" />
+    <Content Include="Admin\RegisterExaminer.aspx" />
+    <Content Include="Admin\RemoveDetainedStatus.aspx" />
+    <Content Include="Admin\RequestForDegree.aspx" />
+    <Content Include="Admin\RequestForMigration.aspx" />
+    <Content Include="Admin\SeachMigrationApplication.aspx" />
+    <Content Include="Admin\SearchDegreeApplication.aspx" />
+    <Content Include="Admin\SearchDL.aspx" />
+    <Content Include="Admin\SearchML.aspx" />
+    <Content Include="Admin\SearchRefundLetterByNo.aspx" />
+    <Content Include="Admin\SearchSLMIssueLetter.aspx" />
+    <Content Include="Admin\SearchSLMIssueStatausByENo.aspx" />
+    <Content Include="Admin\SearchSLMSellletterByLNo.aspx" />
+    <Content Include="Admin\SellSLM.aspx" />
+    <Content Include="Admin\SendConsignment.aspx" />
+    <Content Include="Admin\SendDocuments.aspx" />
+    <Content Include="Admin\SendQuestionPapers.aspx" />
+    <Content Include="Admin\SendSMSToStudents.aspx" />
+    <Content Include="Admin\SentSMSToMNo.aspx" />
+    <Content Include="Admin\SetQP.aspx" />
+    <Content Include="Admin\SetQP1.aspx" />
+    <Content Include="Admin\SetStreamFee.aspx" />
+    <Content Include="Admin\SetTMSCWiseDec12.aspx" />
+    <Content Include="Admin\ShowAddress1.aspx" />
+    <Content Include="Admin\ShowALLFeePaidBySC.aspx" />
+    <Content Include="Admin\ShowAmountDistribution.aspx" />
+    <Content Include="Admin\ShowASFilledRecord.aspx" />
+    <Content Include="Admin\ShowCancelStudents.aspx" />
+    <Content Include="Admin\ShowCompleteResult.aspx" />
+    <Content Include="Admin\ShowConfirmedApplications.aspx" />
+    <Content Include="Admin\ShowCTStudents.aspx" />
+    <Content Include="Admin\ShowDAApproved.aspx" />
+    <Content Include="Admin\ShowDANoDues.aspx" />
+    <Content Include="Admin\ShowDAProofReading.aspx" />
+    <Content Include="Admin\ShowDAStatus.aspx" />
+    <Content Include="Admin\ShowDateSheet.aspx" />
+    <Content Include="Admin\ShowDegreeRequests.aspx" />
+    <Content Include="Admin\ShowDStudent.aspx" />
+    <Content Include="Admin\ShowECLogins.aspx" />
+    <Content Include="Admin\ShowECPStudents.aspx" />
+    <Content Include="Admin\ShowECStudents.aspx" />
+    <Content Include="Admin\ShowEligibilityReport.aspx" />
+    <Content Include="Admin\ShowExaminationCentreReport.aspx" />
+    <Content Include="Admin\ShowExaminers.aspx" />
+    <Content Include="Admin\ShowGrievances.aspx" />
+    <Content Include="Admin\ShowInstruments.aspx" />
+    <Content Include="Admin\ShowMaildStudents.aspx" />
+    <Content Include="Admin\ShowMarks1.aspx" />
+    <Content Include="Admin\ShowMarkSheet2.aspx" />
+    <Content Include="Admin\ShowMarkSheet3.aspx" />
+    <Content Include="Admin\ShowMarkSheet4.aspx" />
+    <Content Include="Admin\ShowMarksheet5.aspx" />
+    <Content Include="Admin\ShowMarkSheetWebsiteVersion.aspx" />
+    <Content Include="Admin\ShowMigrationRequests.aspx" />
+    <Content Include="Admin\ShowMyLog.aspx" />
+    <Content Include="Admin\ShowMyReceivedAS.aspx" />
+    <Content Include="Admin\ShowMyRecProject.aspx" />
+    <Content Include="Admin\ShowOnlineApplications.aspx" />
+    <Content Include="Admin\ShowOnlineBPApplications.aspx" />
+    <Content Include="Admin\ShowOnlineCont.aspx" />
+    <Content Include="Admin\ShowOnlineQueries.aspx" />
+    <Content Include="Admin\ShowOnlineREApplications.aspx" />
+    <Content Include="Admin\ShowPracticalAS.aspx" />
+    <Content Include="Admin\ShowProcessedSLMLetters.aspx" />
+    <Content Include="Admin\ShowQuestionPaper.aspx" />
+    <Content Include="Admin\ShowQuestions.aspx" />
+    <Content Include="Admin\ShowReappearExamReport.aspx" />
+    <Content Include="Admin\ShowRefundLettersByList.aspx" />
+    <Content Include="Admin\ShowRefundSCWise.aspx" />
+    <Content Include="Admin\ShowSCRenewalStatus.aspx" />
+    <Content Include="Admin\ShowSLM.aspx" />
+    <Content Include="Admin\ShowSLMLetters.aspx" />
+    <Content Include="Admin\ShowSLMPendingStudents.aspx" />
+    <Content Include="Admin\ShowSLMRequirements.aspx" />
+    <Content Include="Admin\ShowSLMStock.aspx" />
+    <Content Include="Admin\ShowSLMStockBook.aspx" />
+    <Content Include="Admin\ShowStudentsCourseWise.aspx" />
+    <Content Include="Admin\ShowVerificationLetters.aspx" />
+    <Content Include="Admin\SLMLetter.aspx" />
+    <Content Include="Admin\SLMSellLetter.aspx" />
+    <Content Include="Admin\UpdateASAllotment.aspx" />
+    <Content Include="Admin\UpdateASAllotted.aspx" />
+    <Content Include="Admin\UpdateDNoOnSLMLetter.aspx" />
+    <Content Include="Admin\UpdateSLMStock.aspx" />
+    <Content Include="Admin\UploadInternalMarks.aspx" />
+    <Content Include="Admin\UploadInternalMarks1.aspx" />
+    <Content Include="Admin\UploadInternalMarksByENo.aspx" />
+    <Content Include="Admin\UploadPracAS.aspx" />
+    <Content Include="Admin\UploadQuestionPapers.aspx" />
+    <Content Include="Admin\UploadQuestions.aspx" />
+    <Content Include="Admin\UploadStudentPhotos.aspx" />
+    <Content Include="Admin\UserControls\AdminHeader.ascx" />
+    <Content Include="Admin\VerificationLetter.aspx" />
+    <Content Include="Admin\VerificationSheetList1.aspx" />
+    <Content Include="Admin\VerificationSheetList2.aspx" />
+    <Content Include="Admin\VerifyRefund.aspx" />
+    <Content Include="BarCode.aspx" />
+    <Content Include="ChangeCourse.aspx" />
+    <Content Include="CSS\DateSheet.css" />
+    <Content Include="CSS\DDE.css" />
+    <Content Include="CSS\images\main2.png" />
+    <Content Include="CSS\menu.css" />
+    <Content Include="Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddExamCentres.aspx.cs">
+      <DependentUpon>AddExamCentres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddExamCentres.aspx.designer.cs">
+      <DependentUpon>AddExamCentres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddExaminer.aspx.cs">
+      <DependentUpon>AddExaminer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddExaminer.aspx.designer.cs">
+      <DependentUpon>AddExaminer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddStudyCentre.aspx.cs">
+      <DependentUpon>AddStudyCentre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddStudyCentre.aspx.designer.cs">
+      <DependentUpon>AddStudyCentre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddCity.aspx.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCity.aspx.designer.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddCourse.aspx.cs">
+      <DependentUpon>AddCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCourse.aspx.designer.cs">
+      <DependentUpon>AddCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddPractical.aspx.cs">
+      <DependentUpon>AddPractical.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddPractical.aspx.designer.cs">
+      <DependentUpon>AddPractical.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddSubject.aspx.cs">
+      <DependentUpon>AddSubject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddSubject.aspx.designer.cs">
+      <DependentUpon>AddSubject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdmitCardList.aspx.cs">
+      <DependentUpon>AdmitCardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdmitCardList.aspx.designer.cs">
+      <DependentUpon>AdmitCardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdmitCardList1.aspx.cs">
+      <DependentUpon>AdmitCardList1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdmitCardList1.aspx.designer.cs">
+      <DependentUpon>AdmitCardList1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdmitCardList2.aspx.cs">
+      <DependentUpon>AdmitCardList2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdmitCardList2.aspx.designer.cs">
+      <DependentUpon>AdmitCardList2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AllotApplications.aspx.cs">
+      <DependentUpon>AllotApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AllotApplications.aspx.designer.cs">
+      <DependentUpon>AllotApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AssignRole.aspx.cs">
+      <DependentUpon>AssignRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AssignRole.aspx.designer.cs">
+      <DependentUpon>AssignRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AutoFillExamForm.aspx.cs">
+      <DependentUpon>AutoFillExamForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AutoFillExamForm.aspx.designer.cs">
+      <DependentUpon>AutoFillExamForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AwardSheet.aspx.cs">
+      <DependentUpon>AwardSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AwardSheet.aspx.designer.cs">
+      <DependentUpon>AwardSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AwardSheetPrac.aspx.cs">
+      <DependentUpon>AwardSheetPrac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AwardSheetPrac.aspx.designer.cs">
+      <DependentUpon>AwardSheetPrac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BlankMarksheet.aspx.cs">
+      <DependentUpon>BlankMarksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BlankMarksheet.aspx.designer.cs">
+      <DependentUpon>BlankMarksheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BlockUnblockInstrument.aspx.cs">
+      <DependentUpon>BlockUnblockInstrument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BlockUnblockInstrument.aspx.designer.cs">
+      <DependentUpon>BlockUnblockInstrument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChalanForm.aspx.cs">
+      <DependentUpon>ChalanForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChalanForm.aspx.designer.cs">
+      <DependentUpon>ChalanForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangeExamCentreByENo.aspx.cs">
+      <DependentUpon>ChangeExamCentreByENo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangeExamCentreByENo.aspx.designer.cs">
+      <DependentUpon>ChangeExamCentreByENo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangeExamCentreByList.aspx.cs">
+      <DependentUpon>ChangeExamCentreByList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangeExamCentreByList.aspx.designer.cs">
+      <DependentUpon>ChangeExamCentreByList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangeSLMCourse.aspx.cs">
+      <DependentUpon>ChangeSLMCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangeSLMCourse.aspx.designer.cs">
+      <DependentUpon>ChangeSLMCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangeStudyCentre.aspx.cs">
+      <DependentUpon>ChangeStudyCentre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangeStudyCentre.aspx.designer.cs">
+      <DependentUpon>ChangeStudyCentre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangeYearOfStudents.aspx.cs">
+      <DependentUpon>ChangeYearOfStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangeYearOfStudents.aspx.designer.cs">
+      <DependentUpon>ChangeYearOfStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CheckEligibilityStatus.aspx.cs">
+      <DependentUpon>CheckEligibilityStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CheckEligibilityStatus.aspx.designer.cs">
+      <DependentUpon>CheckEligibilityStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CheckQueryStatusForExam.aspx.cs">
+      <DependentUpon>CheckQueryStatusForExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CheckQueryStatusForExam.aspx.designer.cs">
+      <DependentUpon>CheckQueryStatusForExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClearSIStatus.aspx.cs">
+      <DependentUpon>ClearSIStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClearSIStatus.aspx.designer.cs">
+      <DependentUpon>ClearSIStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ConfirmAdmissionByANo.aspx.cs">
+      <DependentUpon>ConfirmAdmissionByANo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ConfirmAdmissionByANo.aspx.designer.cs">
+      <DependentUpon>ConfirmAdmissionByANo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CoveringLetterDegree.aspx.cs">
+      <DependentUpon>CoveringLetterDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CoveringLetterDegree.aspx.designer.cs">
+      <DependentUpon>CoveringLetterDegree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CPFirstTime.aspx.cs">
+      <DependentUpon>CPFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CPFirstTime.aspx.designer.cs">
+      <DependentUpon>CPFirstTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateDateSheet.aspx.cs">
+      <DependentUpon>CreateDateSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateDateSheet.aspx.designer.cs">
+      <DependentUpon>CreateDateSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateInstrument.aspx.cs">
+      <DependentUpon>CreateInstrument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateInstrument.aspx.designer.cs">
+      <DependentUpon>CreateInstrument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateQuestion.aspx.cs">
+      <DependentUpon>CreateQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateQuestion.aspx.designer.cs">
+      <DependentUpon>CreateQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateSLM.aspx.cs">
+      <DependentUpon>CreateSLM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateSLM.aspx.designer.cs">
+      <DependentUpon>CreateSLM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomiseExamReport.aspx.cs">
+      <DependentUpon>CustomiseExamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomiseExamReport.aspx.designer.cs">
+      <DependentUpon>CustomiseExamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Degree.aspx.cs">
+      <DependentUpon>Degree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Degree.aspx.designer.cs">
+      <DependentUpon>Degree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DegreeLetter.aspx.cs">
+      <DependentUpon>DegreeLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DegreeLetter.aspx.designer.cs">
+      <DependentUpon>DegreeLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DegreeND.aspx.cs">
+      <DependentUpon>DegreeND.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DegreeND.aspx.designer.cs">
+      <DependentUpon>DegreeND.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DegreePR.aspx.cs">
+      <DependentUpon>DegreePR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DegreePR.aspx.designer.cs">
+      <DependentUpon>DegreePR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DetainStudent.aspx.cs">
+      <DependentUpon>DetainStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DetainStudent.aspx.designer.cs">
+      <DependentUpon>DetainStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DistributeAmount.aspx.cs">
+      <DependentUpon>DistributeAmount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DistributeAmount.aspx.designer.cs">
+      <DependentUpon>DistributeAmount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DStudentRegistration.aspx.cs">
+      <DependentUpon>DStudentRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DStudentRegistration.aspx.designer.cs">
+      <DependentUpon>DStudentRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditExamRecord.aspx.cs">
+      <DependentUpon>EditExamRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditExamRecord.aspx.designer.cs">
+      <DependentUpon>EditExamRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditFeeDetail.aspx.cs">
+      <DependentUpon>EditFeeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditFeeDetail.aspx.designer.cs">
+      <DependentUpon>EditFeeDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EnterNewSLMStock.aspx.cs">
+      <DependentUpon>EnterNewSLMStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EnterNewSLMStock.aspx.designer.cs">
+      <DependentUpon>EnterNewSLMStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FeePaidBySC.aspx.cs">
+      <DependentUpon>FeePaidBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeePaidBySC.aspx.designer.cs">
+      <DependentUpon>FeePaidBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillDec12Marks.aspx.cs">
+      <DependentUpon>FillDec12Marks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillDec12Marks.aspx.designer.cs">
+      <DependentUpon>FillDec12Marks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillDegreeInfo.aspx.cs">
+      <DependentUpon>FillDegreeInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillDegreeInfo.aspx.designer.cs">
+      <DependentUpon>FillDegreeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillExamFees.aspx.cs">
+      <DependentUpon>FillExamFees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillExamFees.aspx.designer.cs">
+      <DependentUpon>FillExamFees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillExamRecord_June2013.aspx.cs">
+      <DependentUpon>FillExamRecord_June2013.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillExamRecord_June2013.aspx.designer.cs">
+      <DependentUpon>FillExamRecord_June2013.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillIAAWMarksBySC.aspx.cs">
+      <DependentUpon>FillIAAWMarksBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillIAAWMarksBySC.aspx.designer.cs">
+      <DependentUpon>FillIAAWMarksBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillMarks.aspx.cs">
+      <DependentUpon>FillMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillMarks.aspx.designer.cs">
+      <DependentUpon>FillMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillMarksheet.aspx.cs">
+      <DependentUpon>FillMarksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillMarksheet.aspx.designer.cs">
+      <DependentUpon>FillMarksheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillMigrationInfo.aspx.cs">
+      <DependentUpon>FillMigrationInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillMigrationInfo.aspx.designer.cs">
+      <DependentUpon>FillMigrationInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillMultipleFee.aspx.cs">
+      <DependentUpon>FillMultipleFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillMultipleFee.aspx.designer.cs">
+      <DependentUpon>FillMultipleFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillPracticalMarks.aspx.cs">
+      <DependentUpon>FillPracticalMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillPracticalMarks.aspx.designer.cs">
+      <DependentUpon>FillPracticalMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillPracticalMarksBySC.aspx.cs">
+      <DependentUpon>FillPracticalMarksBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillPracticalMarksBySC.aspx.designer.cs">
+      <DependentUpon>FillPracticalMarksBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillProjectMarks.aspx.cs">
+      <DependentUpon>FillProjectMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillProjectMarks.aspx.designer.cs">
+      <DependentUpon>FillProjectMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillReceivedCopy.aspx.cs">
+      <DependentUpon>FillReceivedCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillReceivedCopy.aspx.designer.cs">
+      <DependentUpon>FillReceivedCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillSCFee.aspx.cs">
+      <DependentUpon>FillSCFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillSCFee.aspx.designer.cs">
+      <DependentUpon>FillSCFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillTheoryMarks.aspx.cs">
+      <DependentUpon>FillTheoryMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillTheoryMarks.aspx.designer.cs">
+      <DependentUpon>FillTheoryMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FindAdmitCard.aspx.cs">
+      <DependentUpon>FindAdmitCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FindAdmitCard.aspx.designer.cs">
+      <DependentUpon>FindAdmitCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FindMarkSheetByENo.aspx.cs">
+      <DependentUpon>FindMarkSheetByENo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FindMarkSheetByENo.aspx.designer.cs">
+      <DependentUpon>FindMarkSheetByENo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FindStudentByENo.aspx.cs">
+      <DependentUpon>FindStudentByENo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FindStudentByENo.aspx.designer.cs">
+      <DependentUpon>FindStudentByENo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FindVLByNo.aspx.cs">
+      <DependentUpon>FindVLByNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FindVLByNo.aspx.designer.cs">
+      <DependentUpon>FindVLByNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GenerateQRCodeForCMS.aspx.cs">
+      <DependentUpon>GenerateQRCodeForCMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateQRCodeForCMS.aspx.designer.cs">
+      <DependentUpon>GenerateQRCodeForCMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GenerateQRCodeForDegree.aspx.cs">
+      <DependentUpon>GenerateQRCodeForDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateQRCodeForDegree.aspx.designer.cs">
+      <DependentUpon>GenerateQRCodeForDegree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GenerateQRCodeForTS.aspx.cs">
+      <DependentUpon>GenerateQRCodeForTS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateQRCodeForTS.aspx.designer.cs">
+      <DependentUpon>GenerateQRCodeForTS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GenerateQuestionPaper.aspx.cs">
+      <DependentUpon>GenerateQuestionPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateQuestionPaper.aspx.designer.cs">
+      <DependentUpon>GenerateQuestionPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GenerateQuestionPaper1.aspx.cs">
+      <DependentUpon>GenerateQuestionPaper1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateQuestionPaper1.aspx.designer.cs">
+      <DependentUpon>GenerateQuestionPaper1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ICard.aspx.cs">
+      <DependentUpon>ICard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ICard.aspx.designer.cs">
+      <DependentUpon>ICard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IssueProspectus.aspx.cs">
+      <DependentUpon>IssueProspectus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IssueProspectus.aspx.designer.cs">
+      <DependentUpon>IssueProspectus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LinkRLToInstrument.aspx.cs">
+      <DependentUpon>LinkRLToInstrument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LinkRLToInstrument.aspx.designer.cs">
+      <DependentUpon>LinkRLToInstrument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MasterPages\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MasterPages\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MasterPages\StudyCentre.Master.cs">
+      <DependentUpon>StudyCentre.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MasterPages\StudyCentre.Master.designer.cs">
+      <DependentUpon>StudyCentre.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MigrationLetter.aspx.cs">
+      <DependentUpon>MigrationLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MigrationLetter.aspx.designer.cs">
+      <DependentUpon>MigrationLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PayAmountBySC.aspx.cs">
+      <DependentUpon>PayAmountBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PayAmountBySC.aspx.designer.cs">
+      <DependentUpon>PayAmountBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProcessSLMLetter.aspx.cs">
+      <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProcessSLMLetter.aspx.designer.cs">
+      <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishAdmitCard.aspx.cs">
+      <DependentUpon>PublishAdmitCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishAdmitCard.aspx.designer.cs">
+      <DependentUpon>PublishAdmitCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishDateSheet.aspx.cs">
+      <DependentUpon>PublishDateSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishDateSheet.aspx.designer.cs">
+      <DependentUpon>PublishDateSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishDCDetails.aspx.cs">
+      <DependentUpon>PublishDCDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishDCDetails.aspx.designer.cs">
+      <DependentUpon>PublishDCDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishICards.aspx.cs">
+      <DependentUpon>PublishICards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishICards.aspx.designer.cs">
+      <DependentUpon>PublishICards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishListsOfSLMLetter.aspx.cs">
+      <DependentUpon>PublishListsOfSLMLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishListsOfSLMLetter.aspx.designer.cs">
+      <DependentUpon>PublishListsOfSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarksheet.aspx.cs">
+      <DependentUpon>PublishMarksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarksheet.aspx.designer.cs">
+      <DependentUpon>PublishMarksheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC.aspx.cs">
+      <DependentUpon>PublishMarkSheetBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC.aspx.designer.cs">
+      <DependentUpon>PublishMarkSheetBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC1.aspx.cs">
+      <DependentUpon>PublishMarkSheetBySC1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC1.aspx.designer.cs">
+      <DependentUpon>PublishMarkSheetBySC1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC2.aspx.cs">
+      <DependentUpon>PublishMarkSheetBySC2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC2.aspx.designer.cs">
+      <DependentUpon>PublishMarkSheetBySC2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC3.aspx.cs">
+      <DependentUpon>PublishMarkSheetBySC3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC3.aspx.designer.cs">
+      <DependentUpon>PublishMarkSheetBySC3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC4.aspx.cs">
+      <DependentUpon>PublishMarkSheetBySC4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC4.aspx.designer.cs">
+      <DependentUpon>PublishMarkSheetBySC4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC5.aspx.cs">
+      <DependentUpon>PublishMarkSheetBySC5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishMarkSheetBySC5.aspx.designer.cs">
+      <DependentUpon>PublishMarkSheetBySC5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishPassword.aspx.cs">
+      <DependentUpon>PublishPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishPassword.aspx.designer.cs">
+      <DependentUpon>PublishPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishPasswordSC.aspx.cs">
+      <DependentUpon>PublishPasswordSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishPasswordSC.aspx.designer.cs">
+      <DependentUpon>PublishPasswordSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishPasswordEC.aspx.cs">
+      <DependentUpon>PublishPasswordEC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishPasswordEC.aspx.designer.cs">
+      <DependentUpon>PublishPasswordEC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishQP.aspx.cs">
+      <DependentUpon>PublishQP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishQP.aspx.designer.cs">
+      <DependentUpon>PublishQP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishRefundByINo.aspx.cs">
+      <DependentUpon>PublishRefundByINo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishRefundByINo.aspx.designer.cs">
+      <DependentUpon>PublishRefundByINo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishRefundLetter.aspx.cs">
+      <DependentUpon>PublishRefundLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishRefundLetter.aspx.designer.cs">
+      <DependentUpon>PublishRefundLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishReportSPCWiseGender.aspx.cs">
+      <DependentUpon>PublishReportSPCWiseGender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishReportSPCWiseGender.aspx.designer.cs">
+      <DependentUpon>PublishReportSPCWiseGender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishReportSPCWiseGender1.aspx.cs">
+      <DependentUpon>PublishReportSPCWiseGender1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishReportSPCWiseGender1.aspx.designer.cs">
+      <DependentUpon>PublishReportSPCWiseGender1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishSLMListofSLMLetter.aspx.cs">
+      <DependentUpon>PublishSLMListofSLMLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishSLMListofSLMLetter.aspx.designer.cs">
+      <DependentUpon>PublishSLMListofSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishStudentInfo.aspx.cs">
+      <DependentUpon>PublishStudentInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishStudentInfo.aspx.designer.cs">
+      <DependentUpon>PublishStudentInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishStudentList.aspx.cs">
+      <DependentUpon>PublishStudentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishStudentList.aspx.designer.cs">
+      <DependentUpon>PublishStudentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishStudentListofSLMLetter.aspx.cs">
+      <DependentUpon>PublishStudentListofSLMLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishStudentListofSLMLetter.aspx.designer.cs">
+      <DependentUpon>PublishStudentListofSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishStudentRecord.aspx.cs">
+      <DependentUpon>PublishStudentRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishStudentRecord.aspx.designer.cs">
+      <DependentUpon>PublishStudentRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QPImgHandler.ashx.cs">
+      <DependentUpon>QPImgHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Question.ashx.cs">
+      <DependentUpon>Question.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReceiveAssignment.aspx.cs">
+      <DependentUpon>ReceiveAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceiveAssignment.aspx.designer.cs">
+      <DependentUpon>ReceiveAssignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReceiveDocuments.aspx.cs">
+      <DependentUpon>ReceiveDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceiveDocuments.aspx.designer.cs">
+      <DependentUpon>ReceiveDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReceivePPFee.aspx.cs">
+      <DependentUpon>ReceivePPFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceivePPFee.aspx.designer.cs">
+      <DependentUpon>ReceivePPFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReceiveProjects.aspx.cs">
+      <DependentUpon>ReceiveProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceiveProjects.aspx.designer.cs">
+      <DependentUpon>ReceiveProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecycleStudent.aspx.cs">
+      <DependentUpon>RecycleStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecycleStudent.aspx.designer.cs">
+      <DependentUpon>RecycleStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RefundByINo.aspx.cs">
+      <DependentUpon>RefundByINo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RefundByINo.aspx.designer.cs">
+      <DependentUpon>RefundByINo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RefundLetter.aspx.cs">
+      <DependentUpon>RefundLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RefundLetter.aspx.designer.cs">
+      <DependentUpon>RefundLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegisterExaminer.aspx.cs">
+      <DependentUpon>RegisterExaminer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegisterExaminer.aspx.designer.cs">
+      <DependentUpon>RegisterExaminer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegisterQueryForExam.aspx.cs">
+      <DependentUpon>RegisterQueryForExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegisterQueryForExam.aspx.designer.cs">
+      <DependentUpon>RegisterQueryForExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RemoveDetainedStatus.aspx.cs">
+      <DependentUpon>RemoveDetainedStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RemoveDetainedStatus.aspx.designer.cs">
+      <DependentUpon>RemoveDetainedStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RequestForDegree.aspx.cs">
+      <DependentUpon>RequestForDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RequestForDegree.aspx.designer.cs">
+      <DependentUpon>RequestForDegree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RequestForMigration.aspx.cs">
+      <DependentUpon>RequestForMigration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RequestForMigration.aspx.designer.cs">
+      <DependentUpon>RequestForMigration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SCRefunds.aspx.cs">
+      <DependentUpon>SCRefunds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SCRefunds.aspx.designer.cs">
+      <DependentUpon>SCRefunds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SeachMigrationApplication.aspx.cs">
+      <DependentUpon>SeachMigrationApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SeachMigrationApplication.aspx.designer.cs">
+      <DependentUpon>SeachMigrationApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchAbsentesInExam.aspx.cs">
+      <DependentUpon>SearchAbsentesInExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchAbsentesInExam.aspx.designer.cs">
+      <DependentUpon>SearchAbsentesInExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchDegreeApplication.aspx.cs">
+      <DependentUpon>SearchDegreeApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchDegreeApplication.aspx.designer.cs">
+      <DependentUpon>SearchDegreeApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchDL.aspx.cs">
+      <DependentUpon>SearchDL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchDL.aspx.designer.cs">
+      <DependentUpon>SearchDL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchML.aspx.cs">
+      <DependentUpon>SearchML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchML.aspx.designer.cs">
+      <DependentUpon>SearchML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchRefundLetterByNo.aspx.cs">
+      <DependentUpon>SearchRefundLetterByNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchRefundLetterByNo.aspx.designer.cs">
+      <DependentUpon>SearchRefundLetterByNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchSLMIssueLetter.aspx.cs">
+      <DependentUpon>SearchSLMIssueLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchSLMIssueLetter.aspx.designer.cs">
+      <DependentUpon>SearchSLMIssueLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchSLMIssueStatausByENo.aspx.cs">
+      <DependentUpon>SearchSLMIssueStatausByENo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchSLMIssueStatausByENo.aspx.designer.cs">
+      <DependentUpon>SearchSLMIssueStatausByENo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchSLMSellletterByLNo.aspx.cs">
+      <DependentUpon>SearchSLMSellletterByLNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchSLMSellletterByLNo.aspx.designer.cs">
+      <DependentUpon>SearchSLMSellletterByLNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SellSLM.aspx.cs">
+      <DependentUpon>SellSLM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SellSLM.aspx.designer.cs">
+      <DependentUpon>SellSLM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendASMail.aspx.cs">
+      <DependentUpon>SendASMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendASMail.aspx.designer.cs">
+      <DependentUpon>SendASMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendConsignment.aspx.cs">
+      <DependentUpon>SendConsignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendConsignment.aspx.designer.cs">
+      <DependentUpon>SendConsignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendDocuments.aspx.cs">
+      <DependentUpon>SendDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendDocuments.aspx.designer.cs">
+      <DependentUpon>SendDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendFeeBySC.aspx.cs">
+      <DependentUpon>SendFeeBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendFeeBySC.aspx.designer.cs">
+      <DependentUpon>SendFeeBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendQuestionPapers.aspx.cs">
+      <DependentUpon>SendQuestionPapers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendQuestionPapers.aspx.designer.cs">
+      <DependentUpon>SendQuestionPapers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendSMSToStudents.aspx.cs">
+      <DependentUpon>SendSMSToStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendSMSToStudents.aspx.designer.cs">
+      <DependentUpon>SendSMSToStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SentSMSToMNo.aspx.cs">
+      <DependentUpon>SentSMSToMNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SentSMSToMNo.aspx.designer.cs">
+      <DependentUpon>SentSMSToMNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetCTPapersByEno.aspx.cs">
+      <DependentUpon>SetCTPapersByEno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetCTPapersByEno.aspx.designer.cs">
+      <DependentUpon>SetCTPapersByEno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetQP.aspx.cs">
+      <DependentUpon>SetQP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetQP.aspx.designer.cs">
+      <DependentUpon>SetQP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetQP1.aspx.cs">
+      <DependentUpon>SetQP1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetQP1.aspx.designer.cs">
+      <DependentUpon>SetQP1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetQualifyingStatus.aspx.cs">
+      <DependentUpon>SetQualifyingStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetQualifyingStatus.aspx.designer.cs">
+      <DependentUpon>SetQualifyingStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetRequiredFee.aspx.cs">
+      <DependentUpon>SetRequiredFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetRequiredFee.aspx.designer.cs">
+      <DependentUpon>SetRequiredFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetSpecialisation.aspx.cs">
+      <DependentUpon>SetSpecialisation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetSpecialisation.aspx.designer.cs">
+      <DependentUpon>SetSpecialisation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetSpecialisationByList.aspx.cs">
+      <DependentUpon>SetSpecialisationByList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetSpecialisationByList.aspx.designer.cs">
+      <DependentUpon>SetSpecialisationByList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetStreamFee.aspx.cs">
+      <DependentUpon>SetStreamFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetStreamFee.aspx.designer.cs">
+      <DependentUpon>SetStreamFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetStreamForSC.aspx.cs">
+      <DependentUpon>SetStreamForSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetStreamForSC.aspx.designer.cs">
+      <DependentUpon>SetStreamForSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetTMSCWiseDec12.aspx.cs">
+      <DependentUpon>SetTMSCWiseDec12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetTMSCWiseDec12.aspx.designer.cs">
+      <DependentUpon>SetTMSCWiseDec12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetYearRecord.aspx.cs">
+      <DependentUpon>SetYearRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetYearRecord.aspx.designer.cs">
+      <DependentUpon>SetYearRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowAddress1.aspx.cs">
+      <DependentUpon>ShowAddress1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowAddress1.aspx.designer.cs">
+      <DependentUpon>ShowAddress1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowAdmissionDataReport.aspx.cs">
+      <DependentUpon>ShowAdmissionDataReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowAdmissionDataReport.aspx.designer.cs">
+      <DependentUpon>ShowAdmissionDataReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowALLFeePaidBySC.aspx.cs">
+      <DependentUpon>ShowALLFeePaidBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowALLFeePaidBySC.aspx.designer.cs">
+      <DependentUpon>ShowALLFeePaidBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowAmountDistribution.aspx.cs">
+      <DependentUpon>ShowAmountDistribution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowAmountDistribution.aspx.designer.cs">
+      <DependentUpon>ShowAmountDistribution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowASFilledRecord.aspx.cs">
+      <DependentUpon>ShowASFilledRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowASFilledRecord.aspx.designer.cs">
+      <DependentUpon>ShowASFilledRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowASReceivedByEmployee.aspx.cs">
+      <DependentUpon>ShowASReceivedByEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowASReceivedByEmployee.aspx.designer.cs">
+      <DependentUpon>ShowASReceivedByEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowCancelStudents.aspx.cs">
+      <DependentUpon>ShowCancelStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowCancelStudents.aspx.designer.cs">
+      <DependentUpon>ShowCancelStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowCityList.aspx.cs">
+      <DependentUpon>ShowCityList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowCityList.aspx.designer.cs">
+      <DependentUpon>ShowCityList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowCompleteResult.aspx.cs">
+      <DependentUpon>ShowCompleteResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowCompleteResult.aspx.designer.cs">
+      <DependentUpon>ShowCompleteResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowConfirmedApplications.aspx.cs">
+      <DependentUpon>ShowConfirmedApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowConfirmedApplications.aspx.designer.cs">
+      <DependentUpon>ShowConfirmedApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowCourse.aspx.cs">
+      <DependentUpon>ShowCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowCourse.aspx.designer.cs">
+      <DependentUpon>ShowCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowCTStudents.aspx.cs">
+      <DependentUpon>ShowCTStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowCTStudents.aspx.designer.cs">
+      <DependentUpon>ShowCTStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDAApproved.aspx.cs">
+      <DependentUpon>ShowDAApproved.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDAApproved.aspx.designer.cs">
+      <DependentUpon>ShowDAApproved.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDANoDues.aspx.cs">
+      <DependentUpon>ShowDANoDues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDANoDues.aspx.designer.cs">
+      <DependentUpon>ShowDANoDues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDAProofReading.aspx.cs">
+      <DependentUpon>ShowDAProofReading.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDAProofReading.aspx.designer.cs">
+      <DependentUpon>ShowDAProofReading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDAStatus.aspx.cs">
+      <DependentUpon>ShowDAStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDAStatus.aspx.designer.cs">
+      <DependentUpon>ShowDAStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDateSheet.aspx.cs">
+      <DependentUpon>ShowDateSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDateSheet.aspx.designer.cs">
+      <DependentUpon>ShowDateSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDCDetails.aspx.cs">
+      <DependentUpon>ShowDCDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDCDetails.aspx.designer.cs">
+      <DependentUpon>ShowDCDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDegreeRequests.aspx.cs">
+      <DependentUpon>ShowDegreeRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDegreeRequests.aspx.designer.cs">
+      <DependentUpon>ShowDegreeRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDetainedStudents.aspx.cs">
+      <DependentUpon>ShowDetainedStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDetainedStudents.aspx.designer.cs">
+      <DependentUpon>ShowDetainedStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDStudent.aspx.cs">
+      <DependentUpon>ShowDStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDStudent.aspx.designer.cs">
+      <DependentUpon>ShowDStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowECLogins.aspx.cs">
+      <DependentUpon>ShowECLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowECLogins.aspx.designer.cs">
+      <DependentUpon>ShowECLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowECPStudents.aspx.cs">
+      <DependentUpon>ShowECPStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowECPStudents.aspx.designer.cs">
+      <DependentUpon>ShowECPStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowECStudents.aspx.cs">
+      <DependentUpon>ShowECStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowECStudents.aspx.designer.cs">
+      <DependentUpon>ShowECStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowEligibilityReport.aspx.cs">
+      <DependentUpon>ShowEligibilityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowEligibilityReport.aspx.designer.cs">
+      <DependentUpon>ShowEligibilityReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowExamCentres.aspx.cs">
+      <DependentUpon>ShowExamCentres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowExamCentres.aspx.designer.cs">
+      <DependentUpon>ShowExamCentres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowExamFeeRecord.aspx.cs">
+      <DependentUpon>ShowExamFeeRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowExamFeeRecord.aspx.designer.cs">
+      <DependentUpon>ShowExamFeeRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowExaminationCentreReport.aspx.cs">
+      <DependentUpon>ShowExaminationCentreReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowExaminationCentreReport.aspx.designer.cs">
+      <DependentUpon>ShowExaminationCentreReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowExaminers.aspx.cs">
+      <DependentUpon>ShowExaminers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowExaminers.aspx.designer.cs">
+      <DependentUpon>ShowExaminers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowGracedStudents.aspx.cs">
+      <DependentUpon>ShowGracedStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowGracedStudents.aspx.designer.cs">
+      <DependentUpon>ShowGracedStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowGrievances.aspx.cs">
+      <DependentUpon>ShowGrievances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowGrievances.aspx.designer.cs">
+      <DependentUpon>ShowGrievances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowInstruments.aspx.cs">
+      <DependentUpon>ShowInstruments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowInstruments.aspx.designer.cs">
+      <DependentUpon>ShowInstruments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowBPExamReport.aspx.cs">
+      <DependentUpon>ShowBPExamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowBPExamReport.aspx.designer.cs">
+      <DependentUpon>ShowBPExamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarks1.aspx.cs">
+      <DependentUpon>ShowMarks1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarks1.aspx.designer.cs">
+      <DependentUpon>ShowMarks1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet3.aspx.cs">
+      <DependentUpon>ShowMarkSheet3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet3.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheet3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet4.aspx.cs">
+      <DependentUpon>ShowMarkSheet4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet4.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheet4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarksheet5.aspx.cs">
+      <DependentUpon>ShowMarksheet5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarksheet5.aspx.designer.cs">
+      <DependentUpon>ShowMarksheet5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheetWebsiteVersion.aspx.cs">
+      <DependentUpon>ShowMarkSheetWebsiteVersion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheetWebsiteVersion.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheetWebsiteVersion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMigrationRequests.aspx.cs">
+      <DependentUpon>ShowMigrationRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMigrationRequests.aspx.designer.cs">
+      <DependentUpon>ShowMigrationRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMyLog.aspx.cs">
+      <DependentUpon>ShowMyLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMyLog.aspx.designer.cs">
+      <DependentUpon>ShowMyLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMyRecProject.aspx.cs">
+      <DependentUpon>ShowMyRecProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMyRecProject.aspx.designer.cs">
+      <DependentUpon>ShowMyRecProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineApplications.aspx.cs">
+      <DependentUpon>ShowOnlineApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineApplications.aspx.designer.cs">
+      <DependentUpon>ShowOnlineApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineBPApplications.aspx.cs">
+      <DependentUpon>ShowOnlineBPApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineBPApplications.aspx.designer.cs">
+      <DependentUpon>ShowOnlineBPApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineCont.aspx.cs">
+      <DependentUpon>ShowOnlineCont.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineCont.aspx.designer.cs">
+      <DependentUpon>ShowOnlineCont.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineQueries.aspx.cs">
+      <DependentUpon>ShowOnlineQueries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineQueries.aspx.designer.cs">
+      <DependentUpon>ShowOnlineQueries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineREApplications.aspx.cs">
+      <DependentUpon>ShowOnlineREApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowOnlineREApplications.aspx.designer.cs">
+      <DependentUpon>ShowOnlineREApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowProcessedSLMLetters.aspx.cs">
+      <DependentUpon>ShowProcessedSLMLetters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProcessedSLMLetters.aspx.designer.cs">
+      <DependentUpon>ShowProcessedSLMLetters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowQuestionPaper.aspx.cs">
+      <DependentUpon>ShowQuestionPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowQuestionPaper.aspx.designer.cs">
+      <DependentUpon>ShowQuestionPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowQuestions.aspx.cs">
+      <DependentUpon>ShowQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowQuestions.aspx.designer.cs">
+      <DependentUpon>ShowQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowRefundLettersByList.aspx.cs">
+      <DependentUpon>ShowRefundLettersByList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowRefundLettersByList.aspx.designer.cs">
+      <DependentUpon>ShowRefundLettersByList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowRegularExamReport.aspx.cs">
+      <DependentUpon>ShowRegularExamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowRegularExamReport.aspx.designer.cs">
+      <DependentUpon>ShowRegularExamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowListofAwardSheets.aspx.cs">
+      <DependentUpon>ShowListofAwardSheets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowListofAwardSheets.aspx.designer.cs">
+      <DependentUpon>ShowListofAwardSheets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowLogs.aspx.cs">
+      <DependentUpon>ShowLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowLogs.aspx.designer.cs">
+      <DependentUpon>ShowLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMaildStudents.aspx.cs">
+      <DependentUpon>ShowMaildStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMaildStudents.aspx.designer.cs">
+      <DependentUpon>ShowMaildStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarks.aspx.cs">
+      <DependentUpon>ShowMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarks.aspx.designer.cs">
+      <DependentUpon>ShowMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet.aspx.cs">
+      <DependentUpon>ShowMarkSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet1.aspx.cs">
+      <DependentUpon>ShowMarkSheet1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet1.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheet1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet2.aspx.cs">
+      <DependentUpon>ShowMarkSheet2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheet2.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheet2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheetSCWise.aspx.cs">
+      <DependentUpon>ShowMarkSheetSCWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMarkSheetSCWise.aspx.designer.cs">
+      <DependentUpon>ShowMarkSheetSCWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMyReceivedAS.aspx.cs">
+      <DependentUpon>ShowMyReceivedAS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMyReceivedAS.aspx.designer.cs">
+      <DependentUpon>ShowMyReceivedAS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMyRoles.aspx.cs">
+      <DependentUpon>ShowMyRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMyRoles.aspx.designer.cs">
+      <DependentUpon>ShowMyRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowNAECStudents.aspx.cs">
+      <DependentUpon>ShowNAECStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowNAECStudents.aspx.designer.cs">
+      <DependentUpon>ShowNAECStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowPaidFeeByENo.aspx.cs">
+      <DependentUpon>ShowPaidFeeByENo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowPaidFeeByENo.aspx.designer.cs">
+      <DependentUpon>ShowPaidFeeByENo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowPendingStudents.aspx.cs">
+      <DependentUpon>ShowPendingStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowPendingStudents.aspx.designer.cs">
+      <DependentUpon>ShowPendingStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowPractical.aspx.cs">
+      <DependentUpon>ShowPractical.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowPractical.aspx.designer.cs">
+      <DependentUpon>ShowPractical.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowPracticalAS.aspx.cs">
+      <DependentUpon>ShowPracticalAS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowPracticalAS.aspx.designer.cs">
+      <DependentUpon>ShowPracticalAS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalStudents.aspx.cs">
+      <DependentUpon>ShowProvisionalStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalStudents.aspx.designer.cs">
+      <DependentUpon>ShowProvisionalStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowRASReportByDate.aspx.cs">
+      <DependentUpon>ShowRASReportByDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowRASReportByDate.aspx.designer.cs">
+      <DependentUpon>ShowRASReportByDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowReappearExamReport.aspx.cs">
+      <DependentUpon>ShowReappearExamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowReappearExamReport.aspx.designer.cs">
+      <DependentUpon>ShowReappearExamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowRefundSCWise.aspx.cs">
+      <DependentUpon>ShowRefundSCWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowRefundSCWise.aspx.designer.cs">
+      <DependentUpon>ShowRefundSCWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSCRenewalStatus.aspx.cs">
+      <DependentUpon>ShowSCRenewalStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSCRenewalStatus.aspx.designer.cs">
+      <DependentUpon>ShowSCRenewalStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSLM.aspx.cs">
+      <DependentUpon>ShowSLM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSLM.aspx.designer.cs">
+      <DependentUpon>ShowSLM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSLMLetters.aspx.cs">
+      <DependentUpon>ShowSLMLetters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSLMLetters.aspx.designer.cs">
+      <DependentUpon>ShowSLMLetters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSLMPendingStudents.aspx.cs">
+      <DependentUpon>ShowSLMPendingStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSLMPendingStudents.aspx.designer.cs">
+      <DependentUpon>ShowSLMPendingStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSLMRequirements.aspx.cs">
+      <DependentUpon>ShowSLMRequirements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSLMRequirements.aspx.designer.cs">
+      <DependentUpon>ShowSLMRequirements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSLMStock.aspx.cs">
+      <DependentUpon>ShowSLMStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSLMStock.aspx.designer.cs">
+      <DependentUpon>ShowSLMStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSLMStockBook.aspx.cs">
+      <DependentUpon>ShowSLMStockBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSLMStockBook.aspx.designer.cs">
+      <DependentUpon>ShowSLMStockBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowStudentListBySC.aspx.cs">
+      <DependentUpon>ShowStudentListBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowStudentListBySC.aspx.designer.cs">
+      <DependentUpon>ShowStudentListBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowStudents.aspx.cs">
+      <DependentUpon>ShowStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowStudents.aspx.designer.cs">
+      <DependentUpon>ShowStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowStudentsCourseWise.aspx.cs">
+      <DependentUpon>ShowStudentsCourseWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowStudentsCourseWise.aspx.designer.cs">
+      <DependentUpon>ShowStudentsCourseWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowStudentsSCWise.aspx.cs">
+      <DependentUpon>ShowStudentsSCWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowStudentsSCWise.aspx.designer.cs">
+      <DependentUpon>ShowStudentsSCWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowStudyCentres.aspx.cs">
+      <DependentUpon>ShowStudyCentres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowStudyCentres.aspx.designer.cs">
+      <DependentUpon>ShowStudyCentres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowSubject.aspx.cs">
+      <DependentUpon>ShowSubject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowSubject.aspx.designer.cs">
+      <DependentUpon>ShowSubject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowUsers.aspx.cs">
+      <DependentUpon>ShowUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowUsers.aspx.designer.cs">
+      <DependentUpon>ShowUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowVerificationLetters.aspx.cs">
+      <DependentUpon>ShowVerificationLetters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowVerificationLetters.aspx.designer.cs">
+      <DependentUpon>ShowVerificationLetters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowVerifiedDraft.aspx.cs">
+      <DependentUpon>ShowVerifiedDraft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowVerifiedDraft.aspx.designer.cs">
+      <DependentUpon>ShowVerifiedDraft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SLMLetter.aspx.cs">
+      <DependentUpon>SLMLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SLMLetter.aspx.designer.cs">
+      <DependentUpon>SLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SLMSellLetter.aspx.cs">
+      <DependentUpon>SLMSellLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SLMSellLetter.aspx.designer.cs">
+      <DependentUpon>SLMSellLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StudentImgHandler.ashx.cs">
+      <DependentUpon>StudentImgHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StudentRegistrationBySC.aspx.cs">
+      <DependentUpon>StudentRegistrationBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StudentRegistrationBySC.aspx.designer.cs">
+      <DependentUpon>StudentRegistrationBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TransferCourse.aspx.cs">
+      <DependentUpon>TransferCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TransferCourse.aspx.designer.cs">
+      <DependentUpon>TransferCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TransferCredits.aspx.cs">
+      <DependentUpon>TransferCredits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TransferCredits.aspx.designer.cs">
+      <DependentUpon>TransferCredits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateASAllotment.aspx.cs">
+      <DependentUpon>UpdateASAllotment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateASAllotment.aspx.designer.cs">
+      <DependentUpon>UpdateASAllotment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateASAllotted.aspx.cs">
+      <DependentUpon>UpdateASAllotted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateASAllotted.aspx.designer.cs">
+      <DependentUpon>UpdateASAllotted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateDNoOnSLMLetter.aspx.cs">
+      <DependentUpon>UpdateDNoOnSLMLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateDNoOnSLMLetter.aspx.designer.cs">
+      <DependentUpon>UpdateDNoOnSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateSLMStock.aspx.cs">
+      <DependentUpon>UpdateSLMStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateSLMStock.aspx.designer.cs">
+      <DependentUpon>UpdateSLMStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadASMarks.aspx.cs">
+      <DependentUpon>UploadASMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadASMarks.aspx.designer.cs">
+      <DependentUpon>UploadASMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadInternalMarks.aspx.cs">
+      <DependentUpon>UploadInternalMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadInternalMarks.aspx.designer.cs">
+      <DependentUpon>UploadInternalMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadInternalMarks1.aspx.cs">
+      <DependentUpon>UploadInternalMarks1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadInternalMarks1.aspx.designer.cs">
+      <DependentUpon>UploadInternalMarks1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadInternalMarksByENo.aspx.cs">
+      <DependentUpon>UploadInternalMarksByENo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadInternalMarksByENo.aspx.designer.cs">
+      <DependentUpon>UploadInternalMarksByENo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadPracAS.aspx.cs">
+      <DependentUpon>UploadPracAS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadPracAS.aspx.designer.cs">
+      <DependentUpon>UploadPracAS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadQuestionPapers.aspx.cs">
+      <DependentUpon>UploadQuestionPapers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadQuestionPapers.aspx.designer.cs">
+      <DependentUpon>UploadQuestionPapers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadQuestions.aspx.cs">
+      <DependentUpon>UploadQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadQuestions.aspx.designer.cs">
+      <DependentUpon>UploadQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadStudentPhotos.aspx.cs">
+      <DependentUpon>UploadStudentPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadStudentPhotos.aspx.designer.cs">
+      <DependentUpon>UploadStudentPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\AdminHeader.ascx.cs">
+      <DependentUpon>AdminHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\AdminHeader.ascx.designer.cs">
+      <DependentUpon>AdminHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\StudyCentre.ascx.cs">
+      <DependentUpon>StudyCentre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\StudyCentre.ascx.designer.cs">
+      <DependentUpon>StudyCentre.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VerificationLetter.aspx.cs">
+      <DependentUpon>VerificationLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VerificationLetter.aspx.designer.cs">
+      <DependentUpon>VerificationLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VerificationSheatList.aspx.cs">
+      <DependentUpon>VerificationSheatList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VerificationSheatList.aspx.designer.cs">
+      <DependentUpon>VerificationSheatList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VerificationSheetList1.aspx.cs">
+      <DependentUpon>VerificationSheetList1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VerificationSheetList1.aspx.designer.cs">
+      <DependentUpon>VerificationSheetList1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VerificationSheetList2.aspx.cs">
+      <DependentUpon>VerificationSheetList2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VerificationSheetList2.aspx.designer.cs">
+      <DependentUpon>VerificationSheetList2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VerifyDraft.aspx.cs">
+      <DependentUpon>VerifyDraft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VerifyDraft.aspx.designer.cs">
+      <DependentUpon>VerifyDraft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VerifyRefund.aspx.cs">
+      <DependentUpon>VerifyRefund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VerifyRefund.aspx.designer.cs">
+      <DependentUpon>VerifyRefund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BarCode.aspx.cs">
+      <DependentUpon>BarCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarCode.aspx.designer.cs">
+      <DependentUpon>BarCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeCourse.aspx.cs">
+      <DependentUpon>ChangeCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeCourse.aspx.designer.cs">
+      <DependentUpon>ChangeCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DetailsOfMarks.aspx.cs">
+      <DependentUpon>DetailsOfMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DetailsOfMarks.aspx.designer.cs">
+      <DependentUpon>DetailsOfMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MakeRROnline.aspx.cs">
+      <DependentUpon>MakeRROnline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MakeRROnline.aspx.designer.cs">
+      <DependentUpon>MakeRROnline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillBPExamFee.aspx.cs">
+      <DependentUpon>FillBPExamFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillBPExamFee.aspx.designer.cs">
+      <DependentUpon>FillBPExamFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FillFee.aspx.cs">
+      <DependentUpon>FillFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FillFee.aspx.designer.cs">
+      <DependentUpon>FillFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FillAdmissionFormAutomatically.aspx.cs">
+      <DependentUpon>FillAdmissionFormAutomatically.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FillAdmissionFormAutomatically.aspx.designer.cs">
+      <DependentUpon>FillAdmissionFormAutomatically.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FillAdmissionFormAutomatically2.aspx.cs">
+      <DependentUpon>FillAdmissionFormAutomatically2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FillAdmissionFormAutomatically2.aspx.designer.cs">
+      <DependentUpon>FillAdmissionFormAutomatically2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FillContFormAutomatically.aspx.cs">
+      <DependentUpon>FillContFormAutomatically.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FillContFormAutomatically.aspx.designer.cs">
+      <DependentUpon>FillContFormAutomatically.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FillExamFormAutomatically.aspx.cs">
+      <DependentUpon>FillExamFormAutomatically.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FillExamFormAutomatically.aspx.designer.cs">
+      <DependentUpon>FillExamFormAutomatically.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Admin\ShowAssignedRoles.aspx.cs">
+      <DependentUpon>ShowAssignedRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowAssignedRoles.aspx.designer.cs">
+      <DependentUpon>ShowAssignedRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowFeeRecord.aspx.cs">
+      <DependentUpon>ShowFeeRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowFeeRecord.aspx.designer.cs">
+      <DependentUpon>ShowFeeRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowPaidFeeBySC.aspx.cs">
+      <DependentUpon>ShowPaidFeeBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowPaidFeeBySC.aspx.designer.cs">
+      <DependentUpon>ShowPaidFeeBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PublishAwardSheet.aspx.cs">
+      <DependentUpon>PublishAwardSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PublishAwardSheet.aspx.designer.cs">
+      <DependentUpon>PublishAwardSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowCompleteExamReport.aspx.cs">
+      <DependentUpon>ShowCompleteExamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowCompleteExamReport.aspx.designer.cs">
+      <DependentUpon>ShowCompleteExamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowDec12StudentsBySC.aspx.cs">
+      <DependentUpon>ShowDec12StudentsBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowDec12StudentsBySC.aspx.designer.cs">
+      <DependentUpon>ShowDec12StudentsBySC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadExcel.aspx.cs">
+      <DependentUpon>UploadExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadExcel.aspx.designer.cs">
+      <DependentUpon>UploadExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadStudents.aspx.cs">
+      <DependentUpon>UploadStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadStudents.aspx.designer.cs">
+      <DependentUpon>UploadStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserMasterPages\DDE.Master.cs">
+      <DependentUpon>DDE.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMasterPages\DDE.Master.designer.cs">
+      <DependentUpon>DDE.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WelcomeSC.aspx.cs">
+      <DependentUpon>WelcomeSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WelcomeSC.aspx.designer.cs">
+      <DependentUpon>WelcomeSC.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddExamCentres.aspx" />
+    <Content Include="Admin\AddStudyCentre.aspx" />
+    <Content Include="Admin\AddCity.aspx" />
+    <Content Include="Admin\AddCourse.aspx" />
+    <Content Include="Admin\AddPractical.aspx" />
+    <Content Include="Admin\AddSubject.aspx" />
+    <Content Include="Admin\AdmitCardList.aspx" />
+    <Content Include="Admin\AssignRole.aspx" />
+    <Content Include="Admin\AwardSheet.aspx" />
+    <Content Include="Admin\ChalanForm.aspx" />
+    <Content Include="Admin\ChangeExamCentreByENo.aspx" />
+    <Content Include="Admin\ChangeExamCentreByList.aspx" />
+    <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="Admin\ChangeStudyCentre.aspx" />
+    <Content Include="Admin\ChangeYearOfStudents.aspx" />
+    <Content Include="Admin\CheckQueryStatusForExam.aspx" />
+    <Content Include="Admin\ConfirmAdmissionByANo.aspx" />
+    <Content Include="Admin\CPFirstTime.aspx" />
+    <Content Include="Admin\CreateUser.aspx" />
+    <Content Include="Admin\DetainStudent.aspx" />
+    <Content Include="Admin\EditExamRecord.aspx" />
+    <Content Include="Admin\EditFeeDetail.aspx" />
+    <Content Include="Admin\FeePaidBySC.aspx" />
+    <Content Include="Admin\FillExamFees.aspx" />
+    <Content Include="Admin\FillExamRecord_June2013.aspx" />
+    <Content Include="Admin\FillIAAWMarksBySC.aspx" />
+    <Content Include="Admin\FillMarks.aspx" />
+    <Content Include="Admin\FillMarksheet.aspx" />
+    <Content Include="Admin\FillMultipleFee.aspx" />
+    <Content Include="Admin\FillPracticalMarks.aspx" />
+    <Content Include="Admin\FillPracticalMarksBySC.aspx" />
+    <Content Include="Admin\FillReceivedCopy.aspx" />
+    <Content Include="Admin\FillTheoryMarks.aspx" />
+    <Content Include="Admin\FindAdmitCard.aspx" />
+    <Content Include="Admin\FindMarkSheetByENo.aspx" />
+    <Content Include="Admin\FindStudentByENo.aspx" />
+    <Content Include="Admin\ICard.aspx" />
+    <Content Include="Admin\images\asst_dir_sign.png" />
+    <Content Include="Admin\images\Checking Officer.jpg" />
+    <Content Include="Admin\images\COE2.jpg" />
+    <Content Include="Admin\images\Controller Of Examiner.jpg" />
+    <Content Include="Admin\images\dde_logo.png" />
+    <Content Include="Admin\images\dde logo1.png" />
+    <Content Include="Admin\images\dde logo_b.jpg" />
+    <Content Include="Admin\images\dde logo_b.png" />
+    <Content Include="Admin\images\ddelogo.png" />
+    <Content Include="Admin\images\ddelogo1.png" />
+    <Content Include="Admin\images\ddelogo2.png" />
+    <Content Include="Admin\images\delete.png" />
+    <Content Include="Admin\images\dir_sign.png" />
+    <Content Include="Admin\images\ie-left.png" />
+    <Content Include="Admin\images\ie-right.png" />
+    <Content Include="Admin\images\ie-submenu-top.gif" />
+    <Content Include="Admin\images\lavalamp-left.gif" />
+    <Content Include="Admin\images\lavalamp-left.png" />
+    <Content Include="Admin\images\lavalamp-right.gif" />
+    <Content Include="Admin\images\lavalamp-right.png" />
+    <Content Include="Admin\images\left.gif" />
+    <Content Include="Admin\images\left.png" />
+    <Content Include="Admin\images\left1.gif" />
+    <Content Include="Admin\images\left1.png" />
+    <Content Include="Admin\images\leftss.gif" />
+    <Content Include="Admin\images\loading.gif" />
+    <Content Include="Admin\images\logo-final.png" />
+    <Content Include="Admin\images\logo1-final.png" />
+    <Content Include="Admin\images\m.jpg" />
+    <Content Include="Admin\images\menu.css" />
+    <Content Include="Admin\images\msback.jpg" />
+    <Content Include="Admin\images\msback1.jpg" />
+    <Content Include="Admin\images\msback2.jpg" />
+    <Content Include="Admin\images\right.gif" />
+    <Content Include="Admin\images\right.png" />
+    <Content Include="Admin\images\rightss.gif" />
+    <Content Include="Admin\images\selected-left-sub.gif" />
+    <Content Include="Admin\images\selected-left-sub.png" />
+    <Content Include="Admin\images\selected-left.png" />
+    <Content Include="Admin\images\selected-right-sub.gif" />
+    <Content Include="Admin\images\selected-right-sub.png" />
+    <Content Include="Admin\images\selected-right.png" />
+    <Content Include="Admin\images\COE.jpg" />
+    <Content Include="Admin\images\submenu-bottom.gif" />
+    <Content Include="Admin\images\submenu-bottom.png" />
+    <Content Include="Admin\images\submenu-pointer-bottom.gif" />
+    <Content Include="Admin\images\submenu-pointer-selected-bottom.png" />
+    <Content Include="Admin\images\submenu-pointer-top.png" />
+    <Content Include="Admin\images\submenu-selected-bottom.png" />
+    <Content Include="Admin\images\submenu-selected-top.png" />
+    <Content Include="Admin\images\submenu-top.png" />
+    <Content Include="Admin\images\subsubmenu-top.gif" />
+    <Content Include="Admin\images\subsubmenu-top.png" />
+    <Content Include="Admin\MasterPages\Admin.Master" />
+    <Content Include="Admin\PayAmountBySC.aspx" />
+    <Content Include="Admin\PublishAdmitCard.aspx" />
+    <Content Include="Admin\PublishDCDetails.aspx" />
+    <Content Include="Admin\PublishICards.aspx" />
+    <Content Include="Admin\PublishMarksheet.aspx" />
+    <Content Include="Admin\PublishMarkSheetBySC.aspx" />
+    <Content Include="Admin\PublishMarkSheetBySC1.aspx" />
+    <Content Include="Admin\PublishPassword.aspx" />
+    <Content Include="Admin\PublishPasswordSC.aspx" />
+    <Content Include="Admin\PublishReportSPCWiseGender.aspx" />
+    <Content Include="Admin\PublishReportSPCWiseGender1.aspx" />
+    <Content Include="Admin\PublishStudentInfo.aspx" />
+    <Content Include="Admin\PublishStudentList.aspx" />
+    <Content Include="Admin\PublishStudentRecord.aspx" />
+    <Content Include="Admin\RecycleStudent.aspx" />
+    <Content Include="Admin\RegisterQueryForExam.aspx" />
+    <Content Include="Admin\SCRefunds.aspx" />
+    <Content Include="Admin\SearchAbsentesInExam.aspx" />
+    <Content Include="Admin\SendASMail.aspx" />
+    <Content Include="Admin\SendFeeBySC.aspx" />
+    <Content Include="Admin\SetCTPapersByEno.aspx" />
+    <Content Include="Admin\SetQualifyingStatus.aspx" />
+    <Content Include="Admin\SetRequiredFee.aspx" />
+    <Content Include="Admin\SetSpecialisation.aspx" />
+    <Content Include="Admin\SetSpecialisationByList.aspx" />
+    <Content Include="Admin\SetStreamForSC.aspx" />
+    <Content Include="Admin\SetYearRecord.aspx" />
+    <Content Include="Admin\ShowAdmissionDataReport.aspx" />
+    <Content Include="Admin\ShowASReceivedByEmployee.aspx" />
+    <Content Include="Admin\ShowCityList.aspx" />
+    <Content Include="Admin\ShowCourse.aspx" />
+    <Content Include="Admin\ShowDCDetails.aspx" />
+    <Content Include="Admin\ShowDetainedStudents.aspx" />
+    <Content Include="Admin\ShowExamCentres.aspx" />
+    <Content Include="Admin\ShowExamFeeRecord.aspx" />
+    <Content Include="Admin\ShowGracedStudents.aspx" />
+    <Content Include="Admin\ShowBPExamReport.aspx" />
+    <Content Include="Admin\ShowRegularExamReport.aspx" />
+    <Content Include="Admin\ShowListofAwardSheets.aspx" />
+    <Content Include="Admin\ShowLogs.aspx" />
+    <Content Include="Admin\ShowMarks.aspx" />
+    <Content Include="Admin\ShowMarkSheet.aspx" />
+    <Content Include="Admin\ShowMarkSheet1.aspx" />
+    <Content Include="Admin\ShowMarkSheetSCWise.aspx" />
+    <Content Include="Admin\ShowMyRoles.aspx" />
+    <Content Include="Admin\ShowNAECStudents.aspx" />
+    <Content Include="Admin\ShowPaidFeeByENo.aspx" />
+    <Content Include="Admin\ShowPendingStudents.aspx" />
+    <Content Include="Admin\ShowPractical.aspx" />
+    <Content Include="Admin\ShowProvisionalStudents.aspx" />
+    <Content Include="Admin\ShowRASReportByDate.aspx" />
+    <Content Include="Admin\ShowStudentListBySC.aspx" />
+    <Content Include="Admin\ShowStudents.aspx" />
+    <Content Include="Admin\ShowStudentsSCWise.aspx" />
+    <Content Include="Admin\ShowStudyCentres.aspx" />
+    <Content Include="Admin\ShowSubject.aspx" />
+    <Content Include="Admin\ShowUsers.aspx" />
+    <Content Include="Admin\ShowVerifiedDraft.aspx" />
+    <Content Include="Admin\StudentRegistrationBySC.aspx" />
+    <Content Include="Admin\TransferCourse.aspx" />
+    <Content Include="Admin\TransferCredits.aspx" />
+    <Content Include="Admin\UploadASMarks.aspx" />
+    <Content Include="Admin\UserControls\StudyCentre.ascx" />
+    <Content Include="Admin\VerificationSheatList.aspx" />
+    <Content Include="Admin\VerifyDraft.aspx" />
+    <Content Include="Admin\Welcome.aspx" />
+    <Content Include="bin\DDE.DAL.dll" />
+    <Content Include="bin\DDE.DAL.pdb" />
+    <Content Include="bin\DDE.Web.dll" />
+    <Content Include="bin\DDE.Web.pdb" />
+    <Content Include="CSS\AjaxImages\123.gif" />
+    <Content Include="CSS\AjaxImages\button12506589.png" />
+    <Content Include="CSS\AjaxImages\button13072671.png" />
+    <Content Include="CSS\AjaxImages\button19604041.png" />
+    <Content Include="CSS\AjaxImages\button25057428.png" />
+    <Content Include="CSS\AjaxImages\button26251876.png" />
+    <Content Include="CSS\AjaxImages\button32300103.png" />
+    <Content Include="CSS\AjaxImages\button44817893.png" />
+    <Content Include="CSS\AjaxImages\button69168531.png" />
+    <Content Include="CSS\AjaxImages\button69868438.png" />
+    <Content Include="CSS\AjaxImages\button72536859.png" />
+    <Content Include="CSS\AjaxImages\button79319929.png" />
+    <Content Include="CSS\AjaxImages\button93491742.png" />
+    <Content Include="CSS\AjaxImages\button95064932.png" />
+    <Content Include="CSS\AjaxImages\button96148959.png" />
+    <Content Include="CSS\AjaxImages\close.gif" />
+    <Content Include="CSS\AjaxImages\close1.gif" />
+    <Content Include="CSS\AjaxImages\exchangr_icon_username_sm.gif" />
+    <Content Include="CSS\AjaxImages\p.jpg" />
+    <Content Include="CSS\AjaxImages\password.png.jpg" />
+    <Content Include="CSS\AjaxImages\password2.png.jpg" />
+    <Content Include="CSS\AjaxImages\tr_back.gif" />
+    <Content Include="CSS\AjaxImages\username.jpg" />
+    <Content Include="CSS\AjaxImages\warning.gif" />
+    <Content Include="CSS\AjaxImages\warning1.gif" />
+    <Content Include="CSS\colorbox.css" />
+    <Content Include="CSS\images\ac_body.jpg" />
+    <Content Include="CSS\images\dde logo_b.jpg" />
+    <Content Include="CSS\images\dde_logo_b.png" />
+    <Content Include="CSS\images\GVHeader.jpg" />
+    <Content Include="CSS\images\lavalamp-left.gif" />
+    <Content Include="CSS\images\lavalamp-left.png" />
+    <Content Include="CSS\images\lavalamp-right.gif" />
+    <Content Include="CSS\images\lavalamp-right.png" />
+    <Content Include="CSS\images\left.gif" />
+    <Content Include="CSS\images\left.png" />
+    <Content Include="CSS\images\right.gif" />
+    <Content Include="CSS\images\right.png" />
+    <Content Include="CSS\images\selected-left-sub.gif" />
+    <Content Include="CSS\images\selected-left-sub.png" />
+    <Content Include="CSS\images\selected-right-sub.gif" />
+    <Content Include="CSS\images\selected-right-sub.png" />
+    <Content Include="CSS\images\submenu-bottom.gif" />
+    <Content Include="CSS\images\submenu-bottom.png" />
+    <Content Include="CSS\images\submenu-pointer-bottom.gif" />
+    <Content Include="CSS\images\submenu-pointer-selected-bottom.png" />
+    <Content Include="CSS\images\submenu-pointer-top.png" />
+    <Content Include="CSS\images\submenu-selected-bottom.png" />
+    <Content Include="CSS\images\submenu-selected-top.png" />
+    <Content Include="CSS\images\subsubmenu-top.gif" />
+    <Content Include="CSS\images\subsubmenu-top.png" />
+    <Content Include="CSS\images\warning.gif" />
+    <Content Include="CSS\jkoutlinemenu.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\SubhartiERPS.css" />
+    <Content Include="DDE.Web.Publish.xml" />
+    <Content Include="Admin\DetailsOfMarks.aspx" />
+    <Content Include="EmployeePhotos\0101050306.jpg" />
+    <Content Include="EmployeePhotos\0101050308.jpg" />
+    <Content Include="EmployeePhotos\0102020169.jpg" />
+    <Content Include="EmployeePhotos\0102020311.jpg" />
+    <Content Include="EmployeePhotos\0102020312.jpg" />
+    <Content Include="EmployeePhotos\0102020314.jpg" />
+    <Content Include="EmployeePhotos\0102020315.jpg" />
+    <Content Include="EmployeePhotos\0102020316.jpg" />
+    <Content Include="EmployeePhotos\0102020410.jpg" />
+    <Content Include="EmployeePhotos\0102030020.jpg" />
+    <Content Include="EmployeePhotos\0102030023.jpg" />
+    <Content Include="EmployeePhotos\0102030029.jpg" />
+    <Content Include="EmployeePhotos\0102030301.jpg" />
+    <Content Include="EmployeePhotos\0102030302.jpg" />
+    <Content Include="EmployeePhotos\0102030303.jpg" />
+    <Content Include="EmployeePhotos\0102030304.jpg" />
+    <Content Include="EmployeePhotos\0102030305.jpg" />
+    <Content Include="EmployeePhotos\0102030309.jpg" />
+    <Content Include="EmployeePhotos\0102030312.jpg" />
+    <Content Include="EmployeePhotos\0102030351.jpg" />
+    <Content Include="EmployeePhotos\0102030353.jpg" />
+    <Content Include="EmployeePhotos\0102030371.JPG" />
+    <Content Include="EmployeePhotos\0102030375.jpg" />
+    <Content Include="EmployeePhotos\0102030376.jpg" />
+    <Content Include="EmployeePhotos\0102030377.jpg" />
+    <Content Include="EmployeePhotos\0102030392.jpg" />
+    <Content Include="EmployeePhotos\0102040039.jpg" />
+    <Content Include="EmployeePhotos\1801050002.jpg" />
+    <Content Include="Admin\FillBPExamFee.aspx" />
+    <Content Include="Admin\FillFee.aspx" />
+    <Content Include="FillAdmissionFormAutomatically.aspx" />
+    <Content Include="FillAdmissionFormAutomatically2.aspx" />
+    <Content Include="FillContFormAutomatically.aspx" />
+    <Content Include="FillExamFormAutomatically.aspx" />
+    <Content Include="Images\Account.jpg" />
+    <Content Include="Images\AccountAdmin.jpg" />
+    <Content Include="Images\AccountsLogin.jpg" />
+    <Content Include="Images\admin.jpg" />
+    <Content Include="Images\Adminlogin.jpg" />
+    <Content Include="Images\AdmissionCell.jpg" />
+    <Content Include="Images\AdmissionCellLogin.jpg" />
+    <Content Include="Images\afh.jpg" />
+    <Content Include="Images\AJAX.gif" />
+    <Content Include="Images\ApplicationFormHeader.jpg" />
+    <Content Include="Images\backlogo.gif" />
+    <Content Include="Images\bg-accor1.png" />
+    <Content Include="Images\bg-accor2.png" />
+    <Content Include="Images\bg-accor3.png" />
+    <Content Include="Images\bg-body-inner.jpg" />
+    <Content Include="Images\bg-body-inner1.jpg" />
+    <Content Include="Images\bg-body-inner2.jpg" />
+    <Content Include="Images\bg-body.jpg" />
+    <Content Include="Images\bg-body1.jpg" />
+    <Content Include="Images\bg-body12.jpg" />
+    <Content Include="Images\bg-border-left.png" />
+    <Content Include="Images\bg-border.png" />
+    <Content Include="Images\bg-btn-left.png" />
+    <Content Include="Images\bg-btn-right.png" />
+    <Content Include="Images\bg-btn-search.png" />
+    <Content Include="Images\bg-footer.png" />
+    <Content Include="Images\bg-hover-list.png" />
+    <Content Include="Images\bg-hover-list2.png" />
+    <Content Include="Images\bg-main.png" />
+    <Content Include="Images\bg-menu-main.png" />
+    <Content Include="Images\bg-nav-hover.gif" />
+    <Content Include="Images\bg-snippet-dim.png" />
+    <Content Include="Images\bg-snippet.png" />
+    <Content Include="Images\bg-topnav-left.png" />
+    <Content Include="Images\bg-topnav-right.png" />
+    <Content Include="Images\bg-tran-1.png" />
+    <Content Include="Images\bg-trans1.png" />
+    <Content Include="Images\bg_body.gif" />
+    <Content Include="Images\bg_gradient-left.png" />
+    <Content Include="Images\bg_nav.gif" />
+    <Content Include="Images\bg_wrapper.gif" />
+    <Content Include="Images\body_bg.gif" />
+    <Content Include="Images\btn-slide1.png" />
+    <Content Include="Images\btn-slide2.png" />
+    <Content Include="Images\btn-top.png" />
+    <Content Include="Images\btn1.jpg" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\Chancellor.jpg" />
+    <Content Include="Images\ChancellorLogin.jpg" />
+    <Content Include="Images\COE2.jpg" />
+    <Content Include="Images\COE3.png" />
+    <Content Include="Images\COE4.jpg" />
+    <Content Include="Images\COE4.png" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\collapse_blue.jpg" />
+    <Content Include="Images\colleges.jpg" />
+    <Content Include="Images\CollegesLogin.jpg" />
+    <Content Include="Images\contact us.jpg" />
+    <Content Include="Images\containerback.jpg" />
+    <Content Include="Images\containerback2.jpg" />
+    <Content Include="Images\controls.png" />
+    <Content Include="Images\cover33.jpg" />
+    <Content Include="Images\coverr.jpg" />
+    <Content Include="Images\cp_button.png" />
+    <Content Include="Images\DDEHome.jpg" />
+    <Content Include="Images\DDEHome1.jpg" />
+    <Content Include="Images\DDEHome2.jpg" />
+    <Content Include="Images\DDEHomePage.jpg" />
+    <Content Include="Images\dde_icon.png" />
+    <Content Include="Images\demobottom.png" />
+    <Content Include="Images\demotop.png" />
+    <Content Include="Images\down.gif" />
+    <Content Include="Images\Employeeback.jpg" />
+    <Content Include="Images\EmployeeLogin.gif" />
+    <Content Include="Images\EmployeeLogin.jpg" />
+    <Content Include="Images\EmptyStar.png" />
+    <Content Include="Images\erp-homepage.jpg" />
+    <Content Include="Images\erp-homepage1.jpg" />
+    <Content Include="Images\erp-homepage2.jpg" />
+    <Content Include="Images\examcover1.jpg" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\expand_blue.jpg" />
+    <Content Include="Images\FilledStar.png" />
+    <Content Include="Images\GVHeader.jpg" />
+    <Content Include="Images\HandleGrip.png" />
+    <Content Include="Images\HandleHand.png" />
+    <Content Include="Images\handle_left.gif" />
+    <Content Include="Images\handle_right.gif" />
+    <Content Include="Images\header-opened.png" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\headerbottom_img.png" />
+    <Content Include="Images\headertop_img.jpg" />
+    <Content Include="Images\HomeDepartments.jpg" />
+    <Content Include="Images\homepage.jpg" />
+    <Content Include="Images\hover-list.png" />
+    <Content Include="Images\ico-rss.png" />
+    <Content Include="Images\img-a1.png" />
+    <Content Include="Images\img-a2.png" />
+    <Content Include="Images\img-a3.png" />
+    <Content Include="Images\img-a4.png" />
+    <Content Include="Images\img-a5.png" />
+    <Content Include="Images\img-dg.png" />
+    <Content Include="Images\img-ico-calendar.gif" />
+    <Content Include="Images\img-pager-left.png" />
+    <Content Include="Images\img-pager-right.png" />
+    <Content Include="Images\left-button.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logobackmarksheet.png" />
+    <Content Include="Images\logomarksheettop.jpg" />
+    <Content Include="Images\lowerstrip1.jpg" />
+    <Content Include="Images\lowerstrip3.jpg" />
+    <Content Include="Images\lowerstripfinal.jpg" />
+    <Content Include="Images\lowerstripfinal4.jpg" />
+    <Content Include="Images\lowerstripfinal5.jpg" />
+    <Content Include="Images\lowerstripfinal6.jpg" />
+    <Content Include="Images\mailheader.jpg" />
+    <Content Include="Images\mailsidebar.jpg" />
+    <Content Include="Images\mw.jpg" />
+    <Content Include="Images\navigation_back.gif" />
+    <Content Include="Images\OEController.jpg" />
+    <Content Include="Images\OEControllerLogin.jpg" />
+    <Content Include="Images\ole8.jpg" />
+    <Content Include="Images\ole9.jpg" />
+    <Content Include="Images\OnlineExam.jpg" />
+    <Content Include="Images\pbrs.png" />
+    <Content Include="Images\provc.jpg" />
+    <Content Include="Images\ProVCLogin.jpg" />
+    <Content Include="Images\Question.PNG" />
+    <Content Include="Images\rail_dark.gif" />
+    <Content Include="Images\rail_light.gif" />
+    <Content Include="Images\Registrar.jpg" />
+    <Content Include="Images\RegistrarLogin.jpg" />
+    <Content Include="Images\right-button.jpg" />
+    <Content Include="Images\rightcoltop.gif" />
+    <Content Include="Images\rt.png" />
+    <Content Include="Images\samples_bg.gif" />
+    <Content Include="Images\SavedStar.png" />
+    <Content Include="Images\scdown.jpg" />
+    <Content Include="Images\scdown1.jpg" />
+    <Content Include="Images\scorecard.jpg" />
+    <Content Include="Images\scorecard1.jpg" />
+    <Content Include="Images\scorecard2.jpg" />
+    <Content Include="Images\scorecard5.jpg" />
+    <Content Include="Images\sep-acord.gif" />
+    <Content Include="Images\sep-header.png" />
+    <Content Include="Images\sep-list-right.gif" />
+    <Content Include="Images\sep-program.png" />
+    <Content Include="Images\sidebar_header.png" />
+    <Content Include="Images\COE.jpg" />
+    <Content Include="Images\slider_h_handle_down.gif" />
+    <Content Include="Images\slider_h_handle_hover.gif" />
+    <Content Include="Images\slider_v_handle_down.gif" />
+    <Content Include="Images\slider_v_handle_hover.gif" />
+    <Content Include="Images\strip1.jpg" />
+    <Content Include="Images\up.gif" />
+    <Content Include="Images\upperstrip3.jpg" />
+    <Content Include="Images\VCLogin.jpg" />
+    <Content Include="Images\walkthrough_bg.gif" />
+    <Content Include="Images\welcome.jpg" />
+    <Content Include="Images\welcome1.jpg" />
+    <Content Include="JS\javascript.js" />
+    <Content Include="JS\jkoutlinemenu.js" />
+    <Content Include="JS\jquery.js" />
+    <Content Include="JS\menu.js" />
+    <Content Include="JS\slide.js" />
+    <Content Include="Admin\MakeRROnline.aspx" />
+    <Content Include="OAPhotos\3201.jpg" />
+    <Content Include="OAPhotos\7045.jpg" />
+    <Content Include="OAPhotos\7628.jpg" />
+    <Content Include="OAPhotos\7631.jpg" />
+    <Content Include="OAPhotos\7640.jpg" />
+    <Content Include="OAPhotos\7647.jpg" />
+    <Content Include="OAPhotos\7649.jpg" />
+    <Content Include="OAPhotos\7651.jpg" />
+    <Content Include="OAPhotos\7754.jpg" />
+    <Content Include="OAPhotos\7784.jpg" />
+    <Content Include="OAPhotos\7803.jpg" />
+    <Content Include="OAPhotos\7805.jpg" />
+    <Content Include="OAPhotos\8175.jpg" />
+    <Content Include="OAPhotos\8222.jpg" />
+    <Content Include="OAPhotos\9704.jpg" />
+    <Content Include="obj\Debug\DDE.Web.csproj.FileListAbsolute.txt" />
+    <None Include="Admin\images\General Rules for Exam.pdf" />
+    <None Include="Admin\images\Thumbs.db" />
+    <Content Include="Admin\MasterPages\StudyCentre.Master" />
+    <Content Include="Admin\StudentImgHandler.ashx" />
+    <Content Include="Admin\QPImgHandler.ashx" />
+    <Content Include="Admin\Question.ashx" />
+    <None Include="CSS\images\Thumbs.db" />
+    <None Include="Images\Untitled-1.psd" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Admin\ShowAssignedRoles.aspx" />
+    <Content Include="Admin\ShowFeeRecord.aspx" />
+    <Content Include="Admin\ShowPaidFeeBySC.aspx" />
+    <Content Include="obj\Debug\DDE.Web.dll" />
+    <Content Include="obj\Debug\DDE.Web.pdb" />
+    <Content Include="Admin\PublishAwardSheet.aspx" />
+    <Content Include="Admin\ShowCompleteExamReport.aspx" />
+    <Content Include="Admin\ShowDec12StudentsBySC.aspx" />
+    <Content Include="SP\C1520109177.jpg" />
+    <Content Include="SP\C1520309116.jpg" />
+    <Content Include="SP\C1520309169.jpg" />
+    <Content Include="SP\C1520309173.jpg" />
+    <Content Include="SP\C1520309178.jpg" />
+    <Content Include="SP\C1520309224.jpg" />
+    <Content Include="SP\C1520309233.jpg" />
+    <Content Include="SP\C1520309274.jpg" />
+    <Content Include="SP\C1520309275.jpg" />
+    <Content Include="SP\C1520309277.jpg" />
+    <Content Include="SP\C1520505547.jpg" />
+    <Content Include="SP\C1520506043.jpg" />
+    <Content Include="SP\C1520506283.JPG" />
+    <Content Include="SP\C1520506755.JPG" />
+    <Content Include="SP\C1520507628.jpg" />
+    <Content Include="SP\C1520507661.JPG" />
+    <Content Include="SP\C1520509108.jpg" />
+    <Content Include="SP\C1520509109.jpg" />
+    <Content Include="SP\C1520509111.jpg" />
+    <Content Include="SP\C1520509112.jpg" />
+    <Content Include="SP\C1520509113.jpg" />
+    <Content Include="SP\C1520509114.jpg" />
+    <Content Include="SP\C1520509117.jpg" />
+    <Content Include="SP\C1520509118.jpg" />
+    <Content Include="SP\C1520509120.jpg" />
+    <Content Include="SP\C1520509122.jpg" />
+    <Content Include="SP\C1520509123.jpg" />
+    <Content Include="SP\C1520509146.jpg" />
+    <Content Include="SP\C1520509148.jpg" />
+    <Content Include="SP\C1520509150.jpg" />
+    <Content Include="SP\C1520509155.jpg" />
+    <Content Include="SP\C1520509158.jpg" />
+    <Content Include="SP\C1520509160.jpg" />
+    <Content Include="SP\C1520509168.jpg" />
+    <Content Include="SP\C1520509170.jpg" />
+    <Content Include="SP\C1520509171.jpg" />
+    <Content Include="SP\C1520509172.jpg" />
+    <Content Include="SP\C1520509174.jpg" />
+    <Content Include="SP\C1520509175.jpg" />
+    <Content Include="SP\C1520509176.jpg" />
+    <Content Include="SP\C1520509180.jpg" />
+    <Content Include="SP\C1520509182.jpg" />
+    <Content Include="SP\C1520509193.jpg" />
+    <Content Include="SP\C1520509196.jpg" />
+    <Content Include="SP\C1520509199.jpg" />
+    <Content Include="SP\C1520509201.jpg" />
+    <Content Include="SP\C1520509204.jpg" />
+    <Content Include="SP\C1520509209.jpg" />
+    <Content Include="SP\C1520509211.jpg" />
+    <Content Include="SP\C1520509219.jpg" />
+    <Content Include="SP\C1520509221.jpg" />
+    <Content Include="SP\C1520509223.jpg" />
+    <Content Include="SP\C1520509225.jpg" />
+    <Content Include="SP\C1520509226.jpg" />
+    <Content Include="SP\C1520509227.jpg" />
+    <Content Include="SP\C1520509230.jpg" />
+    <Content Include="SP\C1520509231.jpg" />
+    <Content Include="SP\C1520509232.jpg" />
+    <Content Include="SP\C1520509234.jpg" />
+    <Content Include="SP\C1520509235.jpg" />
+    <Content Include="SP\C1520509237.jpg" />
+    <Content Include="SP\C1520509245.jpg" />
+    <Content Include="SP\C1520509254.jpg" />
+    <Content Include="SP\C1520509256.jpg" />
+    <Content Include="SP\C1520509258.jpg" />
+    <Content Include="SP\C1520509259.jpg" />
+    <Content Include="SP\C1520509261.jpg" />
+    <Content Include="SP\C1520509262.jpg" />
+    <Content Include="SP\C1520509271.jpg" />
+    <Content Include="SP\C1520509280.jpg" />
+    <Content Include="SP\C1520509285.jpg" />
+    <Content Include="SP\C1520509289.jpg" />
+    <Content Include="SP\C1520509290.jpg" />
+    <Content Include="SP\C1520509291.jpg" />
+    <Content Include="SP\C1520509292.jpg" />
+    <Content Include="SP\C1520605246.jpg" />
+    <Content Include="SP\C1520606067.jpg" />
+    <Content Include="SP\C1520606772.jpg" />
+    <Content Include="SP\C1520607641.JPG" />
+    <Content Include="SP\C1520607676.JPG" />
+    <Content Include="SP\C1520607694.jpg" />
+    <Content Include="SP\C1520608071.jpg" />
+    <Content Include="SP\C1520608193.jpg" />
+    <Content Include="SP\C1520609107.jpg" />
+    <Content Include="SP\C1520609110.jpg" />
+    <Content Include="SP\C1520609115.jpg" />
+    <Content Include="SP\C1520609119.jpg" />
+    <Content Include="SP\C1520609121.jpg" />
+    <Content Include="SP\C1520609161.jpg" />
+    <Content Include="SP\C1520609162.jpg" />
+    <Content Include="SP\C1520609166.jpg" />
+    <Content Include="SP\C1520609195.jpg" />
+    <Content Include="SP\C1520609208.jpg" />
+    <Content Include="SP\C1520609210.jpg" />
+    <Content Include="SP\C1520609212.jpg" />
+    <Content Include="SP\C1520609213.jpg" />
+    <Content Include="SP\C1520609214.jpg" />
+    <Content Include="SP\C1520609216.jpg" />
+    <Content Include="SP\C1520609217.jpg" />
+    <Content Include="SP\C1520609220.jpg" />
+    <Content Include="SP\C1520609222.jpg" />
+    <Content Include="SP\C1520609229.jpg" />
+    <Content Include="SP\C1520609246.jpg" />
+    <Content Include="SP\C1520609247.jpg" />
+    <Content Include="SP\C1520609248.jpg" />
+    <Content Include="SP\C1520609249.jpg" />
+    <Content Include="SP\C1520609250.jpg" />
+    <Content Include="SP\C1520609251.jpg" />
+    <Content Include="SP\C1520609252.jpg" />
+    <Content Include="SP\C1520609253.jpg" />
+    <Content Include="SP\C1520609257.jpg" />
+    <Content Include="SP\C1520609260.jpg" />
+    <Content Include="SP\C1520609264.jpg" />
+    <Content Include="SP\C1520609265.jpg" />
+    <Content Include="SP\C1520609266.jpg" />
+    <Content Include="SP\C1520609267.jpg" />
+    <Content Include="SP\C1520609268.jpg" />
+    <Content Include="SP\C1520609269.jpg" />
+    <Content Include="SP\C1520609270.jpg" />
+    <Content Include="SP\C1520609272.jpg" />
+    <Content Include="SP\C1520609273.jpg" />
+    <Content Include="SP\C1520609276.jpg" />
+    <Content Include="SP\C1520609278.jpg" />
+    <Content Include="SP\C1520609279.jpg" />
+    <Content Include="SP\C1520609281.jpg" />
+    <Content Include="SP\C1520609282.jpg" />
+    <Content Include="SP\C1520609283.jpg" />
+    <Content Include="SP\C1520609284.jpg" />
+    <Content Include="SP\C1520609286.jpg" />
+    <Content Include="SP\C1520609287.jpg" />
+    <Content Include="SP\C1520609288.jpg" />
+    <Content Include="UploadExcel.aspx" />
+    <Content Include="UploadStudents.aspx" />
+    <Content Include="UserControls\Footer.ascx" />
+    <Content Include="UserControls\Header.ascx" />
+    <Content Include="UserMasterPages\DDE.Master" />
+    <Content Include="Admin\WelcomeSC.aspx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDE.DAL\DDE.DAL.csproj">
+      <Project>{C9450E4C-CB69-4CDC-9393-7D6CCBBED13C}</Project>
+      <Name>DDE.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\ExcelSheet\" />
+    <Folder Include="Admin\TSQRCodes\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\Refactor\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6526</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
