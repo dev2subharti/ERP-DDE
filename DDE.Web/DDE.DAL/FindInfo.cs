@@ -3031,7 +3031,7 @@ namespace DDE.DAL
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlDataReader dr;
-            SqlCommand cmd = new SqlCommand("Select EnrollmentCounter from DDEExaminations where ExamCode='" + examcode + "' ", con);
+            SqlCommand cmd = new SqlCommand("Select EnrollmentCounter from DDEExaminations where ExamCode='" + examcode + "' or SemesterExamCode='"+examcode+"' ", con);
             con.Open();
             dr = cmd.ExecuteReader();
             dr.Read();
