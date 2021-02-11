@@ -50,10 +50,6 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\..\..\..\DIPL\ERP\Sarathi\20\Sarathi.Web\Sarathi.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\tpsl\tpsl\bin\com.dll</HintPath>
-    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -66,9 +62,8 @@
     <Reference Include="Microsoft.Synchronization.Data, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
-    <Reference Include="QRCoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\SSDC\Desktop\QRCoder.dll</HintPath>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\30\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -607,13 +602,6 @@
     <Compile Include="Admin\EnterNewSLMStock.aspx.designer.cs">
       <DependentUpon>EnterNewSLMStock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\FeePaidBySC.aspx.cs">
-      <DependentUpon>FeePaidBySC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\FeePaidBySC.aspx.designer.cs">
-      <DependentUpon>FeePaidBySC.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\FillDec12Marks.aspx.cs">
       <DependentUpon>FillDec12Marks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -823,13 +811,6 @@
     </Compile>
     <Compile Include="Admin\MigrationLetter.aspx.designer.cs">
       <DependentUpon>MigrationLetter.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\PayAmountBySC.aspx.cs">
-      <DependentUpon>PayAmountBySC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\PayAmountBySC.aspx.designer.cs">
-      <DependentUpon>PayAmountBySC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ProcessSLMLetter.aspx.cs">
       <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
@@ -2284,7 +2265,6 @@
     <Content Include="Admin\DetainStudent.aspx" />
     <Content Include="Admin\EditExamRecord.aspx" />
     <Content Include="Admin\EditFeeDetail.aspx" />
-    <Content Include="Admin\FeePaidBySC.aspx" />
     <Content Include="Admin\FillExamFees.aspx" />
     <Content Include="Admin\FillExamRecord_June2013.aspx" />
     <Content Include="Admin\FillIAAWMarksBySC.aspx" />
@@ -2353,7 +2333,6 @@
     <Content Include="Admin\images\subsubmenu-top.gif" />
     <Content Include="Admin\images\subsubmenu-top.png" />
     <Content Include="Admin\MasterPages\Admin.Master" />
-    <Content Include="Admin\PayAmountBySC.aspx" />
     <Content Include="Admin\PublishAdmitCard.aspx" />
     <Content Include="Admin\PublishDCDetails.aspx" />
     <Content Include="Admin\PublishICards.aspx" />
