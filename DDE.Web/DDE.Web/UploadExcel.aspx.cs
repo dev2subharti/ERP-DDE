@@ -24,7 +24,7 @@ namespace DDE.Web
         {
           
             int counter = 0;
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Offline Applications\998\C 2020\Excel Sheets\1.xlsx;Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1'";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Offline Applications\999\C 2020\Excel Sheets\7.xlsx;Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1'";
             string queryString = "SELECT * FROM [Applications$]";
 
             using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -321,8 +321,8 @@ namespace DDE.Web
                                     byte[] sp = ImageToByteArray(userPostedFile);
                                     
                                     SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                                    SqlCommand cmd1 = new SqlCommand("update DDEPendingStudentRecord set StudentPhoto=@StudentPhoto where SCFormCounter='" + scformcounter + "' and StudyCentreCode='998'", con1);
-                                    //SqlCommand cmd1 = new SqlCommand("update DDEPendingStudentRecord set StudentPhoto=@StudentPhoto where PSRID='" + scformcounter + "' and StudyCentreCode='998'", con1);
+                                    SqlCommand cmd1 = new SqlCommand("update DDEPendingStudentRecord set StudentPhoto=@StudentPhoto where SCFormCounter='" + scformcounter + "' and StudyCentreCode='999'", con1);
+                                    //SqlCommand cmd1 = new SqlCommand("update DDEPendingStudentRecord set StudentPhoto=@StudentPhoto where PSRID='" + scformcounter + "' and StudyCentreCode='999'", con1);
                                     //SqlCommand cmd1 = new SqlCommand("update DDEStudentRecord set StudentPhoto=@StudentPhoto where EnrollmentNo='" + scformcounter + "'", con1);
                                     cmd1.Parameters.AddWithValue("@StudentPhoto", sp);
 
@@ -376,7 +376,7 @@ namespace DDE.Web
         //protected void btnDelete_Click(object sender, EventArgs e)
         //{
         //    int counter = 0;
-        //    string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Offline Applications\998\Excel Sheets\13.xlsx;Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1'";
+        //    string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Offline Applications\999\Excel Sheets\13.xlsx;Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1'";
         //    string queryString = "SELECT * FROM [Applications$]";
 
         //    using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -392,7 +392,7 @@ namespace DDE.Web
         //            {
 
         //                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-        //                SqlCommand cmd = new SqlCommand("delete from DDEPendingStudentRecord where SCFormCounter ='" + Convert.ToInt32(ds.Tables[0].Rows[i]["SCFormCounter"]) + "' and StudyCentreCode='998'", con);
+        //                SqlCommand cmd = new SqlCommand("delete from DDEPendingStudentRecord where SCFormCounter ='" + Convert.ToInt32(ds.Tables[0].Rows[i]["SCFormCounter"]) + "' and StudyCentreCode='999'", con);
 
         //                con.Open();
         //                cmd.ExecuteReader();
@@ -417,7 +417,7 @@ namespace DDE.Web
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlDataReader dr;
-            SqlCommand cmd = new SqlCommand("Select Enrolled from DDEPendingStudentRecord where SCFormCounter='" + scfc + "' and StudyCentreCode='998'", con);
+            SqlCommand cmd = new SqlCommand("Select Enrolled from DDEPendingStudentRecord where SCFormCounter='" + scfc + "' and StudyCentreCode='999'", con);
             con.Open();
             dr = cmd.ExecuteReader();
 
