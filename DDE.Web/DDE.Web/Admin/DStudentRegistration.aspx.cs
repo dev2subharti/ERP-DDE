@@ -433,7 +433,7 @@ namespace DDE.Web.Admin
                         rfvAaNo.Enabled = false;
                         revAaNo.Enabled = false;
                     }
-                    setExam(ddlistSession.SelectedItem.Text);
+                    setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
                     setCorrectText(ddlistSySession, dr["SyllabusSession"].ToString().TrimEnd());
                     tbENo.Text = "";
                     tbICNo.Text = "";
@@ -1920,12 +1920,13 @@ namespace DDE.Web.Admin
                 tbENo.Enabled = false;
             }
 
-            setExam(ddlistSession.SelectedItem.Text);
+            setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
+            
         }
 
-        private void setExam(string batch)
+        private void setExam(string batch, int at)
         {
-            string exam = FindInfo.findApplicableExamByBatch(batch);
+            string exam = FindInfo.findApplicableExamByBatch(batch,at);
             ddlistExamination.Enabled = true;
             ddlistExamination.SelectedItem.Selected = false;
             ddlistExamination.Items.FindByValue(exam).Selected = true;

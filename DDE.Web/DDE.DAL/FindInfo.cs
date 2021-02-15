@@ -7681,6 +7681,40 @@ namespace DDE.DAL
             return exam;
         }
 
+        public static string findApplicableExamByBatch(string batch, int at)
+        {
+            string exam = "NF";
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+            SqlDataReader dr;
+            SqlCommand cmd = new SqlCommand("Select ApplicableExam,EvenExam from DDESession where Session='" + batch + "' ", con);
+
+            con.Open();
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                if(batch=="C 2020" || batch=="Q 2020")
+                {
+                    if(at==1)
+                    {
+                        exam = dr["EvenExam"].ToString();
+                    }
+                    else
+                    {
+                        exam = dr["ApplicableExam"].ToString();
+                    }
+                }
+                else
+                {
+                    exam = dr["ApplicableExam"].ToString();
+                }
+                
+            }
+            con.Close();
+
+            return exam;
+        }
         public static string findApplicableExamByBatchID(int batchid)
         {
             string exam = "NF";
