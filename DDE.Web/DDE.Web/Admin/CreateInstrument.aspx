@@ -127,7 +127,7 @@
                                                         <b>ISSUING BANK NAME</b>
                                                     </td>
                                                     <td align="left">
-                                                        <asp:DropDownList ID="ddlistIBN" runat="server"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlistIBN" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
                                                 <tr>

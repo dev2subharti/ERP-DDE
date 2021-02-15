@@ -433,7 +433,7 @@ namespace DDE.Web.Admin
                         rfvAaNo.Enabled = false;
                         revAaNo.Enabled = false;
                     }
-                    setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
+                   
                     setCorrectText(ddlistSySession, dr["SyllabusSession"].ToString().TrimEnd());
                     tbENo.Text = "";
                     tbICNo.Text = "";
@@ -470,8 +470,8 @@ namespace DDE.Web.Admin
                         setCorrectValue(ddlistPreCourse, dr["PreviousCourse"].ToString(), "PreviousCourse");
                         pnlCT.Visible = true;
                     }
-
-                    if (ddlistStudyCentre.SelectedItem.Value != "0")
+                setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
+                if (ddlistStudyCentre.SelectedItem.Value != "0")
                     {
                         PopulateDDList.populateCoursesBySCStreamsandAT(ddlistCourses, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value), Convert.ToInt32(ddlistStudyCentre.SelectedItem.Value));
                     }

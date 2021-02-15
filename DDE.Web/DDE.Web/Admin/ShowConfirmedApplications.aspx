@@ -31,6 +31,9 @@
                             <asp:DropDownList ID="ddlistBatch" Visible="false" AutoPostBack="true" 
                                 runat="server" onselectedindexchanged="ddlistBatch_SelectedIndexChanged">                               
                              <asp:ListItem>--SELECT ONE--</asp:ListItem>
+                                 <asp:ListItem>C 2021</asp:ListItem>
+                                <asp:ListItem>Q 2020-21</asp:ListItem>
+                                <asp:ListItem>A 2020-21</asp:ListItem>
                                  <asp:ListItem>Q 2020</asp:ListItem>
                                 <asp:ListItem>C 2020</asp:ListItem>
                                 <asp:ListItem>Q 2019-20</asp:ListItem>
