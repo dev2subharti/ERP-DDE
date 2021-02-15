@@ -85,22 +85,13 @@ namespace DDE.Web.Admin {
         protected global::System.Web.UI.WebControls.DropDownList ddlistDDYear;
         
         /// <summary>
-        /// tbIBN control.
+        /// ddlistIBN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbIBN;
-        
-        /// <summary>
-        /// rfvIBN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIBN;
+        protected global::System.Web.UI.WebControls.DropDownList ddlistIBN;
         
         /// <summary>
         /// tbTotalAmount control.

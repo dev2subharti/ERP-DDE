@@ -24,6 +24,7 @@ namespace DDE.Web.Admin
                     if (!IsPostBack)
                     {                       
                         populateFeeHeads();
+                        PopulateDDList.populateBanks(ddlistIBN);
                         populateInstrumentDetails();
                         if (Accounts.isInstrumentVerified(Convert.ToInt32(Request.QueryString["IID"])))
                         {
@@ -57,6 +58,7 @@ namespace DDE.Web.Admin
                     if (!IsPostBack)
                     {                     
                         populateFeeHeads();
+                        PopulateDDList.populateBanks(ddlistIBN);
                         setTodayDate();
                     }
 
@@ -70,6 +72,8 @@ namespace DDE.Web.Admin
                     pnlMSG.Visible = true;
                 }
             }
+
+
         }
 
         private void setTodayDate()
@@ -89,7 +93,7 @@ namespace DDE.Web.Admin
             ddlistDDDay.Enabled = false;
             ddlistDDMonth.Enabled = false;
             ddlistDDYear.Enabled = false;
-            tbIBN.Enabled = false;
+            ddlistIBN.Enabled = false;
             tbTotalAmount.Enabled = false;
         }
 
@@ -116,9 +120,9 @@ namespace DDE.Web.Admin
                 ddlistDDDay.Items.FindByText(dr["IDate"].ToString().Substring(8,2)).Selected = true;
                 ddlistDDMonth.Items.FindByValue(dr["IDate"].ToString().Substring(5,2)).Selected = true;
                 ddlistDDYear.Items.FindByText(dr["IDate"].ToString().Substring(0,4)).Selected = true;
-              
 
-                tbIBN.Text = dr["IBN"].ToString().ToUpper();
+
+                ddlistIBN.Items.FindByText(dr["IBN"].ToString().ToUpper()).Selected = true;
               
                 tbTotalAmount.Text = Convert.ToInt32(dr["TotalAmount"]).ToString();
                 tbSCCode.Text= dr["SCCode"].ToString();
@@ -240,8 +244,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
              
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+               
+                ddlistIBN.Enabled = true;
 
                
 
@@ -254,8 +258,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
 
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+              
+                ddlistIBN.Enabled = true;
 
 
 
@@ -268,8 +272,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
 
-                tbIBN.Text = "NA";
-                tbIBN.Enabled = false;
+                ddlistIBN.Items.FindByText("NA").Selected = true;
+                ddlistIBN.Enabled = false;
 
 
 
@@ -282,8 +286,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
 
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+              
+                ddlistIBN.Enabled = true;
 
 
 
@@ -298,8 +302,8 @@ namespace DDE.Web.Admin
                     tbDNo.Text = FindInfo.findDFRNo();
                     tbDNo.Enabled = false;
 
-                    tbIBN.Text = "NA";
-                    tbIBN.Enabled = false; ;
+                    ddlistIBN.Items.FindByText("NA").Selected = true;
+                    ddlistIBN.Enabled = false; ;
 
 
 
@@ -325,8 +329,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = FindInfo.findDCTNo();
                 tbDNo.Enabled = false;
 
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+               
+                ddlistIBN.Enabled = true;
 
 
 
@@ -340,7 +344,7 @@ namespace DDE.Web.Admin
         {
             if (btnReceive.Text == "Receive")
             {
-                if (tbDNo.Text != "" && tbIBN.Text != "" && tbTotalAmount.Text != "")
+                if (tbDNo.Text != "" && tbTotalAmount.Text != "")
                 {
                     if (ddlistDraftType.SelectedItem.Text != "--SELECT ONE--")
                     {
@@ -348,7 +352,7 @@ namespace DDE.Web.Admin
                         {
                              string idate = ddlistDDYear.SelectedItem.Text + "-" + ddlistDDMonth.SelectedItem.Value + "-" + ddlistDDDay.SelectedItem.Text;
 
-                            if (!Accounts.instrumentExist(tbDNo.Text,Convert.ToInt32(ddlistDraftType.SelectedItem.Value) ,tbIBN.Text, idate))
+                            if (!Accounts.instrumentExist(tbDNo.Text,Convert.ToInt32(ddlistDraftType.SelectedItem.Value) ,ddlistIBN.SelectedItem.Text, idate))
                             {
                                 try
                                 {
@@ -386,7 +390,7 @@ namespace DDE.Web.Admin
                                                 cmd.Parameters.AddWithValue("@IType", ddlistDraftType.SelectedItem.Value);
                                                 cmd.Parameters.AddWithValue("@INo", tbDNo.Text);
                                                 cmd.Parameters.AddWithValue("@IDate", idate);
-                                                cmd.Parameters.AddWithValue("@IBN", tbIBN.Text.ToUpper());
+                                                cmd.Parameters.AddWithValue("@IBN", ddlistIBN.SelectedItem.Text.ToUpper());
                                                 cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToInt32(tbTotalAmount.Text));
                                                 if (str.Length == 1)
                                                 {
@@ -562,7 +566,7 @@ namespace DDE.Web.Admin
                                         cmd.Parameters.AddWithValue("@IType", ddlistDraftType.SelectedItem.Value);
                                         cmd.Parameters.AddWithValue("@INo", tbDNo.Text);
                                         cmd.Parameters.AddWithValue("@IDate", idate);
-                                        cmd.Parameters.AddWithValue("@IBN", tbIBN.Text.ToUpper());
+                                        cmd.Parameters.AddWithValue("@IBN", ddlistIBN.SelectedItem.Text.ToUpper());
                                         cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToInt32(tbTotalAmount.Text));
                                         if (str.Length == 1)
                                         {
@@ -594,12 +598,12 @@ namespace DDE.Web.Admin
                                         {
 
                                             SqlConnection con2 = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                                            SqlCommand cmd2 = new SqlCommand("update [DDEFeeRecord_" + dr1["AcountSession"].ToString() + "] set PaymentMode=@PaymentMode,DCNumber=@DCNumber,DCDate=@DCDate,IBN=@IBN,TotalDCAmount=@TotalDCAmount where DCNumber='" + tbDNo.Text + "' and DCDate='" + dcdate + "' and IBN='" + tbIBN.Text + "' ", con2);
+                                            SqlCommand cmd2 = new SqlCommand("update [DDEFeeRecord_" + dr1["AcountSession"].ToString() + "] set PaymentMode=@PaymentMode,DCNumber=@DCNumber,DCDate=@DCDate,IBN=@IBN,TotalDCAmount=@TotalDCAmount where DCNumber='" + tbDNo.Text + "' and DCDate='" + dcdate + "' and IBN='" + ddlistIBN.SelectedItem.Text + "' ", con2);
 
                                             cmd2.Parameters.AddWithValue("@PaymentMode", ddlistDraftType.SelectedItem.Value);
                                             cmd2.Parameters.AddWithValue("@DCNumber", tbDNo.Text);
                                             cmd2.Parameters.AddWithValue("@DCDate", dcdate);
-                                            cmd2.Parameters.AddWithValue("@IBN", tbIBN.Text);
+                                            cmd2.Parameters.AddWithValue("@IBN", ddlistIBN.SelectedItem.Text);
                                             cmd2.Parameters.AddWithValue("@TotalDCAmount", tbTotalAmount.Text);
 
                                             cmd2.Connection = con2;
