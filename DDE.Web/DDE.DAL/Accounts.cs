@@ -1186,6 +1186,10 @@ namespace DDE.DAL
                 rfee = rfee * totalsub;
             }
             
+            if((fhid==2) && (batch=="A 2020-21" || batch=="Q 2020-21" || batch=="C 2021" || batch=="Q 2021"))
+            {
+                rfee = 750;
+            }
 
             return rfee;
         }
