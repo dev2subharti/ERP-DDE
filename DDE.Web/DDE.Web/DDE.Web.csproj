@@ -2901,9 +2901,8 @@
   <ItemGroup>
     <Analyzer Include="..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
     <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
-	 
-	
-  </ItemGroup>
+       <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
+</ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
