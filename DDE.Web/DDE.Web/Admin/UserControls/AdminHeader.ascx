@@ -420,6 +420,7 @@
                                 </li>
                                 <li><a href="FillDegreeInfo.aspx"><span>Receive</span></a></li>
                                 <li><a href="#"><span>Post</span></a> </li>
+                                <li><a href="ShowProvisionalDegree.aspx"><span>Provisional Degree</span></a></li>
                             </ul>
                         </div>
                     </li>
