@@ -220,10 +220,15 @@ namespace DDE.Web.Admin
             dt.Columns.Add("srid");
             dt.Columns.Add("EnrollmentNo");
             dt.Columns.Add("remarks");
+<<<<<<< HEAD
+            String sqlResult = "select z.RN1 ,(z.p1+'-'+z.p2) papercd,a.EnrollmentNo,a.srid from[dbo].[SHEET DATA 2447002] z";
+            sqlResult += " inner join[ddedbweb].[dbo].[DDEStudentRecord] a on a.EnrollmentNo=z.ENO where z.FOLDER ='"+ ddlCenterCode.SelectedValue +"'";
+=======
 
             String sqlResult = "select z.RN1 ,(z.p1+'-'+z.p2) papercd,a.EnrollmentNo,a.srid from[dbo].[SHEET DATA 2447002] z";
             sqlResult += " inner join[ddedbweb].[dbo].[DDEStudentRecord] a on a.EnrollmentNo=z.ENO where z.FOLDER ='"+ ddlCenterCode.SelectedValue +"'";
 
+>>>>>>> 4e371746d81d1a81beb0f3efad4e869a76d5948e
             SqlConnectionOpen();
             SqlCommand AllrecordOf = new SqlCommand(sqlResult + " order By DTEXID asc", CSOE);
             SqlDataAdapter Allda = new SqlDataAdapter(AllrecordOf);
