@@ -48,18 +48,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-<<<<<<< HEAD
-      <HintPath>..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
+
+      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="com">
-      <HintPath>..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\com.dll</HintPath>
-=======
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\com.dll</HintPath>
->>>>>>> 4e371746d81d1a81beb0f3efad4e869a76d5948e
+
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -74,11 +72,9 @@
     <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
     <Reference Include="QRCoder">
-<<<<<<< HEAD
-      <HintPath>..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
-=======
+
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
->>>>>>> 4e371746d81d1a81beb0f3efad4e869a76d5948e
+
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -2899,8 +2895,7 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
-    <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
+   
        <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
 </ItemGroup>
   <PropertyGroup>
