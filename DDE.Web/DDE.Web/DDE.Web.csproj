@@ -282,6 +282,7 @@
     <Content Include="Admin\VerificationSheetList2.aspx" />
     <Content Include="Admin\VerifyRefund.aspx" />
     <Content Include="BarCode.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="ChangeCourse.aspx" />
     <Content Include="CSS\DateSheet.css" />
     <Content Include="CSS\DDE.css" />
@@ -2894,12 +2895,14 @@
     <Folder Include="Admin\ExcelSheet\" />
     <Folder Include="Admin\TSQRCodes\" />
     <Folder Include="App_Data\" />
-    <Folder Include="bin\" />
     <Folder Include="obj\Debug\Refactor\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
+    <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
+	 
+	
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
