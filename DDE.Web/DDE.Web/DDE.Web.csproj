@@ -48,11 +48,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\..\..\..\DIPL\ERP\Sarathi\20\Sarathi.Web\Sarathi.Web\bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\tpsl\tpsl\bin\com.dll</HintPath>
+    <Reference Include="com">
+      <HintPath>..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\com.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -66,9 +65,8 @@
     <Reference Include="Microsoft.Synchronization.Data, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
-    <Reference Include="QRCoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\SSDC\Desktop\QRCoder.dll</HintPath>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -2883,6 +2881,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\Refactor\" />
     <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\DDE ERP\DistanceOldERP1122021\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

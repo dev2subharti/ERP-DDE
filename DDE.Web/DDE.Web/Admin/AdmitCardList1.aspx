@@ -28,7 +28,9 @@
                                                             <td align="left" style="padding-left: 15px; padding-bottom: 5px; padding-top: 2px">
                                                                 <img src="images/logo1-final.png" width="100px" height="100px" />
                                                             </td>
-
+                                                            <td>
+                                                                sample
+                                                            </td>
                                                             <td align="center">
                                                                 <div>
                                                                     <h1 style="margin: 0px; color: White; font-family: Verdana">
