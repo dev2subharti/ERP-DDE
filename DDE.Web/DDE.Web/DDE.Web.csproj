@@ -608,13 +608,6 @@
     <Compile Include="Admin\EnterNewSLMStock.aspx.designer.cs">
       <DependentUpon>EnterNewSLMStock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\FeePaidBySC.aspx.cs">
-      <DependentUpon>FeePaidBySC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\FeePaidBySC.aspx.designer.cs">
-      <DependentUpon>FeePaidBySC.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\FillDec12Marks.aspx.cs">
       <DependentUpon>FillDec12Marks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -824,13 +817,6 @@
     </Compile>
     <Compile Include="Admin\MigrationLetter.aspx.designer.cs">
       <DependentUpon>MigrationLetter.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\PayAmountBySC.aspx.cs">
-      <DependentUpon>PayAmountBySC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\PayAmountBySC.aspx.designer.cs">
-      <DependentUpon>PayAmountBySC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ProcessSLMLetter.aspx.cs">
       <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
@@ -2306,7 +2292,6 @@
     <Content Include="Admin\DetainStudent.aspx" />
     <Content Include="Admin\EditExamRecord.aspx" />
     <Content Include="Admin\EditFeeDetail.aspx" />
-    <Content Include="Admin\FeePaidBySC.aspx" />
     <Content Include="Admin\FillExamFees.aspx" />
     <Content Include="Admin\FillExamRecord_June2013.aspx" />
     <Content Include="Admin\FillIAAWMarksBySC.aspx" />
@@ -2375,7 +2360,6 @@
     <Content Include="Admin\images\subsubmenu-top.gif" />
     <Content Include="Admin\images\subsubmenu-top.png" />
     <Content Include="Admin\MasterPages\Admin.Master" />
-    <Content Include="Admin\PayAmountBySC.aspx" />
     <Content Include="Admin\PublishAdmitCard.aspx" />
     <Content Include="Admin\PublishDCDetails.aspx" />
     <Content Include="Admin\PublishICards.aspx" />
