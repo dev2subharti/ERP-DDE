@@ -48,11 +48,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\..\..\..\DIPL\ERP\Sarathi\20\Sarathi.Web\Sarathi.Web\bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\tpsl\tpsl\bin\com.dll</HintPath>
+      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\com.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -66,9 +66,8 @@
     <Reference Include="Microsoft.Synchronization.Data, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
-    <Reference Include="QRCoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\SSDC\Desktop\QRCoder.dll</HintPath>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -209,6 +208,7 @@
     <Content Include="Admin\ShowDAProofReading.aspx" />
     <Content Include="Admin\ShowDAStatus.aspx" />
     <Content Include="Admin\ShowDateSheet.aspx" />
+    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowDegreeRequests.aspx" />
     <Content Include="Admin\ShowDStudent.aspx" />
     <Content Include="Admin\ShowECLogins.aspx" />
@@ -251,6 +251,7 @@
     <Content Include="Admin\ShowSLMStockBook.aspx" />
     <Content Include="Admin\ShowStudentsCourseWise.aspx" />
     <Content Include="Admin\ShowVerificationLetters.aspx" />
+    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\SLMLetter.aspx" />
     <Content Include="Admin\SLMSellLetter.aspx" />
     <Content Include="Admin\UpdateASAllotment.aspx" />
@@ -1432,6 +1433,13 @@
     <Compile Include="Admin\ShowDCDetails.aspx.designer.cs">
       <DependentUpon>ShowDCDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ShowDegreeRequests.aspx.cs">
       <DependentUpon>ShowDegreeRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1908,6 +1916,13 @@
     <Compile Include="Admin\ShowVerifiedDraft.aspx.designer.cs">
       <DependentUpon>ShowVerifiedDraft.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SLMLetter.aspx.cs">
       <DependentUpon>SLMLetter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2218,6 +2233,13 @@
     <Compile Include="Admin\ShowDec12StudentsBySC.aspx.designer.cs">
       <DependentUpon>ShowDec12StudentsBySC.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ResultCalcuate.aspx.cs">
+      <DependentUpon>ResultCalcuate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultCalcuate.aspx.designer.cs">
+      <DependentUpon>ResultCalcuate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2419,10 +2441,6 @@
     <Content Include="Admin\VerificationSheatList.aspx" />
     <Content Include="Admin\VerifyDraft.aspx" />
     <Content Include="Admin\Welcome.aspx" />
-    <Content Include="bin\DDE.DAL.dll" />
-    <Content Include="bin\DDE.DAL.pdb" />
-    <Content Include="bin\DDE.Web.dll" />
-    <Content Include="bin\DDE.Web.pdb" />
     <Content Include="CSS\AjaxImages\123.gif" />
     <Content Include="CSS\AjaxImages\button12506589.png" />
     <Content Include="CSS\AjaxImages\button13072671.png" />
@@ -2478,7 +2496,6 @@
     <Content Include="CSS\jkoutlinemenu.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\SubhartiERPS.css" />
-    <Content Include="DDE.Web.Publish.xml" />
     <Content Include="Admin\DetailsOfMarks.aspx" />
     <Content Include="EmployeePhotos\0101050306.jpg" />
     <Content Include="EmployeePhotos\0101050308.jpg" />
@@ -2720,6 +2737,7 @@
     <Content Include="Admin\PublishAwardSheet.aspx" />
     <Content Include="Admin\ShowCompleteExamReport.aspx" />
     <Content Include="Admin\ShowDec12StudentsBySC.aspx" />
+    <Content Include="ResultCalcuate.aspx" />
     <Content Include="SP\C1520109177.jpg" />
     <Content Include="SP\C1520309116.jpg" />
     <Content Include="SP\C1520309169.jpg" />
@@ -2881,6 +2899,7 @@
     <Folder Include="Admin\ExcelSheet\" />
     <Folder Include="Admin\TSQRCodes\" />
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
     <Folder Include="obj\Debug\Refactor\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
