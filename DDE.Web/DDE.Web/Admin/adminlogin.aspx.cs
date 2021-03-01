@@ -196,7 +196,7 @@ namespace DDE.Web.Admin
                    
                 }
 
-                catch
+                catch(Exception ex)
                 {
                     lblError.Text = "Please enter a valid user name";
                     lblError.Visible = true;

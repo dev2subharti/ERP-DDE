@@ -20,7 +20,7 @@ namespace DDE.Web.Admin
         StringBuilder SB2 = new StringBuilder(90000000);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 129))
+            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 85) || Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 113))
             {
                 pnlData.Visible = true;
                 pnlMSG.Visible = false;
@@ -126,25 +126,16 @@ namespace DDE.Web.Admin
 
                 if (dsCheck.Tables[0].Rows.Count <= 0)
                 {
-                    SqlDataAdapter adNos = new SqlDataAdapter("select max(Nos) nos from ddeProvisionalDegree ", con);
-                    DataSet dsNos = new DataSet();
-                    adNos.Fill(dsNos);
-                    if (dsExamRec.Tables[0].Rows.Count <= 0)
-                        varNos = 0;
-                    else
-                    {
-                        if (dsNos.Tables[0].Rows[0]["nos"].ToString().Trim().Length > 0)
-                            varNos = Convert.ToInt32(dsNos.Tables[0].Rows[0]["nos"].ToString());
-                        else
-                            varNos = 0;
-                    }
+                    SqlDataAdapter adNos = new SqlDataAdapter("select max(Nos) from ddeProvisionalDegree ", con);
+                    if (adNos.SelectCommand.ExecuteScalar() != null)
+                        varNos = Convert.ToInt32(adp.SelectCommand.ExecuteScalar().ToString());
 
-                    varSrlno = tbENo.Text.Substring(0, 1) + "/" + Convert.ToDateTime(varServer).ToString("yyyy") + "/" + (1000000 + 1 + varNos).ToString().Substring(2, 5);
-                    varInsert = "insert into ddeProvisionalDegree (SRID,CourseID,CompletionDT,Exam,RollNo,MM,Obtain,Grade,Status,SrlNo,nos)values (";
+                    varSrlno = tbENo.Text.Substring(0, 1) + "/" + Convert.ToDateTime(varServer).ToString("yyyy") + "/" + (1000000 + 1 + varNos).ToString().Substring(3, 7);
+                    varInsert = "insert into ddeProvisionalDegree (SRID,CourseID,CompletionDT,Exam,RollNo,MM,Obtain,Grade,Status,SrlNo)values (";
                     varInsert += "'" + Session["srid"].ToString() + "'," + Session["Courseid"].ToString() + ",";
                     varInsert += "'" + Convert.ToDateTime(dsExam.Tables[0].Rows[0]["ResultDeclaredOn"].ToString()).ToString("yyyy-MM-dd") + "',";
                     varInsert += "'" + ddlistExam.SelectedItem.Text + "','" + dsExamRec.Tables[0].Rows[0]["rollno"].ToString() + "'," + txtMM.Text + "," + txtObtMarks.Text + ",";
-                    varInsert += "'" + txtGrade.Text + "','Active','" + varSrlno.ToString() + "'," + (varNos + 1) + ")";
+                    varInsert += "'" + txtGrade.Text + "','Active','" + varSrlno.ToString() + "')";
                 }
                 else
                 {
@@ -219,9 +210,9 @@ namespace DDE.Web.Admin
                     txtAdminDate.Text = Convert.ToDateTime(dsStdRecord.Tables[0].Rows[0]["vdoa"].ToString()).ToString("dd-MM-yyyy");
                     txtCourse.Text = dsStdRecord.Tables[0].Rows[0]["CourseFullName"].ToString();
 
-                    txtMM.Enabled = true;
-                    txtObtMarks.Enabled = true;
-                    txtGrade.Enabled = true;
+                    txtMM.Text = dsStdRecord.Tables[0].Rows[0]["mm"].ToString();
+                    txtObtMarks.Text = dsStdRecord.Tables[0].Rows[0]["obtain"].ToString();
+                    txtGrade.Text = dsStdRecord.Tables[0].Rows[0]["grade"].ToString();
                 }
                 else
                 {
@@ -232,18 +223,18 @@ namespace DDE.Web.Admin
             else
             {
                 Session["SRID"] = dsProDegree.Tables[0].Rows[0]["srid"].ToString();
+                //Session["ExamLst"] = ddlistExam.SelectedValue.ToString();
+                //Session["Exam"] = ddlistExam.SelectedItem.Text;
+                //Session["Courseid"] = dsProDegree.Tables[0].Rows[0]["courseid"].ToString();
 
                 txtStudentName.Text = dsProDegree.Tables[0].Rows[0]["studentname"].ToString();
                 txtFName.Text = dsProDegree.Tables[0].Rows[0]["studentname"].ToString();
+                //txtAdminDate.Text = Convert.ToDateTime(dsStdRecord.Tables[0].Rows[0]["vdoa"].ToString()).ToString("dd-MM-yyyy");
                 txtCourse.Text = dsProDegree.Tables[0].Rows[0]["CourseFullName"].ToString();
 
                 txtMM.Text = dsProDegree.Tables[0].Rows[0]["mm"].ToString();
                 txtObtMarks.Text = dsProDegree.Tables[0].Rows[0]["obtain"].ToString();
                 txtGrade.Text = dsProDegree.Tables[0].Rows[0]["grade"].ToString();
-
-                txtMM.Enabled = false;
-                txtObtMarks.Enabled = false;
-                txtGrade.Enabled = false;
             }
 
         }
@@ -253,19 +244,6 @@ namespace DDE.Web.Admin
             lblMSG.Text = string.Empty;
             pnlMSG.Visible = false;
             pnlData.Visible = true;
-        }
-
-        protected void btnReset_Click(object sender, EventArgs e)
-        {
-            ddlistExam.SelectedIndex = 0;
-            tbENo.Text = string.Empty;
-            txtStudentName.Text = string.Empty;
-            txtFName.Text = string.Empty;
-            txtCourse.Text = string.Empty;
-            txtAdminDate.Text = string.Empty;
-            txtMM.Text = string.Empty;
-            txtObtMarks.Text = string.Empty;
-            txtGrade.Text = string.Empty;
         }
     }
 }

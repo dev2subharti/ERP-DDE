@@ -149,6 +149,7 @@ namespace DDE.Web.Admin
             SB.Append("<tr>");
             //SB.Append("<td valign = top style='background-image: url(images/ddelogo5.png); width:100 %; background-repeat: no-repeat;border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
             SB.Append("<td valign = top style='border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
+            SB.Append("<td valign = top style='background-image: url(images/ddelogo5.png); width:100 %; background-repeat: no-repeat;border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
             SB.Append("<span style = 'text-align:justify;font-size:14.0pt;font-family:'Cambria''>");
             SB.Append("This is certify that ");
             if (dsProDegree.Tables[0].Rows[0]["gender"].ToString().ToUpper() == "MALE".ToUpper())

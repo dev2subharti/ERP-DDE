@@ -64,21 +64,19 @@
                         <tr>
                             <td align="left"><b>Maximum Marks</b></td>
                             <td>
-                                <asp:TextBox ID="txtMM" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"
-                                    MaxLength="3" Enabled="false"></asp:TextBox></td>
+                                <asp:TextBox ID="txtMM" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"></asp:TextBox></td>
                         </tr>
 
                         <tr>
                             <td align="left"><b>Obtained Marks</b></td>
                             <td>
-                                <asp:TextBox ID="txtObtMarks" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"
-                                    MaxLength="3" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="txtObtMarks" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td align="left"><b>Grade</b></td>
                             <td>
-                                <asp:TextBox ID="txtGrade" runat="server" MaxLength="1" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="txtGrade" runat="server" MaxLength="1"></asp:TextBox>
                             </td>
                         </tr>
                     </td>
@@ -87,8 +85,7 @@
         </div>
 
         <div style="padding-top: 10px">
-            <asp:Button ID="btnSearch" runat="server" Text=" Save & Print " Width="120px" OnClick="btnSearch_Click" Height="30px" />
-            <asp:Button ID="btnReset" runat="server" Text=" Reset " Width="120px" OnClick="btnReset_Click" Height="30px" />
+            <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         </div>
 
     </asp:Panel>
