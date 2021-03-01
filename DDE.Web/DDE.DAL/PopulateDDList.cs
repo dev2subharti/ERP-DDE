@@ -33,6 +33,22 @@ namespace DDE.DAL
 
         }
 
+        public static void populateBanks(DropDownList ddlistIBN)
+        {
+            ddlistIBN.Items.Add("NA");
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+            SqlCommand cmd = new SqlCommand("Select BankName from DDEBanks order by BankID", con);
+            SqlDataReader dr;
+            con.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ddlistIBN.Items.Add(dr["BankName"].ToString());
+            }
+
+            con.Close();
+        }
+
         public static void populatePaperCodeFromQB(DropDownList ddlistPaperCode)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSonlineexam"].ToString());

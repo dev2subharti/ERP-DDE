@@ -424,6 +424,9 @@
                             </ul>
                         </div>
                     </li>
+                     <li><a href="ShowProvisionalDegree.aspx"><span>Provisional Degree</span></a>
+                        
+                    </li>
                     <li><a href="#" class="parent"><span>Migration</span></a>
                         <div>
                             <ul>

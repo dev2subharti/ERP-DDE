@@ -59,10 +59,6 @@
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\com.dll</HintPath>
 
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\9.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll</HintPath>
@@ -79,7 +75,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -162,6 +157,7 @@
     <Content Include="Admin\LinkRLToInstrument.aspx" />
     <Content Include="Admin\MigrationLetter.aspx" />
     <Content Include="Admin\ProcessSLMLetter.aspx" />
+    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\PublishDateSheet.aspx" />
     <Content Include="Admin\PublishListsOfSLMLetter.aspx" />
     <Content Include="Admin\PublishMarkSheetBySC2.aspx" />
@@ -244,6 +240,7 @@
     <Content Include="Admin\ShowOnlineREApplications.aspx" />
     <Content Include="Admin\ShowPracticalAS.aspx" />
     <Content Include="Admin\ShowProcessedSLMLetters.aspx" />
+    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowQuestionPaper.aspx" />
     <Content Include="Admin\ShowQuestions.aspx" />
     <Content Include="Admin\ShowReappearExamReport.aspx" />
@@ -832,6 +829,13 @@
     </Compile>
     <Compile Include="Admin\ProcessSLMLetter.aspx.designer.cs">
       <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\PublishAdmitCard.aspx.cs">
       <DependentUpon>PublishAdmitCard.aspx</DependentUpon>
@@ -1636,6 +1640,13 @@
     </Compile>
     <Compile Include="Admin\ShowProcessedSLMLetters.aspx.designer.cs">
       <DependentUpon>ShowProcessedSLMLetters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ShowQuestionPaper.aspx.cs">
       <DependentUpon>ShowQuestionPaper.aspx</DependentUpon>
@@ -2716,6 +2727,7 @@
     <None Include="CSS\images\Thumbs.db" />
     <None Include="Images\Untitled-1.psd" />
     <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

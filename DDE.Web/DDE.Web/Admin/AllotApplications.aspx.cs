@@ -46,7 +46,7 @@ namespace DDE.Web.Admin
 
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
                 SqlDataReader dr;
-                SqlCommand cmd = new SqlCommand("Select distinct StudyCentreCode from DDEPendingStudentRecord where Session='" + ddlistBatch.SelectedItem.Text + "' and SCStatus='O' and AdmissionStatus='0' and Enrolled='False' and Eligible='' and DocUploaded='True' and ExID='0' union Select distinct PreviousSCCode as StudyCentreCode from DDEPendingStudentRecord where Session='" + ddlistBatch.SelectedItem.Text + "' and SCStatus='T' and AdmissionStatus='0' and Enrolled='False' and Eligible='' and DocUploaded='True' and ExID='0' order by StudyCentreCode", con);
+                SqlCommand cmd = new SqlCommand("Select distinct StudyCentreCode from DDEPendingStudentRecord where Session='" + ddlistBatch.SelectedItem.Text + "' and SCStatus='O' and AdmissionStatus='0' and Enrolled='False' and Eligible='' and DocUploaded='True' and (ExID='0' or ExID is NULL) union Select distinct PreviousSCCode as StudyCentreCode from DDEPendingStudentRecord where Session='" + ddlistBatch.SelectedItem.Text + "' and SCStatus='T' and AdmissionStatus='0' and Enrolled='False' and Eligible='' and DocUploaded='True' and (ExID='0' or ExID is NULL) order by StudyCentreCode", con);
                 con.Open();
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -64,7 +64,7 @@ namespace DDE.Web.Admin
         private void populateStudents()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-            SqlCommand cmd = new SqlCommand("Select DDEPendingStudentRecord.PSRID,DDEPendingStudentRecord.StudentName,DDEPendingStudentRecord.FatherName,DDEPendingStudentRecord.Session,DDECourse.CourseName,DDEPendingStudentRecord.CYear from DDEPendingStudentRecord inner join DDECourse on DDEPendingStudentRecord.Course=DDECourse.CourseID where DDEPendingStudentRecord.AdmissionStatus='0' and DDEPendingStudentRecord.Session='" + ddlistBatch.SelectedItem.Text + "' and ((SCStatus='O' and StudyCentreCode='" + ddlistSCCode.SelectedItem.Text + "') or (SCStatus='T' and PreviousSCCode='" + ddlistSCCode.SelectedItem.Text + "')) and Enrolled='False' and Eligible='' and DocUploaded='True' and ExID='0'  order by PSRID", con);
+            SqlCommand cmd = new SqlCommand("Select DDEPendingStudentRecord.PSRID,DDEPendingStudentRecord.StudentName,DDEPendingStudentRecord.FatherName,DDEPendingStudentRecord.Session,DDECourse.CourseName,DDEPendingStudentRecord.CYear from DDEPendingStudentRecord inner join DDECourse on DDEPendingStudentRecord.Course=DDECourse.CourseID where DDEPendingStudentRecord.AdmissionStatus='0' and DDEPendingStudentRecord.Session='" + ddlistBatch.SelectedItem.Text + "' and ((SCStatus='O' and StudyCentreCode='" + ddlistSCCode.SelectedItem.Text + "') or (SCStatus='T' and PreviousSCCode='" + ddlistSCCode.SelectedItem.Text + "')) and Enrolled='False' and Eligible='' and DocUploaded='True' and (ExID='0' or ExID is NULL)  order by PSRID", con);
             con.Open();
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
@@ -161,7 +161,6 @@ namespace DDE.Web.Admin
         {
 
             populateSCCodes();
-
             btnSelectAll.Visible = false;
             dtlistShowPending.Visible = false;
             pnlAllot.Visible = false;

@@ -22,27 +22,27 @@ namespace DDE.Web
         protected void btnAutoFeed_Click(object sender, EventArgs e)
         {
             string sccode = "999";
-            string session = "Q 2019-20";
-            int batchid = 24;
-            string exam = "W11";
-            int ano = 462672;
-            int lano = 462772;
+            string session = "Q 2020";
+            int batchid = 26;
+            string exam = "G10";
+            int ano = 473329;
+            int lano = 473585;
 
             int sano = ano;
             string accsess = "2020-21";
             int itype = 1;
-            string ino = "COMB041MSJUNE20-009";
+            string ino = "UTIBR520210224003";
 
-            string iday = "16";
-            string imonth = "09";
-            string iyear = "2020";
+            string iday = "24";
+            string imonth = "02";
+            string iyear = "2021";
 
             string idate = iyear + "-" + imonth + "-" + iday;
-            string ibn = "NA";
-            int totalamount = 2764350;
-            int fhfee = 2000000;
+            string ibn = "ICICI BANK";
+            int totalamount = 10000000;
+            int fhfee = 10000000;
 
-            string frdate = "2020-10-16";
+            string frdate = "2021-02-25";
 
             SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlCommand cmd1 = new SqlCommand("Select * from DDEPendingStudentRecord where [Session]='" + session + "' and StudyCentreCode='" + sccode + "' and StudentPhoto is not null and Eligible='YES' and OriginalsVerified='YES' and AdmissionStatus='1' and Enrolled='False' order by PSRID", con1);
@@ -317,7 +317,7 @@ namespace DDE.Web
             string sccode = "996";
             string session = "Q 2019-20";
             int batchid = 24;
-            string exam = "W11";
+            string exam = "Z11";
             int ano = 464049;
             int lano = 464224;
 
@@ -794,7 +794,7 @@ namespace DDE.Web
 
             string finalcounter = string.Format("{0:00000}", encounter);
 
-            eno = "W1120" + pcode.ToString() + finalcounter;
+            eno = "Z1120" + pcode.ToString() + finalcounter;
 
             return eno;
 

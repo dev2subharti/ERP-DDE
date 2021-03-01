@@ -23,7 +23,7 @@ namespace DDE.Web.Admin
         StringBuilder SB2 = new StringBuilder(90000000);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 95))
+            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 129))
             {
                 if (!IsPostBack)
                 {
@@ -147,6 +147,8 @@ namespace DDE.Web.Admin
             SB.Append("<table width =" + varTblWidth + ">");
             //SB.Append("<br /><br />");
             SB.Append("<tr>");
+            //SB.Append("<td valign = top style='background-image: url(images/ddelogo5.png); width:100 %; background-repeat: no-repeat;border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
+            SB.Append("<td valign = top style='border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
             SB.Append("<td valign = top style='background-image: url(images/ddelogo5.png); width:100 %; background-repeat: no-repeat;border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
             SB.Append("<span style = 'text-align:justify;font-size:14.0pt;font-family:'Cambria''>");
             SB.Append("This is certify that ");

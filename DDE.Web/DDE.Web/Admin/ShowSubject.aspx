@@ -25,15 +25,17 @@
                             </asp:DropDownList>
                         </td>
                         <td>
-                            <b>Select Year</b>
+                            <b>Select Year/Semester</b>
                         </td>
                         <td>
-                            <asp:DropDownList ID="ddlistYear" runat="server">
-                                <asp:ListItem>1st Year</asp:ListItem>
-                                <asp:ListItem>2nd Year</asp:ListItem>
-                                <asp:ListItem>3rd Year</asp:ListItem>
-                                <asp:ListItem>4th Year</asp:ListItem>
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlistYear" Width="60px" runat="server">
+                                    <asp:ListItem>1</asp:ListItem>
+                                    <asp:ListItem>2</asp:ListItem>
+                                    <asp:ListItem>3</asp:ListItem>
+                                    <asp:ListItem>4</asp:ListItem>
+                                    <asp:ListItem>5</asp:ListItem>
+                                    <asp:ListItem>6</asp:ListItem>
+                                </asp:DropDownList>
                         </td>
                         <td>
                             <asp:Button ID="btnFind" runat="server" Text="Find" Style="height: 26px" Width="82px"

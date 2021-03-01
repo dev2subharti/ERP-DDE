@@ -221,65 +221,117 @@ namespace DDE.Web.Admin
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            if (!(Accounts.isInstrumentLocked(Convert.ToInt32(lblIID.Text))))
+            if (valisSCCodes())
             {
-                if (btnVerify.Text == "Verify Instrument")
+                if (!(Accounts.isInstrumentLocked(Convert.ToInt32(lblIID.Text))))
                 {
-                    string aro = ddlistDDYear.SelectedItem.Text + "-" + ddlistDDMonth.SelectedItem.Value + "-" + ddlistDDDay.SelectedItem.Text;
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                    SqlCommand cmd = new SqlCommand("update DDEFeeInstruments set Verified=@Verified,VerifiedOn=@VerifiedOn,AmountReceivedOn=@AmountReceivedOn,VerifiedBy=@VerifiedBy where IID='" + lblIID.Text + "'", con);
+                    if (btnVerify.Text == "Verify Instrument")
+                    {
+                        string aro = ddlistDDYear.SelectedItem.Text + "-" + ddlistDDMonth.SelectedItem.Value + "-" + ddlistDDDay.SelectedItem.Text;
+                        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+                        SqlCommand cmd = new SqlCommand("update DDEFeeInstruments set Verified=@Verified,VerifiedOn=@VerifiedOn,AmountReceivedOn=@AmountReceivedOn,VerifiedBy=@VerifiedBy where IID='" + lblIID.Text + "'", con);
 
-                    cmd.Parameters.AddWithValue("@Verified", "True");
-                    cmd.Parameters.AddWithValue("@VerifiedOn", DateTime.Now.ToString());
-                    cmd.Parameters.AddWithValue("@AmountReceivedOn", aro);
-                    cmd.Parameters.AddWithValue("@VerifiedBy", Convert.ToInt32(Session["ERID"]));
+                        cmd.Parameters.AddWithValue("@Verified", "True");
+                        cmd.Parameters.AddWithValue("@VerifiedOn", DateTime.Now.ToString());
+                        cmd.Parameters.AddWithValue("@AmountReceivedOn", aro);
+                        cmd.Parameters.AddWithValue("@VerifiedBy", Convert.ToInt32(Session["ERID"]));
 
 
 
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
 
-                    Log.createLogNow("Verified Instruments", "Verified '" + tbDType.Text + "' with No. '" + tbDCNo.Text + "'", Convert.ToInt32(Session["ERID"].ToString()));
+                        Log.createLogNow("Verified Instruments", "Verified '" + tbDType.Text + "' with No. '" + tbDCNo.Text + "'", Convert.ToInt32(Session["ERID"].ToString()));
 
-                    pnlData.Visible = false;
-                    lblMSG.Text = "Instruments has been verified successfully";
-                    pnlMSG.Visible = true;
-                    btnOK.Text = "Verify More Instruments";
-                    btnOK.Visible = true;
+                        pnlData.Visible = false;
+                        lblMSG.Text = "Instruments has been verified successfully";
+                        pnlMSG.Visible = true;
+                        btnOK.Text = "Verify More Instruments";
+                        btnOK.Visible = true;
+                    }
+                    else if (btnVerify.Text == "Set Verification Pending")
+                    {
+                        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+                        SqlCommand cmd = new SqlCommand("update DDEFeeInstruments set Verified=@Verified,VerifiedOn=@VerifiedOn,AmountReceivedOn=@AmountReceivedOn,VerifiedBy=@VerifiedBy where IID='" + lblIID.Text + "'", con);
+
+                        cmd.Parameters.AddWithValue("@Verified", "False");
+                        cmd.Parameters.AddWithValue("@VerifiedOn", "");
+                        cmd.Parameters.AddWithValue("@AmountReceivedOn", "");
+                        cmd.Parameters.AddWithValue("@VerifiedBy", "");
+
+
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                        Log.createLogNow("Update", "Set Verification Pending for '" + tbDType.Text + "' with No. '" + tbDNo.Text + "'", Convert.ToInt32(Session["ERID"].ToString()));
+
+                        pnlData.Visible = false;
+                        lblMSG.Text = "Instruments has been set on 'Verification Pending' mode successfully";
+                        pnlMSG.Visible = true;
+
+                    }
                 }
-                else if (btnVerify.Text == "Set Verification Pending")
+                else
                 {
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                    SqlCommand cmd = new SqlCommand("update DDEFeeInstruments set Verified=@Verified,VerifiedOn=@VerifiedOn,AmountReceivedOn=@AmountReceivedOn,VerifiedBy=@VerifiedBy where IID='" + lblIID.Text + "'", con);
-
-                    cmd.Parameters.AddWithValue("@Verified", "False");
-                    cmd.Parameters.AddWithValue("@VerifiedOn", "");
-                    cmd.Parameters.AddWithValue("@AmountReceivedOn", "");
-                    cmd.Parameters.AddWithValue("@VerifiedBy", "");
-
-
-
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-
-                    Log.createLogNow("Update", "Set Verification Pending for '" + tbDType.Text + "' with No. '" + tbDNo.Text + "'", Convert.ToInt32(Session["ERID"].ToString()));
-
                     pnlData.Visible = false;
-                    lblMSG.Text = "Instruments has been set on 'Verification Pending' mode successfully";
+                    lblMSG.Text = "Sorry !! This Instrument is Locked.Please contact Accounts Department";
                     pnlMSG.Visible = true;
-
+                    btnOK.Text = "OK";
+                    btnOK.Visible = true;
                 }
             }
             else
             {
                 pnlData.Visible = false;
-                lblMSG.Text = "Sorry !! This Instrument is Locked.Please contact Accounts Department";
+                lblMSG.Text = "Sorry ! Invalid SC Code.";
                 pnlMSG.Visible = true;
-                btnOK.Text = "OK";
-                btnOK.Visible = true;
             }
+        }
+
+        private bool valisSCCodes()
+        {
+            bool val = false;
+            
+
+            string[] str = tbSCCode.Text.Split(',');
+          
+
+
+            bool isspecafcode = false;
+
+            string[] specafcode = FindInfo.findSpecAFCodes();
+
+            for (int s = 0; s < str.Length; s++)
+            {
+                int pos = Array.IndexOf(specafcode, str[s]);
+
+                if ((pos > -1))
+                {
+                    isspecafcode = true;
+                }
+            }
+
+
+            if (isspecafcode == true)
+            {
+                if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 78))
+                {
+                    val = true;
+                }
+                else
+                {
+                    val = false;
+                }
+            }
+            else
+            {
+                val = true;
+            }
+
+            return val;
         }
 
         protected void dtlistTotalInstruments_ItemCommand(object source, DataListCommandEventArgs e)

@@ -69,7 +69,7 @@ namespace DDE.Web.Admin
 
                                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSonlineexam"].ToString());
                                 SqlCommand cmd = new SqlCommand();
-                                cmd.CommandText = "insert into QuestionBank (PaperCode,QT,Question,A,B,C,D,Ans) OUTPUT INSERTED.QID values (@PaperCode,@QT,@Question,@A,@B,@C,@D,@Ans)";
+                                cmd.CommandText = "insert into QuestionBank_Semester (PaperCode,QT,Question,A,B,C,D,Ans) OUTPUT INSERTED.QID values (@PaperCode,@QT,@Question,@A,@B,@C,@D,@Ans)";
 
                                 cmd.Parameters.AddWithValue("@PaperCode", tbPaperCode.Text);
                                 cmd.Parameters.AddWithValue("@QT", 0);
@@ -126,7 +126,7 @@ namespace DDE.Web.Admin
 
                                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSonlineexam"].ToString());
                                     SqlCommand cmd = new SqlCommand();
-                                    cmd.CommandText = "insert into QuestionBank (PaperCode,QT,QImage,A,B,C,D,Ans) OUTPUT INSERTED.QID values (@PaperCode,@QT,@QImage,@A,@B,@C,@D,@Ans)";
+                                    cmd.CommandText = "insert into QuestionBank_Semester (PaperCode,QT,QImage,A,B,C,D,Ans) OUTPUT INSERTED.QID values (@PaperCode,@QT,@QImage,@A,@B,@C,@D,@Ans)";
 
                                     cmd.Parameters.AddWithValue("@PaperCode", tbPaperCode.Text);
                                     cmd.Parameters.AddWithValue("@QT", 1);
@@ -184,7 +184,7 @@ namespace DDE.Web.Admin
         {
             bool exist = false;
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSonlineexam"].ToString());
-            SqlCommand scmd = new SqlCommand("Select QID from QuestionBank where Question='" + question + "' and PaperCode='" + papercode + "'", con);
+            SqlCommand scmd = new SqlCommand("Select QID from QuestionBank_Semester where Question='" + question + "' and PaperCode='" + papercode + "'", con);
             SqlDataReader dr;
 
             con.Open();
