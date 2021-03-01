@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div align="center" style="padding: 20px">
-                <asp:Button ID="btnAddNewSub" runat="server" Text="Add New Subject in This Course"
+                <asp:Button ID="btnAddNewSub" runat="server" CssClass="btn" Text="Add New Subject in This Course"
                     Visible="false" OnClick="btnAddNewSub_Click" />
             </div>
             <div>

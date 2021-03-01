@@ -24,7 +24,7 @@ namespace DDE.Web
         {
           
             int counter = 0;
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Offline Applications\999\C 2020\Excel Sheets\8.xlsx;Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1'";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Offline Applications\999\C 2020\Excel Sheets\10.xlsx;Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1'";
             string queryString = "SELECT * FROM [Applications$]";
 
             using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -105,7 +105,7 @@ namespace DDE.Web
                                 cmd.Parameters.AddWithValue("@PhoneNo", ds.Tables[0].Rows[i]["PhoneNo"].ToString());
                                 cmd.Parameters.AddWithValue("@MobileNo", ds.Tables[0].Rows[i]["MobileNo"].ToString());
                                 cmd.Parameters.AddWithValue("@Email", ds.Tables[0].Rows[i]["Email"].ToString());
-                                cmd.Parameters.AddWithValue("@DOA", DateTime.Now.ToString());
+                                cmd.Parameters.AddWithValue("@DOA", DateTime.Now);
 
                                 cmd.Parameters.AddWithValue("@Nationality", ds.Tables[0].Rows[i]["Nationality"].ToString().ToUpper());
                                 cmd.Parameters.AddWithValue("@Category", ds.Tables[0].Rows[i]["Category"].ToString().ToUpper());

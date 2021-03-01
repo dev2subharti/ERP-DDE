@@ -1021,6 +1021,8 @@ namespace DDE.DAL
             return qs;
         }
 
+      
+
         public static int findYearOfPractical(int pracid)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
@@ -8908,6 +8910,31 @@ namespace DDE.DAL
             return det;
         }
 
+        public static string[] findSpecAFCodes()
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+            SqlCommand cmd = new SqlCommand();
+           
+            cmd.CommandText = "Select AFCode from DDESpecialAF order by AFCode";
+            
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            string[] det = new string[ds.Tables[0].Rows.Count];
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    det[i] = ds.Tables[0].Rows[i]["AFCode"].ToString();
+                }
+            }
+
+            return det;
+        }
         public static string[] findAllDetainedStudentsForSLM()
         {
 

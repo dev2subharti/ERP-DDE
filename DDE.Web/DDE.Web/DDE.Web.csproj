@@ -146,6 +146,7 @@
     <Content Include="Admin\LinkRLToInstrument.aspx" />
     <Content Include="Admin\MigrationLetter.aspx" />
     <Content Include="Admin\ProcessSLMLetter.aspx" />
+    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\PublishDateSheet.aspx" />
     <Content Include="Admin\PublishListsOfSLMLetter.aspx" />
     <Content Include="Admin\PublishMarkSheetBySC2.aspx" />
@@ -227,6 +228,7 @@
     <Content Include="Admin\ShowOnlineREApplications.aspx" />
     <Content Include="Admin\ShowPracticalAS.aspx" />
     <Content Include="Admin\ShowProcessedSLMLetters.aspx" />
+    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowQuestionPaper.aspx" />
     <Content Include="Admin\ShowQuestions.aspx" />
     <Content Include="Admin\ShowReappearExamReport.aspx" />
@@ -813,6 +815,13 @@
     </Compile>
     <Compile Include="Admin\ProcessSLMLetter.aspx.designer.cs">
       <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\PublishAdmitCard.aspx.cs">
       <DependentUpon>PublishAdmitCard.aspx</DependentUpon>
@@ -1610,6 +1619,13 @@
     </Compile>
     <Compile Include="Admin\ShowProcessedSLMLetters.aspx.designer.cs">
       <DependentUpon>ShowProcessedSLMLetters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ShowQuestionPaper.aspx.cs">
       <DependentUpon>ShowQuestionPaper.aspx</DependentUpon>

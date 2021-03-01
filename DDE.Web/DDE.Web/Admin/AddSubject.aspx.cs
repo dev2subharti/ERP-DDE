@@ -51,7 +51,7 @@ namespace DDE.Web.Admin
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlDataReader dr;
-            SqlCommand cmd = new SqlCommand("Select SySession from DDESySession ", con);
+            SqlCommand cmd = new SqlCommand("Select SySession from DDESySession order by SySessionID DESC ", con);
             con.Open();
             dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -184,6 +184,7 @@ namespace DDE.Web.Admin
                 pnlData.Visible = false;
                 lblMSG.Text = "Subject has been updated successfully";
                 pnlMSG.Visible = true;
+              
 
 
 
