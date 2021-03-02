@@ -10,25 +10,7 @@
 namespace DDE.Web.Admin {
     
     
-    public partial class ProvisionalDegree {
-        
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class ShowProvisionalStudents {
         
         /// <summary>
         /// pnlData control.
@@ -40,22 +22,13 @@ namespace DDE.Web.Admin {
         protected global::System.Web.UI.WebControls.Panel pnlData;
         
         /// <summary>
-        /// PanelReport control.
+        /// dtlistShowPending control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelReport;
-        
-        /// <summary>
-        /// lblshow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblshow;
+        protected global::System.Web.UI.WebControls.DataList dtlistShowPending;
         
         /// <summary>
         /// pnlMSG control.
@@ -74,14 +47,5 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMSG;
-        
-        /// <summary>
-        /// btnOK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOK;
     }
 }

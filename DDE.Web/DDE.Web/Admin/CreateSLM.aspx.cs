@@ -19,6 +19,7 @@ namespace DDE.Web.Admin
             {
                 if (!IsPostBack)
                 {
+                    PopulateDDList.populateSySession(ddlistSS);
                     PopulateDDList.populateCourses(ddlistCourse);
                    
 

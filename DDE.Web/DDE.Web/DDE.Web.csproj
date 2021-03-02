@@ -50,21 +50,6 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="com">
-      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\com.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\9.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Synchronization, Version=1.0.0.0" />
-    <Reference Include="Microsoft.Synchronization.Data, Version=2.0.0.0" />
-    <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
-    <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
     <Reference Include="QRCoder">
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
     </Reference>
@@ -153,7 +138,6 @@
     <Content Include="Admin\LinkRLToInstrument.aspx" />
     <Content Include="Admin\MigrationLetter.aspx" />
     <Content Include="Admin\ProcessSLMLetter.aspx" />
-    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\PublishDateSheet.aspx" />
     <Content Include="Admin\PublishListsOfSLMLetter.aspx" />
     <Content Include="Admin\PublishMarkSheetBySC2.aspx" />
@@ -235,7 +219,6 @@
     <Content Include="Admin\ShowOnlineREApplications.aspx" />
     <Content Include="Admin\ShowPracticalAS.aspx" />
     <Content Include="Admin\ShowProcessedSLMLetters.aspx" />
-    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowQuestionPaper.aspx" />
     <Content Include="Admin\ShowQuestions.aspx" />
     <Content Include="Admin\ShowReappearExamReport.aspx" />
@@ -270,6 +253,12 @@
     <Content Include="Admin\VerifyRefund.aspx" />
     <Content Include="BarCode.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\com.dll" />
+    <Content Include="bin\DDE.DAL.dll" />
+    <Content Include="bin\DDE.DAL.pdb" />
+    <Content Include="bin\DDE.Web.dll" />
+    <Content Include="bin\DDE.Web.pdb" />
+    <Content Include="bin\QRCoder.dll" />
     <Content Include="ChangeCourse.aspx" />
     <Content Include="CSS\DateSheet.css" />
     <Content Include="CSS\DDE.css" />
@@ -823,13 +812,6 @@
     </Compile>
     <Compile Include="Admin\ProcessSLMLetter.aspx.designer.cs">
       <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
-      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
-      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\PublishAdmitCard.aspx.cs">
       <DependentUpon>PublishAdmitCard.aspx</DependentUpon>
@@ -1628,13 +1610,6 @@
     <Compile Include="Admin\ShowProcessedSLMLetters.aspx.designer.cs">
       <DependentUpon>ShowProcessedSLMLetters.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
-      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
-      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ShowQuestionPaper.aspx.cs">
       <DependentUpon>ShowQuestionPaper.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1767,6 +1742,13 @@
     </Compile>
     <Compile Include="Admin\ShowPracticalAS.aspx.designer.cs">
       <DependentUpon>ShowPracticalAS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalStudents.aspx.cs">
+      <DependentUpon>ShowProvisionalStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalStudents.aspx.designer.cs">
+      <DependentUpon>ShowProvisionalStudents.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ShowRASReportByDate.aspx.cs">
       <DependentUpon>ShowRASReportByDate.aspx</DependentUpon>
@@ -2400,6 +2382,7 @@
     <Content Include="Admin\ShowPaidFeeByENo.aspx" />
     <Content Include="Admin\ShowPendingStudents.aspx" />
     <Content Include="Admin\ShowPractical.aspx" />
+    <Content Include="Admin\ShowProvisionalStudents.aspx" />
     <Content Include="Admin\ShowRASReportByDate.aspx" />
     <Content Include="Admin\ShowStudentListBySC.aspx" />
     <Content Include="Admin\ShowStudents.aspx" />
@@ -2696,6 +2679,7 @@
     <Content Include="Admin\StudentImgHandler.ashx" />
     <Content Include="Admin\QPImgHandler.ashx" />
     <Content Include="Admin\Question.ashx" />
+    <None Include="bin\DDE.Web.dll.config" />
     <None Include="CSS\images\Thumbs.db" />
     <None Include="Images\Untitled-1.psd" />
     <None Include="obj\Debug\ResolveAssemblyReference.cache" />
