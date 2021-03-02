@@ -48,7 +48,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="com">
@@ -57,7 +56,6 @@
     <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\com.dll</HintPath>
-
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,9 +66,7 @@
     <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
     <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
     <Reference Include="QRCoder">
-
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\QRCoder.dll</HintPath>
-
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -211,7 +207,6 @@
     <Content Include="Admin\ShowDAProofReading.aspx" />
     <Content Include="Admin\ShowDAStatus.aspx" />
     <Content Include="Admin\ShowDateSheet.aspx" />
-    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowDegreeRequests.aspx" />
     <Content Include="Admin\ShowDStudent.aspx" />
     <Content Include="Admin\ShowECLogins.aspx" />
@@ -255,7 +250,6 @@
     <Content Include="Admin\ShowSLMStockBook.aspx" />
     <Content Include="Admin\ShowStudentsCourseWise.aspx" />
     <Content Include="Admin\ShowVerificationLetters.aspx" />
-    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\SLMLetter.aspx" />
     <Content Include="Admin\SLMSellLetter.aspx" />
     <Content Include="Admin\UpdateASAllotment.aspx" />
@@ -1431,13 +1425,6 @@
     <Compile Include="Admin\ShowDCDetails.aspx.designer.cs">
       <DependentUpon>ShowDCDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
-      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
-      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ShowDegreeRequests.aspx.cs">
       <DependentUpon>ShowDegreeRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1781,13 +1768,6 @@
     <Compile Include="Admin\ShowPracticalAS.aspx.designer.cs">
       <DependentUpon>ShowPracticalAS.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ShowProvisionalStudents.aspx.cs">
-      <DependentUpon>ShowProvisionalStudents.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ShowProvisionalStudents.aspx.designer.cs">
-      <DependentUpon>ShowProvisionalStudents.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ShowRASReportByDate.aspx.cs">
       <DependentUpon>ShowRASReportByDate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1920,13 +1900,6 @@
     </Compile>
     <Compile Include="Admin\ShowVerifiedDraft.aspx.designer.cs">
       <DependentUpon>ShowVerifiedDraft.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
-      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
-      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\SLMLetter.aspx.cs">
       <DependentUpon>SLMLetter.aspx</DependentUpon>
@@ -2427,7 +2400,6 @@
     <Content Include="Admin\ShowPaidFeeByENo.aspx" />
     <Content Include="Admin\ShowPendingStudents.aspx" />
     <Content Include="Admin\ShowPractical.aspx" />
-    <Content Include="Admin\ShowProvisionalStudents.aspx" />
     <Content Include="Admin\ShowRASReportByDate.aspx" />
     <Content Include="Admin\ShowStudentListBySC.aspx" />
     <Content Include="Admin\ShowStudents.aspx" />
@@ -2907,9 +2879,8 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-   
-       <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
-</ItemGroup>
+    <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
