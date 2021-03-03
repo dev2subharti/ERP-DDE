@@ -1156,7 +1156,19 @@ namespace DDE.DAL
                 con.Close();             
 
             }
-            
+            else if (fhid==2)
+            {
+                int batchid =FindInfo.findBatchID(FindInfo.findBatchBySRID(srid));
+
+                if(batchid>=27)
+                {
+                    rfee = 750;
+                }
+                else
+                {
+                    rfee = 1400;
+                }
+            }
 
             else
             {
