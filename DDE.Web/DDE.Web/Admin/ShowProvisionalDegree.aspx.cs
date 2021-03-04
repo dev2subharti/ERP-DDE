@@ -197,7 +197,9 @@ namespace DDE.Web.Admin
             {
                 String sqlEnrol = "select a.CourseFullName,a.SpecializationDegree,z.StudentName,z.FatherName,z.VDOA,z.Gender,z.srid,a.courseid from DDEStudentRecord z";
                 sqlEnrol += " inner join DDECourse a on a.CourseID in (";
-                sqlEnrol += " select isnull((case cyear when 1 then course when 2 then course2year when 3 then course3year end),0)asd from DDEStudentRecord";
+                sqlEnrol += " select isnull((case cyear when 1 then course";
+                sqlEnrol += " when 2 then(case when len(course2year) > 0 then course2year else course end) ";
+                sqlEnrol += " when 3 then(case when len(course3year) > 0 then course3year else course end)end),0)asd from DDEStudentRecord";
                 sqlEnrol += " where EnrollmentNo = z.EnrollmentNo ) and EnrollmentNo = z.EnrollmentNo";
                 sqlEnrol += " where EnrollmentNo='" + tbENo.Text + "'";
 
