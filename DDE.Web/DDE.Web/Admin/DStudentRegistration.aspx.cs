@@ -1920,6 +1920,12 @@ namespace DDE.Web.Admin
                 tbENo.Enabled = false;
             }
 
+            if(Convert.ToInt32(ddlistSession.SelectedItem.Value)>=25)
+            {
+                ddlistSySession.Items.FindByText("A 2020-21").Selected = true;
+                ddlistSySession.Enabled = false;
+            }
+
             setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
             
         }

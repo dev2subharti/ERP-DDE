@@ -19,6 +19,7 @@ namespace DDE.Web.Admin
             {
                 if (!IsPostBack)
                 {
+                    PopulateDDList.populateSySession(ddlistSS);
                     PopulateDDList.populateCourses(ddlistCourse);
                    
 
@@ -117,7 +118,10 @@ namespace DDE.Web.Admin
             lblSLMCode.Text=tbSLMCode.Text = dr["SLMCode"].ToString();
             rblLang.SelectedItem.Selected = false;
             rblLang.Items.FindByValue(dr["Lang"].ToString()).Selected = true;
-                        
+
+            ddlistSS.SelectedItem.Selected = false;
+            ddlistSS.Items.FindByText(dr["SyllabusSession"].ToString()).Selected = true;
+
             tbTitle.Text = dr["Title"].ToString();
                 
             tbCost.Text = dr["Cost"].ToString();
@@ -127,7 +131,7 @@ namespace DDE.Web.Admin
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ddlistCourse.SelectedItem.Value != "0" && ddlistCourse.SelectedItem.Value != "0")
+            if (ddlistSS.SelectedItem.Value != "0"&& ddlistCourse.SelectedItem.Value != "0" && ddlistCourse.SelectedItem.Value != "0")
             {
                 DataTable dt = new DataTable();
 
@@ -232,7 +236,7 @@ namespace DDE.Web.Admin
                         object oslmid = 0;
 
                         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                        SqlCommand cmd = new SqlCommand("insert into DDESLMMaster OUTPUT INSERTED.SLMID values(@SLMCode,@Dual,@GroupID,@Lang,@Title,@Cost,@PresentStock)", con);
+                        SqlCommand cmd = new SqlCommand("insert into DDESLMMaster OUTPUT INSERTED.SLMID values(@SLMCode,@Dual,@GroupID,@Lang,@Title,@Cost,@PresentStock,@SyllabusSession)", con);
 
                         cmd.Parameters.AddWithValue("@SLMCode", tbSLMCode.Text.ToUpper());
                         cmd.Parameters.AddWithValue("@Dual","False");
@@ -241,6 +245,7 @@ namespace DDE.Web.Admin
                         cmd.Parameters.AddWithValue("@Title", tbTitle.Text);
                         cmd.Parameters.AddWithValue("@Cost", tbCost.Text);                   
                         cmd.Parameters.AddWithValue("@PresentStock", 0);
+                        cmd.Parameters.AddWithValue("@SyllabusSession", ddlistSS.SelectedItem.Text);
 
                         con.Open();
                         oslmid=cmd.ExecuteScalar();

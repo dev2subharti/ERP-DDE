@@ -6,6 +6,27 @@
         <div align="center" class="heading">
             Show SLM Linking with Course and Year (On Trial)
         </div>
+          <div align="center" class="text" style="padding-top: 20px">
+                <table class="tableStyle2" cellspacing="10px">
+                    <tr>
+                        <td>
+                            <b>Syllabus Session</b>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="ddlistSS" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                       
+                    </tr>
+                </table>
+            </div>
+            
+            <div align="center" style="padding-top:20px">
+             
+                            <asp:Button ID="btnFind" runat="server" Text="Search" Style="height: 26px" Width="82px"
+                                OnClick="btnFind_Click" />
+                       
+            </div>
         <div style="padding-top:20px">
            
             <div align="center">

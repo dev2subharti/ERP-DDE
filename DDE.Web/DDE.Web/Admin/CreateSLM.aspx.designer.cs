@@ -130,6 +130,15 @@ namespace DDE.Web.Admin {
         protected global::System.Web.UI.WebControls.Panel pnlCourseDetails;
         
         /// <summary>
+        /// ddlistSS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlistSS;
+        
+        /// <summary>
         /// ddlistCourse control.
         /// </summary>
         /// <remarks>

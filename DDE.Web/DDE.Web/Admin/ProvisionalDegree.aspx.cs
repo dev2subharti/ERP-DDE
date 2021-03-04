@@ -23,7 +23,7 @@ namespace DDE.Web.Admin
         StringBuilder SB2 = new StringBuilder(90000000);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 129))
+            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 95))
             {
                 if (!IsPostBack)
                 {
@@ -54,7 +54,7 @@ namespace DDE.Web.Admin
             if (con.State == ConnectionState.Closed)
                 con.Open();
 
-            String sqlProvDegree = "select z.*,a.CourseFullName,b.EnrollmentNo,b.StudentName,b.FatherName,b.gender,b.StudentPhoto from ddeProvisionalDegree z";
+            String sqlProvDegree = "select z.*,a.CourseFullName,b.EnrollmentNo,b.StudentName,b.FatherName,b.gender,b.StudentPhoto,b.mobileno from ddeProvisionalDegree z";
             sqlProvDegree += " inner join DDECourse a on a.CourseID=z.courseid";
             sqlProvDegree += " inner join DDEStudentRecord b on b.srid=z.srid";
             sqlProvDegree += " where z.srid=" + Session["srid"].ToString();
@@ -65,9 +65,6 @@ namespace DDE.Web.Admin
             SqlDataAdapter daProDegree = new SqlDataAdapter(cmdProDegree);
             DataSet dsProDegree = new DataSet();
             daProDegree.Fill(dsProDegree);
-
-            if (dsProDegree.Tables[0].Rows.Count > 0)
-            { }
 
             String varServer = string.Empty;
             SqlDataAdapter adp = new SqlDataAdapter("select getdate()", con);
@@ -149,7 +146,6 @@ namespace DDE.Web.Admin
             SB.Append("<tr>");
             //SB.Append("<td valign = top style='background-image: url(images/ddelogo5.png); width:100 %; background-repeat: no-repeat;border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
             SB.Append("<td valign = top style='border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
-            SB.Append("<td valign = top style='background-image: url(images/ddelogo5.png); width:100 %; background-repeat: no-repeat;border:none;padding:0in 5.4pt 0in 5.4pt;line-height:200%;font-size:14.0pt;' colspan=4 align=justify heighy=100px>");
             SB.Append("<span style = 'text-align:justify;font-size:14.0pt;font-family:'Cambria''>");
             SB.Append("This is certify that ");
             if (dsProDegree.Tables[0].Rows[0]["gender"].ToString().ToUpper() == "MALE".ToUpper())
@@ -221,6 +217,82 @@ namespace DDE.Web.Admin
             SB.Append("<td width = 188 style = 'border:none'></td>");
             SB.Append("<td width = 99 style = 'border:none'></td>");
             SB.Append("</tr>");
+            SB.Append("</table>");
+            SB.Append("</div>");
+
+            SB.Append("<p style='page-break-before:always;'></p>");
+
+            SB.Append("<div>");
+            SB.Append("<table>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>" + dsProDegree.Tables[0].Rows[0]["StudentName"].ToString() + " </td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>" + dsProDegree.Tables[0].Rows[0]["FatherName"].ToString() + "</td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>" + dsProDegree.Tables[0].Rows[0]["address"].ToString() + "</td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("</tr>");
+
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>Mobile: " + dsProDegree.Tables[0].Rows[0]["MobileNo"].ToString() + "</td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>Enrolment No." + dsProDegree.Tables[0].Rows[0]["EnrollmentNo"].ToString() + "</td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            SB.Append("</tr>");
+
+            //SB.Append("<tr>");
+            //SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>Degree No.:" + dsProDegree.Tables[0].Rows[0]["sno"].ToString() + "</td>");
+            //SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>&nbsp;</td>");
+            //SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("</tr>");
+
+            SB.Append("<tr>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'>  ");
+            SB.Append("<br /><br /><br /><i><u>If Undelivered Please Return It back TO:</u></i>  ");
+            SB.Append("<br />");
+
+            SB.Append("<br /><b>DIRECTORATE OF DISTANCE EDUCATION</b>");
+            SB.Append("<br /><b>SWAMI VIVEKANAND SUBHARTI UNIVERSITY</b>");
+            SB.Append("<br /><b>NH-58,DELHI-HARIDWAR BYPASS ROAD,</b>");
+            SB.Append("<br /><b>MEERUT</b>");
+            SB.Append("<br /><b>PIN - 250005</b><br /><br /><br /><br />");
+            SB.Append("</td> ");
+            SB.Append("</tr>");
+
+            SB.Append("<tr> ");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("<td width=382 valign=top style='padding:0in 5.4pt 0in 5.4pt'></td>");
+            SB.Append("</tr>");
+
             SB.Append("</table>");
             SB.Append("</div>");
         }

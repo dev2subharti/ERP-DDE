@@ -689,34 +689,34 @@ namespace DDE.Web.Admin
             string[] pstr = tbProSCCode.Text.Split(',');
 
             
-            bool isspecafcode = false;
+            //bool isspecafcode = false;
 
-            string [] specafcode = FindInfo.findSpecAFCodes();
+            //string [] specafcode = FindInfo.findSpecAFCodes();
 
-            for(int s=0; s<str.Length; s++)
-            {
-                int pos = Array.IndexOf(specafcode, str[s]);
+            //for(int s=0; s<str.Length; s++)
+            //{
+                //int pos = Array.IndexOf(specafcode, str[s]);
 
-                if (pos > -1)
-                {
-                    isspecafcode = true;
-                }
-            }
+                //if (pos > -1)
+                //{
+                    //isspecafcode = true;
+                //}
+            //}
 
            
-            if(isspecafcode==true)
-            {
-                if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 77))
-                {                 
-                    val = true;
-                }
-                else
-                {
-                    val = false;
-                    goto last;
+            //if(isspecafcode==true)
+            //{
+                //if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 77))
+                //{                 
+                    //val = true;
+                //}
+                //else
+                //{
+                    //val = false;
+                    //goto last;
 
-                }
-            }
+                //}
+            //}
                    
 
             if (tbSCCode.Text != "")

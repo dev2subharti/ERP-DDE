@@ -411,7 +411,7 @@ namespace DDE.DAL
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlDataReader dr;
-            SqlCommand cmd = new SqlCommand("Select SySession from DDESySession ", con);
+            SqlCommand cmd = new SqlCommand("Select SySession from DDESySession order by SySessionID DESC", con);
             con.Open();
             dr = cmd.ExecuteReader();
             while (dr.Read())
