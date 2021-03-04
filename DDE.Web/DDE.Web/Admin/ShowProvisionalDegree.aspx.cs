@@ -218,7 +218,7 @@ namespace DDE.Web.Admin
                     Session["Courseid"] = dsStdRecord.Tables[0].Rows[0]["courseid"].ToString();
 
                     txtStudentName.Text = dsStdRecord.Tables[0].Rows[0]["studentname"].ToString();
-                    txtFName.Text = dsStdRecord.Tables[0].Rows[0]["studentname"].ToString();
+                    txtFName.Text = dsStdRecord.Tables[0].Rows[0]["FatherName"].ToString();
                     txtAdminDate.Text = Convert.ToDateTime(dsStdRecord.Tables[0].Rows[0]["vdoa"].ToString()).ToString("dd-MM-yyyy");
                     txtCourse.Text = dsStdRecord.Tables[0].Rows[0]["CourseFullName"].ToString();
 
@@ -237,7 +237,7 @@ namespace DDE.Web.Admin
                 Session["SRID"] = dsProDegree.Tables[0].Rows[0]["srid"].ToString();
 
                 txtStudentName.Text = dsProDegree.Tables[0].Rows[0]["studentname"].ToString();
-                txtFName.Text = dsProDegree.Tables[0].Rows[0]["studentname"].ToString();
+                txtFName.Text = dsProDegree.Tables[0].Rows[0]["FatherName"].ToString();
                 txtCourse.Text = dsProDegree.Tables[0].Rows[0]["CourseFullName"].ToString();
 
                 txtMM.Text = dsProDegree.Tables[0].Rows[0]["mm"].ToString();
