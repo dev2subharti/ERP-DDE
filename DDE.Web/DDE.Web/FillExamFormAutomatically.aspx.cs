@@ -23,15 +23,15 @@ namespace DDE.Web
 
         protected void btnAutoFeed_Click(object sender, EventArgs e)
         {
-            string sccode = "999";
+            string sccode = "996";
             string exam="Z11";
             int ecid = FindInfo.findExamCentreBySCCode(sccode,exam);
 
             int itype = 4;
-            string ino = "COMB041MSDEC20-004";
-            string idate = "2020-02-02";
+            string ino = "COMB016USCDEC20-011";
+            string idate = "2021-03-03";
             string ibn = "NA";
-            int iamount = 3046253;
+            int iamount = 539145;
 
             string asession = "2020-21";
 
