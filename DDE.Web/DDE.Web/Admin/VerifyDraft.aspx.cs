@@ -294,44 +294,46 @@ namespace DDE.Web.Admin
         private bool valisSCCodes()
         {
             bool val = false;
-            
-
-            string[] str = tbSCCode.Text.Split(',');
-          
 
 
-            bool isspecafcode = false;
-
-            string[] specafcode = FindInfo.findSpecAFCodes();
-
-            for (int s = 0; s < str.Length; s++)
-            {
-                int pos = Array.IndexOf(specafcode, str[s]);
-
-                if ((pos > -1))
-                {
-                    isspecafcode = true;
-                }
-            }
+            //string[] str = tbSCCode.Text.Split(',');
 
 
-            if (isspecafcode == true)
-            {
-                if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 78))
-                {
-                    val = true;
-                }
-                else
-                {
-                    val = false;
-                }
-            }
-            else
-            {
-                val = true;
-            }
 
-            return val;
+            //bool isspecafcode = false;
+
+            //string[] specafcode = FindInfo.findSpecAFCodes();
+
+            //for (int s = 0; s < str.Length; s++)
+            //{
+            //    int pos = Array.IndexOf(specafcode, str[s]);
+
+            //    if ((pos > -1))
+            //    {
+            //        isspecafcode = true;
+            //    }
+            //}
+
+
+            //if (isspecafcode == true)
+            //{
+            //    if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 78))
+            //    {
+            //        val = true;
+            //    }
+            //    else
+            //    {
+            //        val = false;
+            //    }
+            //}
+            //else
+            //{
+            //    val = true;
+            //}
+
+            //return val;
+
+            return true;
         }
 
         protected void dtlistTotalInstruments_ItemCommand(object source, DataListCommandEventArgs e)
