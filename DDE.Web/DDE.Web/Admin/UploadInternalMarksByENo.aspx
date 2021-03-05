@@ -13,22 +13,23 @@
                             <b>Exam</b>
                         </td>
                         <td align="left">
-                            <asp:DropDownList ID="ddlistExam" runat="server" Width="150px">                             
+                            <asp:DropDownList ID="ddlistExam" runat="server" Width="150px">
                                 <asp:ListItem>--SELECT ONE--</asp:ListItem>
+                                <asp:ListItem Value="Z11">DECEMBER 2020</asp:ListItem>
                                 <asp:ListItem Value="W11">JUNE 2020</asp:ListItem>
                                 <asp:ListItem Value="Z10">DECEMBER 2019</asp:ListItem>
-                                 <asp:ListItem Value="W10">JUNE 2019</asp:ListItem>
-                                 <asp:ListItem Value="B18">DECEMBER 2018</asp:ListItem>
-                                 <asp:ListItem Value="A18">JUNE 2018</asp:ListItem>
-                                 <asp:ListItem Value="B17">DECEMBER 2017</asp:ListItem>
-                                  <asp:ListItem Value="A17">JUNE 2017</asp:ListItem>
-                                 <asp:ListItem Value="B16">DECEMBER 2016</asp:ListItem>
+                                <asp:ListItem Value="W10">JUNE 2019</asp:ListItem>
+                                <asp:ListItem Value="B18">DECEMBER 2018</asp:ListItem>
+                                <asp:ListItem Value="A18">JUNE 2018</asp:ListItem>
+                                <asp:ListItem Value="B17">DECEMBER 2017</asp:ListItem>
+                                <asp:ListItem Value="A17">JUNE 2017</asp:ListItem>
+                                <asp:ListItem Value="B16">DECEMBER 2016</asp:ListItem>
                                 <asp:ListItem Value="A16">JUNE 2016</asp:ListItem>
-                                 <asp:ListItem Value="B15">DECEMBER 2015</asp:ListItem>  
-                                <asp:ListItem Value="A15">JUNE 2015</asp:ListItem>                                
-                                  <asp:ListItem Value="B14">DECEMBER 2014</asp:ListItem>
-                                  <asp:ListItem Value="A14">JUNE 2014</asp:ListItem>
-                                  <asp:ListItem Value="B13">DECEMBER 2013</asp:ListItem>
+                                <asp:ListItem Value="B15">DECEMBER 2015</asp:ListItem>
+                                <asp:ListItem Value="A15">JUNE 2015</asp:ListItem>
+                                <asp:ListItem Value="B14">DECEMBER 2014</asp:ListItem>
+                                <asp:ListItem Value="A14">JUNE 2014</asp:ListItem>
+                                <asp:ListItem Value="B13">DECEMBER 2013</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td align="left">
@@ -36,12 +37,12 @@
                         </td>
                         <td align="left">
                             <asp:DropDownList ID="ddlistMOE" runat="server" Width="150px">
-                               <asp:ListItem>--SELECT ONE--</asp:ListItem>
-                                <asp:ListItem Value="R" >REGULAR</asp:ListItem>
+                                <asp:ListItem>--SELECT ONE--</asp:ListItem>
+                                <asp:ListItem Value="R">REGULAR</asp:ListItem>
                                 <asp:ListItem Value="B">BACK PAPER</asp:ListItem>
                             </asp:DropDownList>
                         </td>
-                       
+
                     </tr>
                 </table>
             </div>
@@ -64,16 +65,15 @@
                         </td>
                         <td colspan="2" align="left">
                             <asp:DropDownList ID="ddlistYear" runat="server" Visible="false">
-                               
                             </asp:DropDownList>
                         </td>
                     </tr>
-                   
+
                 </table>
             </div>
-            <div align="center" style="padding-top:10px">
-            <asp:Button ID="btnFind2" runat="server" Text="Find" Visible="false" 
-                                Width="80px" onclick="btnFind2_Click" />
+            <div align="center" style="padding-top: 10px">
+                <asp:Button ID="btnFind2" runat="server" Text="Find" Visible="false"
+                    Width="80px" OnClick="btnFind2_Click" />
             </div>
         </div>
     </asp:Panel>
@@ -85,10 +85,10 @@
                 </td>
             </tr>
         </table>
-        <div style="padding-top:10px">
-            <asp:Button ID="btnOK" runat="server" Text="OK" Visible="false" Width="60px" 
-                onclick="btnOK_Click" />
-        
+        <div style="padding-top: 10px">
+            <asp:Button ID="btnOK" runat="server" Text="OK" Visible="false" Width="60px"
+                OnClick="btnOK_Click" />
+
         </div>
     </asp:Panel>
 </asp:Content>

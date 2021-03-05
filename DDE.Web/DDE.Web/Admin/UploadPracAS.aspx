@@ -31,33 +31,34 @@
                             <b>Examination</b>
                         </td>
                         <td>
-                            <asp:DropDownList ID="ddlistExam" AutoPostBack="true" runat="server" 
-                                onselectedindexchanged="ddlistExam_SelectedIndexChanged">
+                            <asp:DropDownList ID="ddlistExam" AutoPostBack="true" runat="server"
+                                OnSelectedIndexChanged="ddlistExam_SelectedIndexChanged">
                                 <asp:ListItem Value="A15">JUNE 2015</asp:ListItem>
                                 <asp:ListItem Value="B15">DECEMBER 2015</asp:ListItem>
                                 <asp:ListItem Value="A16">JUNE 2016</asp:ListItem>
                                 <asp:ListItem Value="B16">DECEMBER 2016</asp:ListItem>
                                 <asp:ListItem Value="A17">JUNE 2017</asp:ListItem>
                                 <asp:ListItem Value="B17">DECEMBER 2017</asp:ListItem>
-                                 <asp:ListItem Value="A18">JUNE 2018</asp:ListItem>
-                                  <asp:ListItem Value="B18">DECEMBER 2018</asp:ListItem>
-                                 <asp:ListItem Value="W10" Selected="True">JUNE 2019</asp:ListItem>
+                                <asp:ListItem Value="A18">JUNE 2018</asp:ListItem>
+                                <asp:ListItem Value="B18">DECEMBER 2018</asp:ListItem>
+                                <asp:ListItem Value="W10">JUNE 2019</asp:ListItem>
+                                <asp:ListItem Value="Z11" Selected="True">DECEMBER 2020</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td>
                             <b>AF Code</b>
                         </td>
                         <td>
-                            <asp:DropDownList ID="ddlistSCCode" AutoPostBack="true" runat="server" 
-                                onselectedindexchanged="ddlistSCCode_SelectedIndexChanged">
+                            <asp:DropDownList ID="ddlistSCCode" AutoPostBack="true" runat="server"
+                                OnSelectedIndexChanged="ddlistSCCode_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td>
                             <b>Practical Code</b>
                         </td>
                         <td>
-                            <asp:DropDownList ID="ddlistPracCode" AutoPostBack="true" runat="server" 
-                                onselectedindexchanged="ddlistPracCode_SelectedIndexChanged">
+                            <asp:DropDownList ID="ddlistPracCode" AutoPostBack="true" runat="server"
+                                OnSelectedIndexChanged="ddlistPracCode_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -68,70 +69,58 @@
             </asp:Panel>
         </div>
         <div class="text" style="padding-top: 20px">
-        <asp:Panel ID="pnlAS" runat="server" Visible="false">
-            <table cellspacing="10px" class="tableStyle2">
-                <tr>
-                    <td valign="top" align="left" style="width: 120px">
-                        Practical Name
-                    </td>
-                    <td valign="top">
-                        :
-                    </td>
-                    <td valign="top" align="left" style="width: 200px">
-                        <asp:Label ID="lblPracticalName" runat="server" Text=""></asp:Label>
-                    </td>
-                    <td valign="top" align="right">
-                        Practical Code
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td valign="top" align="left">
-                        <asp:Label ID="lblPracticalCode" runat="server" Text=""></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top" align="left">
-                        Course
-                    </td>
-                    <td valign="top">
-                        :
-                    </td>
-                    <td valign="top" align="left">
-                        <asp:Label ID="lblCourse" runat="server" Text=""></asp:Label>
-                        <asp:Label ID="lblCourseID" runat="server" Text="" Visible="false"></asp:Label>
-                    </td>
-                    <td valign="top" align="right">
-                        Year
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td valign="top" align="left">
-                        <asp:Label ID="lblYear" runat="server" Text=""></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        A.F. Code
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td align="left">
-                        <asp:Label ID="lblSCCode" runat="server" Text=""></asp:Label>
-                    </td>
-                    <td align="right">
-                        Max. Marks
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td align="left">
-                        <asp:Label ID="lblMMarks" runat="server" Text=""></asp:Label>
-                    </td>
-                </tr>
-            </table>
+            <asp:Panel ID="pnlAS" runat="server" Visible="false">
+                <table cellspacing="10px" class="tableStyle2">
+                    <tr>
+                        <td valign="top" align="left" style="width: 120px">Practical Name
+                        </td>
+                        <td valign="top">:
+                        </td>
+                        <td valign="top" align="left" style="width: 200px">
+                            <asp:Label ID="lblPracticalName" runat="server" Text=""></asp:Label>
+                        </td>
+                        <td valign="top" align="right">Practical Code
+                        </td>
+                        <td>:
+                        </td>
+                        <td valign="top" align="left">
+                            <asp:Label ID="lblPracticalCode" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left">Course
+                        </td>
+                        <td valign="top">:
+                        </td>
+                        <td valign="top" align="left">
+                            <asp:Label ID="lblCourse" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="lblCourseID" runat="server" Text="" Visible="false"></asp:Label>
+                        </td>
+                        <td valign="top" align="right">Year
+                        </td>
+                        <td>:
+                        </td>
+                        <td valign="top" align="left">
+                            <asp:Label ID="lblYear" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">A.F. Code
+                        </td>
+                        <td>:
+                        </td>
+                        <td align="left">
+                            <asp:Label ID="lblSCCode" runat="server" Text=""></asp:Label>
+                        </td>
+                        <td align="right">Max. Marks
+                        </td>
+                        <td>:
+                        </td>
+                        <td align="left">
+                            <asp:Label ID="lblMMarks" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                </table>
             </asp:Panel>
         </div>
         <div style="padding-top: 20px">
@@ -160,8 +149,8 @@
                         <tr>
                             <td align="left" style="width: 50px">
                                 <asp:Label ID="lblSNo" runat="server" Text='<%#Eval("SNo")%>'></asp:Label>
-                                <asp:Label ID="lblSRID" runat="server" Text='<%#Eval("SRID")%>' Visible="false"></asp:Label>                            
-                                 <asp:Label ID="lblMOE" runat="server" Text='<%#Eval("MOE")%>' Visible="false"></asp:Label>                                                                                              
+                                <asp:Label ID="lblSRID" runat="server" Text='<%#Eval("SRID")%>' Visible="false"></asp:Label>
+                                <asp:Label ID="lblMOE" runat="server" Text='<%#Eval("MOE")%>' Visible="false"></asp:Label>
                             </td>
                             <td align="right" style="width: 120px; padding-right: 30px">
                                 <asp:Label ID="lblENo" runat="server" Text='<%#Eval("EnrollmentNo")%>'></asp:Label>
@@ -179,9 +168,9 @@
                 </ItemTemplate>
             </asp:DataList>
         </div>
-         <div style="padding-top: 5px">
-                    <asp:Button ID="btnUploadMarks" runat="server" Visible="false" Text="Upload Marks" OnClick="btnUploadMarks_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
+        <div style="padding-top: 5px">
+            <asp:Button ID="btnUploadMarks" runat="server" Visible="false" Text="Upload Marks" OnClick="btnUploadMarks_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
     </asp:Panel>
     <asp:Panel ID="pnlMSG" runat="server" CssClass="msgpnl" Visible="false">
         <table class="tableStyle2">
@@ -191,8 +180,8 @@
                 </td>
             </tr>
         </table>
-         <div style="padding-top: 10px">
-                <asp:Button ID="btnOK" runat="server" Text="OK" Width="60px" Visible="false" OnClick="btnOK_Click" />
-            </div>
+        <div style="padding-top: 10px">
+            <asp:Button ID="btnOK" runat="server" Text="OK" Width="60px" Visible="false" OnClick="btnOK_Click" />
+        </div>
     </asp:Panel>
 </asp:Content>

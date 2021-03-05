@@ -22,7 +22,7 @@
                                 <asp:ListItem>Q 2019-20</asp:ListItem>
                                 <asp:ListItem>A 2019-20</asp:ListItem>
                                 <asp:ListItem>Q 2019</asp:ListItem>
-                                <asp:ListItem>C 2019</asp:ListItem
+                                <asp:ListItem>C 2019</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                       
