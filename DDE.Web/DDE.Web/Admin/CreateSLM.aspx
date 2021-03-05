@@ -68,16 +68,48 @@
                                 <td valign="top">
                                     <asp:Panel ID="pnlCourseDetails" runat="server" GroupingText="Attached Courses">
                                         <div style="padding: 10px">
-                                            <asp:DropDownList ID="ddlistCourse" Width="200px" runat="server">
-                                                <asp:ListItem Value="0">--SELECT COURSE--</asp:ListItem>
+                                            <table cellspacing="10px">
+                                                <tr>
+                                                    <td>
+                                                        Syllabus Session
+                                                    </td>
+                                                    <td>
+                                                         <asp:DropDownList ID="ddlistSS" Width="200px"  runat="server">
+                                                            <asp:ListItem Value="0">--SELECT ONE--</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Course
+                                                    </td>
+                                                    <td>
+                                                         <asp:DropDownList ID="ddlistCourse" Width="200px" runat="server">
+                                                <asp:ListItem Value="0">--SELECT ONE--</asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:DropDownList ID="ddlistYear" runat="server">
-                                                <asp:ListItem Value="0">--SELECT YEAR--</asp:ListItem>
-                                                <asp:ListItem Value="1">1ST YEAR</asp:ListItem>
-                                                <asp:ListItem Value="2">2ND YEAR</asp:ListItem>
-                                                <asp:ListItem Value="3">3RD YEAR</asp:ListItem>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Year
+                                                    </td>
+                                                    <td>
+                                                        <asp:DropDownList ID="ddlistYear" runat="server">
+                                                <asp:ListItem Value="0">--SELECT ONE--</asp:ListItem>
+                                                <asp:ListItem Value="1">1</asp:ListItem>
+                                                <asp:ListItem Value="2">2</asp:ListItem>
+                                                <asp:ListItem Value="3">3</asp:ListItem>
+                                                <asp:ListItem Value="4">4</asp:ListItem>
+                                                <asp:ListItem Value="5">5</asp:ListItem>
+                                                <asp:ListItem Value="6">6</asp:ListItem>
                                             </asp:DropDownList>
-                                            &nbsp;&nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                           
+                                            
+                                       
                                             <asp:Button ID="btnAdd" Width="60px" runat="server" Text="Add" OnClick="btnAdd_Click" />
                                         </div>
                                         <div>

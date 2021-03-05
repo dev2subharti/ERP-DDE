@@ -1021,6 +1021,8 @@ namespace DDE.DAL
             return qs;
         }
 
+      
+
         public static int findYearOfPractical(int pracid)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
@@ -7681,6 +7683,40 @@ namespace DDE.DAL
             return exam;
         }
 
+        public static string findApplicableExamByBatch(string batch, int at)
+        {
+            string exam = "NF";
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+            SqlDataReader dr;
+            SqlCommand cmd = new SqlCommand("Select ApplicableExam,EvenExam from DDESession where Session='" + batch + "' ", con);
+
+            con.Open();
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                if(batch=="C 2020" || batch=="Q 2020")
+                {
+                    if(at==1)
+                    {
+                        exam = dr["EvenExam"].ToString();
+                    }
+                    else
+                    {
+                        exam = dr["ApplicableExam"].ToString();
+                    }
+                }
+                else
+                {
+                    exam = dr["ApplicableExam"].ToString();
+                }
+                
+            }
+            con.Close();
+
+            return exam;
+        }
         public static string findApplicableExamByBatchID(int batchid)
         {
             string exam = "NF";
@@ -8874,6 +8910,31 @@ namespace DDE.DAL
             return det;
         }
 
+        public static string[] findSpecAFCodes()
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+            SqlCommand cmd = new SqlCommand();
+           
+            cmd.CommandText = "Select AFCode from DDESpecialAF order by AFCode";
+            
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            string[] det = new string[ds.Tables[0].Rows.Count];
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    det[i] = ds.Tables[0].Rows[i]["AFCode"].ToString();
+                }
+            }
+
+            return det;
+        }
         public static string[] findAllDetainedStudentsForSLM()
         {
 

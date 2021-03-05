@@ -113,7 +113,7 @@ namespace DDE.Web.Admin
         private void populateSubjects()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-            SqlCommand cmd = new SqlCommand("Select * from DDESubject where SyllabusSession='"+ddlistSySession.SelectedItem.Text+"' and CourseName='"+ddlistCourse.SelectedItem.Text+"' and Year='"+ddlistYear.Text+"' order by SubjectSNo ", con);
+            SqlCommand cmd = new SqlCommand("Select * from DDESubject where SyllabusSession='"+ddlistSySession.SelectedItem.Text+"' and CourseID='"+ddlistCourse.SelectedItem.Value+"' and NYear='"+ddlistYear.SelectedItem.Value+"' order by SubjectSNo ", con);
             con.Open();
             SqlDataReader dr;
 

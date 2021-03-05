@@ -20,10 +20,8 @@ namespace DDE.Web.Admin
 
                 if (!IsPostBack)
                 {
-                    populateSLMCodes();
-                    populateAttachedCourses();
-                    setAccessbility();
-                   
+                    PopulateDDList.populateSySession(ddlistSS);
+
                 }
 
                 pnlData.Visible = true;
@@ -138,7 +136,7 @@ namespace DDE.Web.Admin
         private void populateSLMCodes()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-            SqlCommand cmd = new SqlCommand("Select * from DDESLMMaster order by SLMCode", con);
+            SqlCommand cmd = new SqlCommand("Select * from DDESLMMaster where SyllabusSession='"+ddlistSS.SelectedItem.Text+"' order by SLMCode", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -188,6 +186,11 @@ namespace DDE.Web.Admin
 
         }
 
-      
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            populateSLMCodes();
+            populateAttachedCourses();
+            setAccessbility();
+        }
     }
 }

@@ -433,7 +433,7 @@ namespace DDE.Web.Admin
                         rfvAaNo.Enabled = false;
                         revAaNo.Enabled = false;
                     }
-                    setExam(ddlistSession.SelectedItem.Text);
+                   
                     setCorrectText(ddlistSySession, dr["SyllabusSession"].ToString().TrimEnd());
                     tbENo.Text = "";
                     tbICNo.Text = "";
@@ -470,8 +470,8 @@ namespace DDE.Web.Admin
                         setCorrectValue(ddlistPreCourse, dr["PreviousCourse"].ToString(), "PreviousCourse");
                         pnlCT.Visible = true;
                     }
-
-                    if (ddlistStudyCentre.SelectedItem.Value != "0")
+                setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
+                if (ddlistStudyCentre.SelectedItem.Value != "0")
                     {
                         PopulateDDList.populateCoursesBySCStreamsandAT(ddlistCourses, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value), Convert.ToInt32(ddlistStudyCentre.SelectedItem.Value));
                     }
@@ -1920,12 +1920,19 @@ namespace DDE.Web.Admin
                 tbENo.Enabled = false;
             }
 
-            setExam(ddlistSession.SelectedItem.Text);
+            if(Convert.ToInt32(ddlistSession.SelectedItem.Value)>=25)
+            {
+                ddlistSySession.Items.FindByText("A 2020-21").Selected = true;
+                ddlistSySession.Enabled = false;
+            }
+
+            setExam(ddlistSession.SelectedItem.Text, Convert.ToInt32(ddlistAdmissionType.SelectedItem.Value));
+            
         }
 
-        private void setExam(string batch)
+        private void setExam(string batch, int at)
         {
-            string exam = FindInfo.findApplicableExamByBatch(batch);
+            string exam = FindInfo.findApplicableExamByBatch(batch,at);
             ddlistExamination.Enabled = true;
             ddlistExamination.SelectedItem.Selected = false;
             ddlistExamination.Items.FindByValue(exam).Selected = true;

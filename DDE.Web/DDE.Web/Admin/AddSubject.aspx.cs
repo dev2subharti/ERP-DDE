@@ -51,7 +51,7 @@ namespace DDE.Web.Admin
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlDataReader dr;
-            SqlCommand cmd = new SqlCommand("Select SySession from DDESySession ", con);
+            SqlCommand cmd = new SqlCommand("Select SySession from DDESySession order by SySessionID DESC ", con);
             con.Open();
             dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -126,7 +126,7 @@ namespace DDE.Web.Admin
                 if (!FindInfo.isSubjectExist(ddlistSySession.SelectedItem.Text, ddlistCourse.SelectedItem.Text, tbSubCode.Text))
                 {
                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                    SqlCommand cmd = new SqlCommand("insert into DDESubject values(@SyllabusSession,@CourseName,@Year,@SubjectSNo,@PaperCode,@SubjectCode,@SubjectName)", con);
+                    SqlCommand cmd = new SqlCommand("insert into DDESubject values(@SyllabusSession,@CourseName,@Year,@SubjectSNo,@PaperCode,@SubjectCode,@SubjectName,@NYear,@CourseID)", con);
 
 
                     cmd.Parameters.AddWithValue("@SyllabusSession", ddlistSySession.SelectedItem.Text);
@@ -136,6 +136,8 @@ namespace DDE.Web.Admin
                     cmd.Parameters.AddWithValue("@PaperCode", tbPaperCode.Text);
                     cmd.Parameters.AddWithValue("@SubjectCode", tbSubCode.Text);
                     cmd.Parameters.AddWithValue("@SubjectName", tbSubName.Text);
+                    cmd.Parameters.AddWithValue("@NYear",Convert.ToInt32(ddlistYear.SelectedItem.Value));
+                    cmd.Parameters.AddWithValue("@CourseID", Convert.ToInt32(ddlistCourse.SelectedItem.Value));
 
 
 
@@ -160,7 +162,7 @@ namespace DDE.Web.Admin
             else if (Request.QueryString["SubjectID"] != null)
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                SqlCommand cmd = new SqlCommand("update DDESubject set SyllabusSession=@SyllabusSession,CourseName=@CourseName,Year=@Year,SubjectSNo=@SubjectSNo,PaperCode=@PaperCode,SubjectCode=@SubjectCode,SubjectName=@SubjectName where SubjectID='" + Request.QueryString["SubjectID"] + "' ", con);
+                SqlCommand cmd = new SqlCommand("update DDESubject set SyllabusSession=@SyllabusSession,CourseName=@CourseName,Year=@Year,SubjectSNo=@SubjectSNo,PaperCode=@PaperCode,SubjectCode=@SubjectCode,SubjectName=@SubjectName,NYear=@NYear,CourseID=@CourseID where SubjectID='" + Request.QueryString["SubjectID"] + "' ", con);
 
                 cmd.Parameters.AddWithValue("@SyllabusSession", ddlistSySession.SelectedItem.Text);
                 cmd.Parameters.AddWithValue("@CourseName", ddlistCourse.SelectedItem.Text);
@@ -169,7 +171,8 @@ namespace DDE.Web.Admin
                 cmd.Parameters.AddWithValue("@PaperCode", tbPaperCode.Text);
                 cmd.Parameters.AddWithValue("@SubjectCode", tbSubCode.Text);
                 cmd.Parameters.AddWithValue("@SubjectName", tbSubName.Text);
-
+                cmd.Parameters.AddWithValue("@NYear", Convert.ToInt32(ddlistYear.SelectedItem.Value));
+                cmd.Parameters.AddWithValue("@CourseID", Convert.ToInt32(ddlistCourse.SelectedItem.Value));
 
 
 
@@ -181,6 +184,7 @@ namespace DDE.Web.Admin
                 pnlData.Visible = false;
                 lblMSG.Text = "Subject has been updated successfully";
                 pnlMSG.Visible = true;
+              
 
 
 

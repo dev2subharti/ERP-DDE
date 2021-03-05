@@ -127,8 +127,7 @@
                                                         <b>ISSUING BANK NAME</b>
                                                     </td>
                                                     <td align="left">
-                                                        <asp:TextBox ID="tbIBN" runat="server" TextMode="MultiLine" ForeColor="Black"></asp:TextBox><br />
-                                                        <asp:RequiredFieldValidator ID="rfvIBN" runat="server" ControlToValidate="tbIBN" ErrorMessage="Please IBN"></asp:RequiredFieldValidator>
+                                                        <asp:DropDownList ID="ddlistIBN" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
                                                 <tr>

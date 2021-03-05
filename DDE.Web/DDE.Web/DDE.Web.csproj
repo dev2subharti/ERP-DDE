@@ -211,7 +211,6 @@
     <Content Include="Admin\ShowDAProofReading.aspx" />
     <Content Include="Admin\ShowDAStatus.aspx" />
     <Content Include="Admin\ShowDateSheet.aspx" />
-    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowDegreeRequests.aspx" />
     <Content Include="Admin\ShowDStudent.aspx" />
     <Content Include="Admin\ShowECLogins.aspx" />
@@ -240,6 +239,7 @@
     <Content Include="Admin\ShowOnlineREApplications.aspx" />
     <Content Include="Admin\ShowPracticalAS.aspx" />
     <Content Include="Admin\ShowProcessedSLMLetters.aspx" />
+    <Content Include="Admin\ShowProvisionalDegree.aspx" />
     <Content Include="Admin\ShowQuestionPaper.aspx" />
     <Content Include="Admin\ShowQuestions.aspx" />
     <Content Include="Admin\ShowReappearExamReport.aspx" />
@@ -254,7 +254,6 @@
     <Content Include="Admin\ShowSLMStockBook.aspx" />
     <Content Include="Admin\ShowStudentsCourseWise.aspx" />
     <Content Include="Admin\ShowVerificationLetters.aspx" />
-    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\SLMLetter.aspx" />
     <Content Include="Admin\SLMSellLetter.aspx" />
     <Content Include="Admin\UpdateASAllotment.aspx" />
@@ -275,6 +274,12 @@
     <Content Include="Admin\VerifyRefund.aspx" />
     <Content Include="BarCode.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\com.dll" />
+    <Content Include="bin\DDE.DAL.dll" />
+    <Content Include="bin\DDE.DAL.pdb" />
+    <Content Include="bin\DDE.Web.dll" />
+    <Content Include="bin\DDE.Web.pdb" />
+    <Content Include="bin\QRCoder.dll" />
     <Content Include="ChangeCourse.aspx" />
     <Content Include="CSS\DateSheet.css" />
     <Content Include="CSS\DDE.css" />
@@ -828,6 +833,13 @@
     </Compile>
     <Compile Include="Admin\ProcessSLMLetter.aspx.designer.cs">
       <DependentUpon>ProcessSLMLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\PublishAdmitCard.aspx.cs">
       <DependentUpon>PublishAdmitCard.aspx</DependentUpon>
@@ -1423,13 +1435,6 @@
     <Compile Include="Admin\ShowDCDetails.aspx.designer.cs">
       <DependentUpon>ShowDCDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
-      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
-      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ShowDegreeRequests.aspx.cs">
       <DependentUpon>ShowDegreeRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1632,6 +1637,13 @@
     </Compile>
     <Compile Include="Admin\ShowProcessedSLMLetters.aspx.designer.cs">
       <DependentUpon>ShowProcessedSLMLetters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowProvisionalDegree.aspx.designer.cs">
+      <DependentUpon>ShowProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ShowQuestionPaper.aspx.cs">
       <DependentUpon>ShowQuestionPaper.aspx</DependentUpon>
@@ -1905,13 +1917,6 @@
     </Compile>
     <Compile Include="Admin\ShowVerifiedDraft.aspx.designer.cs">
       <DependentUpon>ShowVerifiedDraft.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ProvisionalDegree.aspx.cs">
-      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ProvisionalDegree.aspx.designer.cs">
-      <DependentUpon>ProvisionalDegree.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\SLMLetter.aspx.cs">
       <DependentUpon>SLMLetter.aspx</DependentUpon>
@@ -2709,9 +2714,11 @@
     <Content Include="Admin\StudentImgHandler.ashx" />
     <Content Include="Admin\QPImgHandler.ashx" />
     <Content Include="Admin\Question.ashx" />
+    <None Include="bin\DDE.Web.dll.config" />
     <None Include="CSS\images\Thumbs.db" />
     <None Include="Images\Untitled-1.psd" />
     <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -2892,6 +2899,7 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll" />
+    <Analyzer Include="bin\AjaxControlToolkit.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

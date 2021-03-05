@@ -24,6 +24,7 @@ namespace DDE.Web.Admin
                     if (!IsPostBack)
                     {                       
                         populateFeeHeads();
+                        PopulateDDList.populateBanks(ddlistIBN);
                         populateInstrumentDetails();
                         if (Accounts.isInstrumentVerified(Convert.ToInt32(Request.QueryString["IID"])))
                         {
@@ -57,6 +58,7 @@ namespace DDE.Web.Admin
                     if (!IsPostBack)
                     {                     
                         populateFeeHeads();
+                        PopulateDDList.populateBanks(ddlistIBN);
                         setTodayDate();
                     }
 
@@ -70,6 +72,8 @@ namespace DDE.Web.Admin
                     pnlMSG.Visible = true;
                 }
             }
+
+
         }
 
         private void setTodayDate()
@@ -89,7 +93,7 @@ namespace DDE.Web.Admin
             ddlistDDDay.Enabled = false;
             ddlistDDMonth.Enabled = false;
             ddlistDDYear.Enabled = false;
-            tbIBN.Enabled = false;
+            ddlistIBN.Enabled = false;
             tbTotalAmount.Enabled = false;
         }
 
@@ -116,9 +120,9 @@ namespace DDE.Web.Admin
                 ddlistDDDay.Items.FindByText(dr["IDate"].ToString().Substring(8,2)).Selected = true;
                 ddlistDDMonth.Items.FindByValue(dr["IDate"].ToString().Substring(5,2)).Selected = true;
                 ddlistDDYear.Items.FindByText(dr["IDate"].ToString().Substring(0,4)).Selected = true;
-              
 
-                tbIBN.Text = dr["IBN"].ToString().ToUpper();
+
+                ddlistIBN.Items.FindByText(dr["IBN"].ToString().ToUpper()).Selected = true;
               
                 tbTotalAmount.Text = Convert.ToInt32(dr["TotalAmount"]).ToString();
                 tbSCCode.Text= dr["SCCode"].ToString();
@@ -240,8 +244,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
              
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+               
+                ddlistIBN.Enabled = true;
 
                
 
@@ -254,8 +258,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
 
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+              
+                ddlistIBN.Enabled = true;
 
 
 
@@ -268,8 +272,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
 
-                tbIBN.Text = "NA";
-                tbIBN.Enabled = false;
+                ddlistIBN.Items.FindByText("NA").Selected = true;
+                ddlistIBN.Enabled = false;
 
 
 
@@ -282,8 +286,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = "";
                 tbDNo.Enabled = true;
 
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+              
+                ddlistIBN.Enabled = true;
 
 
 
@@ -298,8 +302,8 @@ namespace DDE.Web.Admin
                     tbDNo.Text = FindInfo.findDFRNo();
                     tbDNo.Enabled = false;
 
-                    tbIBN.Text = "NA";
-                    tbIBN.Enabled = false; ;
+                    ddlistIBN.Items.FindByText("NA").Selected = true;
+                    ddlistIBN.Enabled = false; ;
 
 
 
@@ -325,8 +329,8 @@ namespace DDE.Web.Admin
                 tbDNo.Text = FindInfo.findDCTNo();
                 tbDNo.Enabled = false;
 
-                tbIBN.Text = "";
-                tbIBN.Enabled = true;
+               
+                ddlistIBN.Enabled = true;
 
 
 
@@ -338,114 +342,124 @@ namespace DDE.Web.Admin
 
         protected void btnReceive_Click(object sender, EventArgs e)
         {
-            if (btnReceive.Text == "Receive")
-            {
-                if (tbDNo.Text != "" && tbIBN.Text != "" && tbTotalAmount.Text != "")
+           
+                if (btnReceive.Text == "Receive")
                 {
-                    if (ddlistDraftType.SelectedItem.Text != "--SELECT ONE--")
+                    if (tbDNo.Text != "" && tbTotalAmount.Text != "")
                     {
-                        if (ddlistRemark.SelectedItem.Text != "--SELECT ONE--")
+                        if (ddlistDraftType.SelectedItem.Text != "--SELECT ONE--")
                         {
-                             string idate = ddlistDDYear.SelectedItem.Text + "-" + ddlistDDMonth.SelectedItem.Value + "-" + ddlistDDDay.SelectedItem.Text;
-
-                            if (!Accounts.instrumentExist(tbDNo.Text,Convert.ToInt32(ddlistDraftType.SelectedItem.Value) ,tbIBN.Text, idate))
+                            if (ddlistRemark.SelectedItem.Text != "--SELECT ONE--")
                             {
-                                try
+                                string idate = ddlistDDYear.SelectedItem.Text + "-" + ddlistDDMonth.SelectedItem.Value + "-" + ddlistDDDay.SelectedItem.Text;
+
+                                if (!Accounts.instrumentExist(tbDNo.Text, Convert.ToInt32(ddlistDraftType.SelectedItem.Value), ddlistIBN.SelectedItem.Text, idate))
                                 {
-                                    string fhs = calculateAFH();
-                                    if (fhs != "")
+                                    try
                                     {
-                                        if (valisSCCodes())
+                                        string fhs = calculateAFH();
+                                        if (fhs != "")
                                         {
-                                          
-                                            if (FindInfo.isValidDate(idate))
+                                            if (valisSCCodes())
                                             {
 
-                                                string sc = "";
-                                                if (tbSCCode.Text == "" && tbProSCCode.Text != "")
-                                                {
-                                                    sc = tbProSCCode.Text;
-                                                }
-                                                else if (tbSCCode.Text != "" && tbProSCCode.Text == "")
-                                                {
-                                                    sc = tbSCCode.Text;
-                                                }
-                                                else if (tbSCCode.Text != "" && tbProSCCode.Text != "")
-                                                {
-                                                    sc = tbSCCode.Text + "," + tbProSCCode.Text;
-                                                }
-
-                                                string[] str = sc.Split(',');
-
-                                                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                                                SqlCommand cmd = new SqlCommand("insert into DDEFeeInstruments values(@RG,@Lock,@LockRemark,@IType,@INo,@IDate,@IBN,@TotalAmount,@SCMode,@SCCode,@Received,@ReceivedOn,@ReceivedBy,@Verified,@VerifiedOn,@AmountReceivedOn,@VerifiedBy,@AmountAlloted,@AllotedOn,@AllotedBy,@AllotedFeeHeads,@Remark,@Balance,@FH1,@FH2,@FH3,@FH4,@FH5,@FH5,@FH7,@FH8,@FH9,@FH10,@FH11,@FH12,@FH13,@FH14,@FH15,@FH16,@FH17,@FH18,@FH19,@FH20,@FH21,@FH22,@FH23,@FH24,@FH25,@FH26,@FH27,@FH28,@FH29,@FH30,@FH31,@FH32,@FH33,@FH34,@FH35,@FH36,@FH37,@FH38,@FH39,@FH40,@FH41,@FH42,@FH43,@FH44,@FH45,@FH46,@FH47,@FH48,@FH49,@FH50,@FH51,@FH52,@FH53,@FH54,@FH55,@FH56,@FH57,@FH58,@FH59,@FH60,@FH61,@FH62,@FH63,@FH64,@FH65,@FH66,@FH67)", con);
-
-                                                cmd.Parameters.AddWithValue("@RG", "False");
-                                                cmd.Parameters.AddWithValue("@Lock", "False");
-                                                cmd.Parameters.AddWithValue("@LockRemark", "");
-                                                cmd.Parameters.AddWithValue("@IType", ddlistDraftType.SelectedItem.Value);
-                                                cmd.Parameters.AddWithValue("@INo", tbDNo.Text);
-                                                cmd.Parameters.AddWithValue("@IDate", idate);
-                                                cmd.Parameters.AddWithValue("@IBN", tbIBN.Text.ToUpper());
-                                                cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToInt32(tbTotalAmount.Text));
-                                                if (str.Length == 1)
-                                                {
-                                                    cmd.Parameters.AddWithValue("@SCMode", "True");
-                                                }
-                                                else if (str.Length > 1)
-                                                {
-                                                    cmd.Parameters.AddWithValue("@SCMode", "False");
-                                                }
-                                                cmd.Parameters.AddWithValue("@SCCode", sc);
-                                                cmd.Parameters.AddWithValue("@Received", "True");
-                                                cmd.Parameters.AddWithValue("@ReceivedOn", DateTime.Now.ToString());
-                                                cmd.Parameters.AddWithValue("@ReceivedBy", Convert.ToInt32(Session["ERID"]));
-                                                cmd.Parameters.AddWithValue("@Verified", "False");
-                                                cmd.Parameters.AddWithValue("@VerifiedOn", "");
-                                                cmd.Parameters.AddWithValue("@AmountReceivedOn", "");
-                                                cmd.Parameters.AddWithValue("@VerifiedBy", 0);
-                                                cmd.Parameters.AddWithValue("@AmountAlloted", "False");
-                                                cmd.Parameters.AddWithValue("@AllotedOn", "");
-                                                cmd.Parameters.AddWithValue("@AllotedBy", 0);
-                                                cmd.Parameters.AddWithValue("@AllotedFeeHeads", fhs);
-                                                cmd.Parameters.AddWithValue("@Remark", Convert.ToInt32(ddlistRemark.SelectedItem.Value));
-                                                cmd.Parameters.AddWithValue("@Balance", 0);
-                                                int ta = 0;
-
-
-                                                for (int i = 1; i <= 67; i++)
+                                                if (FindInfo.isValidDate(idate))
                                                 {
 
-                                                    cmd.Parameters.AddWithValue("@FH" + i.ToString(), 0);
+                                                    string sc = "";
+                                                    if (tbSCCode.Text == "" && tbProSCCode.Text != "")
+                                                    {
+                                                        sc = tbProSCCode.Text;
+                                                    }
+                                                    else if (tbSCCode.Text != "" && tbProSCCode.Text == "")
+                                                    {
+                                                        sc = tbSCCode.Text;
+                                                    }
+                                                    else if (tbSCCode.Text != "" && tbProSCCode.Text != "")
+                                                    {
+                                                        sc = tbSCCode.Text + "," + tbProSCCode.Text;
+                                                    }
 
+                                                    string[] str = sc.Split(',');
+
+                                                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+                                                    SqlCommand cmd = new SqlCommand("insert into DDEFeeInstruments values(@RG,@Lock,@LockRemark,@IType,@INo,@IDate,@IBN,@TotalAmount,@SCMode,@SCCode,@Received,@ReceivedOn,@ReceivedBy,@Verified,@VerifiedOn,@AmountReceivedOn,@VerifiedBy,@AmountAlloted,@AllotedOn,@AllotedBy,@AllotedFeeHeads,@Remark,@Balance,@FH1,@FH2,@FH3,@FH4,@FH5,@FH5,@FH7,@FH8,@FH9,@FH10,@FH11,@FH12,@FH13,@FH14,@FH15,@FH16,@FH17,@FH18,@FH19,@FH20,@FH21,@FH22,@FH23,@FH24,@FH25,@FH26,@FH27,@FH28,@FH29,@FH30,@FH31,@FH32,@FH33,@FH34,@FH35,@FH36,@FH37,@FH38,@FH39,@FH40,@FH41,@FH42,@FH43,@FH44,@FH45,@FH46,@FH47,@FH48,@FH49,@FH50,@FH51,@FH52,@FH53,@FH54,@FH55,@FH56,@FH57,@FH58,@FH59,@FH60,@FH61,@FH62,@FH63,@FH64,@FH65,@FH66,@FH67)", con);
+
+                                                    cmd.Parameters.AddWithValue("@RG", "False");
+                                                    cmd.Parameters.AddWithValue("@Lock", "False");
+                                                    cmd.Parameters.AddWithValue("@LockRemark", "");
+                                                    cmd.Parameters.AddWithValue("@IType", ddlistDraftType.SelectedItem.Value);
+                                                    cmd.Parameters.AddWithValue("@INo", tbDNo.Text);
+                                                    cmd.Parameters.AddWithValue("@IDate", idate);
+                                                    cmd.Parameters.AddWithValue("@IBN", ddlistIBN.SelectedItem.Text.ToUpper());
+                                                    cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToInt32(tbTotalAmount.Text));
+                                                    if (str.Length == 1)
+                                                    {
+                                                        cmd.Parameters.AddWithValue("@SCMode", "True");
+                                                    }
+                                                    else if (str.Length > 1)
+                                                    {
+                                                        cmd.Parameters.AddWithValue("@SCMode", "False");
+                                                    }
+                                                    cmd.Parameters.AddWithValue("@SCCode", sc);
+                                                    cmd.Parameters.AddWithValue("@Received", "True");
+                                                    cmd.Parameters.AddWithValue("@ReceivedOn", DateTime.Now.ToString());
+                                                    cmd.Parameters.AddWithValue("@ReceivedBy", Convert.ToInt32(Session["ERID"]));
+                                                    cmd.Parameters.AddWithValue("@Verified", "False");
+                                                    cmd.Parameters.AddWithValue("@VerifiedOn", "");
+                                                    cmd.Parameters.AddWithValue("@AmountReceivedOn", "");
+                                                    cmd.Parameters.AddWithValue("@VerifiedBy", 0);
+                                                    cmd.Parameters.AddWithValue("@AmountAlloted", "False");
+                                                    cmd.Parameters.AddWithValue("@AllotedOn", "");
+                                                    cmd.Parameters.AddWithValue("@AllotedBy", 0);
+                                                    cmd.Parameters.AddWithValue("@AllotedFeeHeads", fhs);
+                                                    cmd.Parameters.AddWithValue("@Remark", Convert.ToInt32(ddlistRemark.SelectedItem.Value));
+                                                    cmd.Parameters.AddWithValue("@Balance", 0);
+                                                    int ta = 0;
+
+
+                                                    for (int i = 1; i <= 67; i++)
+                                                    {
+
+                                                        cmd.Parameters.AddWithValue("@FH" + i.ToString(), 0);
+
+                                                    }
+
+                                                    con.Open();
+                                                    cmd.ExecuteNonQuery();
+                                                    con.Close();
+
+                                                    if (ddlistDraftType.SelectedItem.Value == "5")
+                                                    {
+
+                                                        FindInfo.updateDRCounter(Convert.ToInt32(tbDNo.Text.Substring(3, (tbDNo.Text.Length - 3))));
+                                                    }
+                                                    else if (ddlistDraftType.SelectedItem.Value == "6")
+                                                    {
+
+                                                        FindInfo.updateCTCounter(Convert.ToInt32(tbDNo.Text.Substring(3, (tbDNo.Text.Length - 3))));
+                                                    }
+
+                                                    Log.createLogNow("Create", "Created a Fee Instrument '" + ddlistDraftType.SelectedItem.Text + " with No. '" + tbDNo.Text + "'", Convert.ToInt32(Session["ERID"]));
+                                                    pnlData.Visible = false;
+                                                    lblMSG.Text = "Instrument has been received successfully";
+                                                    pnlMSG.Visible = true;
+                                                    btnOK.Text = "Receive More Instrument";
+                                                    btnOK.Visible = true;
                                                 }
-
-                                                con.Open();
-                                                cmd.ExecuteNonQuery();
-                                                con.Close();
-
-                                                if (ddlistDraftType.SelectedItem.Value == "5")
+                                                else
                                                 {
-
-                                                    FindInfo.updateDRCounter(Convert.ToInt32(tbDNo.Text.Substring(3, (tbDNo.Text.Length - 3))));
+                                                    pnlData.Visible = false;
+                                                    lblMSG.Text = "Sorry ! Invalid date.";
+                                                    pnlMSG.Visible = true;
+                                                    btnOK.Text = "OK";
+                                                    btnOK.Visible = true;
                                                 }
-                                                else if (ddlistDraftType.SelectedItem.Value == "6")
-                                                {
-
-                                                    FindInfo.updateCTCounter(Convert.ToInt32(tbDNo.Text.Substring(3, (tbDNo.Text.Length - 3))));
-                                                }
-
-                                                Log.createLogNow("Create", "Created a Fee Instrument '" + ddlistDraftType.SelectedItem.Text + " with No. '" + tbDNo.Text + "'", Convert.ToInt32(Session["ERID"]));
-                                                pnlData.Visible = false;
-                                                lblMSG.Text = "Instrument has been received successfully";
-                                                pnlMSG.Visible = true;
-                                                btnOK.Text = "Receive More Instrument";
-                                                btnOK.Visible = true;
                                             }
                                             else
                                             {
                                                 pnlData.Visible = false;
-                                                lblMSG.Text = "Sorry ! Invalid date.";
+                                                lblMSG.Text = "Sorry ! Invalid SC Code.";
                                                 pnlMSG.Visible = true;
                                                 btnOK.Text = "OK";
                                                 btnOK.Visible = true;
@@ -454,30 +468,32 @@ namespace DDE.Web.Admin
                                         else
                                         {
                                             pnlData.Visible = false;
-                                            lblMSG.Text = "Sorry ! Invalid SC Code. Please fill correct SC Code";
+                                            lblMSG.Text = "Please select any Fee Head.";
                                             pnlMSG.Visible = true;
                                             btnOK.Text = "OK";
                                             btnOK.Visible = true;
                                         }
+
+
+
+
                                     }
-                                    else
+
+                                    catch (Exception er)
                                     {
                                         pnlData.Visible = false;
-                                        lblMSG.Text = "Please select any Fee Head.";
+                                        lblMSG.Text = er.Message;
                                         pnlMSG.Visible = true;
                                         btnOK.Text = "OK";
                                         btnOK.Visible = true;
                                     }
 
 
-
-
                                 }
-
-                                catch (Exception er)
+                                else
                                 {
                                     pnlData.Visible = false;
-                                    lblMSG.Text = er.Message;
+                                    lblMSG.Text = "Sorry !! this Instrument is already exist";
                                     pnlMSG.Visible = true;
                                     btnOK.Text = "OK";
                                     btnOK.Visible = true;
@@ -488,49 +504,38 @@ namespace DDE.Web.Admin
                             else
                             {
                                 pnlData.Visible = false;
-                                lblMSG.Text = "Sorry !! this Instrument is already exist";
+                                lblMSG.Text = "Please select any 'REMARK'";
                                 pnlMSG.Visible = true;
                                 btnOK.Text = "OK";
                                 btnOK.Visible = true;
                             }
 
-
                         }
                         else
                         {
                             pnlData.Visible = false;
-                            lblMSG.Text = "Please select any 'REMARK'";
+                            lblMSG.Text = "Please select any 'INTRUMENT TYPE'";
                             pnlMSG.Visible = true;
                             btnOK.Text = "OK";
                             btnOK.Visible = true;
                         }
-
                     }
                     else
                     {
                         pnlData.Visible = false;
-                        lblMSG.Text = "Please select any 'INTRUMENT TYPE'";
+                        lblMSG.Text = "Please check !! you have missed any entry";
                         pnlMSG.Visible = true;
                         btnOK.Text = "OK";
                         btnOK.Visible = true;
                     }
                 }
-                else
+                else if (btnReceive.Text == "Update")
                 {
-                    pnlData.Visible = false;
-                    lblMSG.Text = "Please check !! you have missed any entry";
-                    pnlMSG.Visible = true;
-                    btnOK.Text = "OK";
-                    btnOK.Visible = true;
-                }
-            }
-            else if (btnReceive.Text == "Update")
-            {
-                if (ddlistDraftType.SelectedItem.Text != "--SELECT ONE--")
-                {
-                    if (ddlistRemark.SelectedItem.Text != "--SELECT ONE--")
+                    if (ddlistDraftType.SelectedItem.Text != "--SELECT ONE--")
                     {
-                
+                        if (ddlistRemark.SelectedItem.Text != "--SELECT ONE--")
+                        {
+
                             try
                             {
                                 string fhs = calculateAFH();
@@ -543,7 +548,7 @@ namespace DDE.Web.Admin
                                         string sc = "";
                                         if (tbSCCode.Text == "" && tbProSCCode.Text != "")
                                         {
-                                            sc=tbProSCCode.Text;
+                                            sc = tbProSCCode.Text;
                                         }
                                         else if (tbSCCode.Text != "" && tbProSCCode.Text == "")
                                         {
@@ -551,7 +556,7 @@ namespace DDE.Web.Admin
                                         }
                                         else if (tbSCCode.Text != "" && tbProSCCode.Text != "")
                                         {
-                                            sc = tbSCCode.Text+","+tbProSCCode.Text;
+                                            sc = tbSCCode.Text + "," + tbProSCCode.Text;
                                         }
 
                                         string[] str = sc.Split(',');
@@ -562,7 +567,7 @@ namespace DDE.Web.Admin
                                         cmd.Parameters.AddWithValue("@IType", ddlistDraftType.SelectedItem.Value);
                                         cmd.Parameters.AddWithValue("@INo", tbDNo.Text);
                                         cmd.Parameters.AddWithValue("@IDate", idate);
-                                        cmd.Parameters.AddWithValue("@IBN", tbIBN.Text.ToUpper());
+                                        cmd.Parameters.AddWithValue("@IBN", ddlistIBN.SelectedItem.Text.ToUpper());
                                         cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToInt32(tbTotalAmount.Text));
                                         if (str.Length == 1)
                                         {
@@ -594,12 +599,12 @@ namespace DDE.Web.Admin
                                         {
 
                                             SqlConnection con2 = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                                            SqlCommand cmd2 = new SqlCommand("update [DDEFeeRecord_" + dr1["AcountSession"].ToString() + "] set PaymentMode=@PaymentMode,DCNumber=@DCNumber,DCDate=@DCDate,IBN=@IBN,TotalDCAmount=@TotalDCAmount where DCNumber='" + tbDNo.Text + "' and DCDate='" + dcdate + "' and IBN='" + tbIBN.Text + "' ", con2);
+                                            SqlCommand cmd2 = new SqlCommand("update [DDEFeeRecord_" + dr1["AcountSession"].ToString() + "] set PaymentMode=@PaymentMode,DCNumber=@DCNumber,DCDate=@DCDate,IBN=@IBN,TotalDCAmount=@TotalDCAmount where DCNumber='" + tbDNo.Text + "' and DCDate='" + dcdate + "' and IBN='" + ddlistIBN.SelectedItem.Text + "' ", con2);
 
                                             cmd2.Parameters.AddWithValue("@PaymentMode", ddlistDraftType.SelectedItem.Value);
                                             cmd2.Parameters.AddWithValue("@DCNumber", tbDNo.Text);
                                             cmd2.Parameters.AddWithValue("@DCDate", dcdate);
-                                            cmd2.Parameters.AddWithValue("@IBN", tbIBN.Text);
+                                            cmd2.Parameters.AddWithValue("@IBN", ddlistIBN.SelectedItem.Text);
                                             cmd2.Parameters.AddWithValue("@TotalDCAmount", tbTotalAmount.Text);
 
                                             cmd2.Connection = con2;
@@ -608,7 +613,7 @@ namespace DDE.Web.Admin
                                             con2.Close();
                                         }
                                         con1.Close();
-            
+
 
 
 
@@ -626,7 +631,7 @@ namespace DDE.Web.Admin
                                         btnOK.Visible = true;
                                     }
 
-                                    
+
                                 }
                                 else
                                 {
@@ -651,26 +656,28 @@ namespace DDE.Web.Admin
                                 btnOK.Visible = true;
                             }
 
+                        }
+                        else
+                        {
+                            pnlData.Visible = false;
+                            lblMSG.Text = "Please select any 'REMARK'";
+                            pnlMSG.Visible = true;
+                            btnOK.Text = "OK";
+                            btnOK.Visible = true;
+                        }
+
                     }
                     else
                     {
                         pnlData.Visible = false;
-                        lblMSG.Text = "Please select any 'REMARK'";
+                        lblMSG.Text = "Please select any 'INSTRUMENT TYPE'";
                         pnlMSG.Visible = true;
                         btnOK.Text = "OK";
                         btnOK.Visible = true;
                     }
-
                 }
-                else
-                {
-                    pnlData.Visible = false;
-                    lblMSG.Text = "Please select any 'INSTRUMENT TYPE'";
-                    pnlMSG.Visible = true;
-                    btnOK.Text = "OK";
-                    btnOK.Visible = true;
-                } 
-            }
+            
+           
         }
 
         private bool valisSCCodes()
@@ -680,6 +687,37 @@ namespace DDE.Web.Admin
            
             string[] str = tbSCCode.Text.Split(',');
             string[] pstr = tbProSCCode.Text.Split(',');
+
+            
+            //bool isspecafcode = false;
+
+            //string [] specafcode = FindInfo.findSpecAFCodes();
+
+            //for(int s=0; s<str.Length; s++)
+            //{
+                //int pos = Array.IndexOf(specafcode, str[s]);
+
+                //if (pos > -1)
+                //{
+                    //isspecafcode = true;
+                //}
+            //}
+
+           
+            //if(isspecafcode==true)
+            //{
+                //if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 77))
+                //{                 
+                    //val = true;
+                //}
+                //else
+                //{
+                    //val = false;
+                    //goto last;
+
+                //}
+            //}
+                   
 
             if (tbSCCode.Text != "")
             {
@@ -754,7 +792,7 @@ namespace DDE.Web.Admin
             {
                 val = true;
             }
-
+            last:
             return val;
 
         }

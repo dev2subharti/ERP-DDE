@@ -278,7 +278,7 @@ namespace DDE.Web.Admin
                 lblCID.Text = dr["Course"].ToString();
                 lblSySession.Text = dr["SyllabusSession"].ToString();             
                
-                lblRNo.Text = FindInfo.findRollNoBySRID(Convert.ToInt32(srid), Session["ExamCode"].ToString(), Session["ResultType"].ToString());
+                lblRNo.Text = FindInfo.findRollNoBySRID1(Convert.ToInt32(srid),Convert.ToInt32(Session["Year"]), Session["ExamCode"].ToString(), Session["ResultType"].ToString());
      
                 lblExamination.Text = Session["ExamName"].ToString();              
 

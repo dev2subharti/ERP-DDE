@@ -16,6 +16,8 @@
                         <asp:DropDownList ID="ddlistExam" AutoPostBack="true" Width="150px" runat="server"
                             OnSelectedIndexChanged="ddlistExam_SelectedIndexChanged">
                             <asp:ListItem>--SELECT ONE--</asp:ListItem>
+                            <asp:ListItem Value="W12">JUNE 2021</asp:ListItem>
+                             <asp:ListItem Value="G10">MARCH 2021</asp:ListItem>
                             <asp:ListItem Value="Z11">DECEMBER 2020</asp:ListItem>
                             <asp:ListItem Value="W11">JUNE 2020</asp:ListItem>
                              <asp:ListItem Value="Z10">DECEMBER 2019</asp:ListItem>                   
