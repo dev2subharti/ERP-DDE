@@ -49,7 +49,7 @@ namespace DDE.Web.Admin
             {
 
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSonlineexam"].ToString());
-                SqlCommand cmd = new SqlCommand("select QuestionPapers.QSNo,QuestionPapers.QID,QuestionBank.QT,QuestionBank.Question,QuestionBank.A,QuestionBank.B,QuestionBank.C,QuestionBank.D from QuestionPapers inner join QuestionBank on QuestionPapers.QID=QuestionBank.QID where QuestionPapers.ExamCode='" + lblExamCode.Text + "' and QuestionPapers.PaperCode='" + lblPaperCode.Text + "' and QuestionPapers.MOE='" + lblMOE.Text + "' order by QuestionPapers.QSNo", con);
+                SqlCommand cmd = new SqlCommand("select QuestionPapers.QSNo,QuestionPapers.QID,QuestionBank.QT,QuestionBank.Question,QuestionBank.A,QuestionBank.B,QuestionBank.C,QuestionBank.D from QuestionPapers inner join QuestionBank_Semester QuestionBank on QuestionPapers.QID=QuestionBank.QID where QuestionPapers.ExamCode='" + lblExamCode.Text + "' and QuestionPapers.PaperCode='" + lblPaperCode.Text + "' and QuestionPapers.MOE='" + lblMOE.Text + "' order by QuestionPapers.QSNo", con);
                 //SqlCommand cmd = new SqlCommand("select top 60 * from QuestionBank where PaperCode='" + Session["PaperCode"].ToString() + "'", con);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

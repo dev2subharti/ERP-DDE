@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DDE.Web.Admin {
-    
-    
-    public partial class ShowProvisionalDegree {
-        
+namespace DDE.Web.Admin
+{
+
+
+    public partial class ShowProvisionalDegree
+    {
+
         /// <summary>
         /// pnlData control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlData;
-        
+
         /// <summary>
         /// ddlistExam control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlistExam;
-        
+
         /// <summary>
         /// tbENo control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbENo;
-        
+
         /// <summary>
         /// txtStudentName control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentName;
-        
+
         /// <summary>
         /// txtFName control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFName;
-        
+
         /// <summary>
         /// txtCourse control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCourse;
-        
+
         /// <summary>
         /// txtAdminDate control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAdminDate;
-        
+
         /// <summary>
         /// txtMM control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMM;
-        
+
         /// <summary>
         /// txtObtMarks control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObtMarks;
-        
+
         /// <summary>
         /// txtGrade control.
         /// </summary>
@@ -101,7 +103,16 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGrade;
-        
+
+        /// <summary>
+        /// txtAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -110,7 +121,16 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
+        /// <summary>
+        /// btnReset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReset;
+
         /// <summary>
         /// pnlMSG control.
         /// </summary>
@@ -119,7 +139,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlMSG;
-        
+
         /// <summary>
         /// lblMSG control.
         /// </summary>
@@ -128,7 +148,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMSG;
-        
+
         /// <summary>
         /// btnClose control.
         /// </summary>

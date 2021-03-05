@@ -7,7 +7,7 @@
             Show Provisional Degree
         </div>
         <div style="padding-top: 20px">
-            <table class="tableStyle2" cellspacing="10px" width="450px">
+            <table class="tableStyle2" cellspacing="10px" width="550px">
                 <tr>
                     <%--<td>
 
@@ -28,28 +28,28 @@
                                 <b>Enrollment No</b>
                             </td>
                             <td>
-                                <asp:TextBox ID="tbENo" runat="server" OnTextChanged="tbENo_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                <asp:TextBox ID="tbENo" runat="server" OnTextChanged="tbENo_TextChanged" AutoPostBack="true" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
 
                         <tr>
                             <td>Student Name</td>
                             <td>
-                                <asp:TextBox ID="txtStudentName" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="txtStudentName" runat="server" Enabled="false" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
 
                         <tr>
                             <td>Father's Name</td>
                             <td>
-                                <asp:TextBox ID="txtFName" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="txtFName" runat="server" Enabled="false" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
 
                         <tr>
                             <td>Course Name</td>
                             <td>
-                                <asp:TextBox ID="txtCourse" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="txtCourse" runat="server" Enabled="false" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
 
@@ -57,26 +57,35 @@
 
                             <td>Admission Date</td>
                             <td>
-                                <asp:TextBox ID="txtAdminDate" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="txtAdminDate" runat="server" Enabled="false" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
 
                         <tr>
                             <td align="left"><b>Maximum Marks</b></td>
                             <td>
-                                <asp:TextBox ID="txtMM" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"></asp:TextBox></td>
+                                <asp:TextBox ID="txtMM" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"
+                                    MaxLength="3" Enabled="false" Width="350px"></asp:TextBox></td>
                         </tr>
 
                         <tr>
                             <td align="left"><b>Obtained Marks</b></td>
                             <td>
-                                <asp:TextBox ID="txtObtMarks" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"></asp:TextBox>
+                                <asp:TextBox ID="txtObtMarks" runat="server" onkeydown="return (!(event.keyCode>=65 && event.keyCode<=90 ) && event.keyCode!=32);"
+                                    MaxLength="3" Enabled="false" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td align="left"><b>Grade</b></td>
                             <td>
-                                <asp:TextBox ID="txtGrade" runat="server" MaxLength="1"></asp:TextBox>
+                                <asp:TextBox ID="txtGrade" runat="server" MaxLength="1" Enabled="false" Width="350px"></asp:TextBox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td align="left"><b>Address</b></td>
+                            <td>
+                                <asp:TextBox ID="txtAddress" runat="server" MaxLength="1000"  TextMode="MultiLine" Width="350px"></asp:TextBox>
                             </td>
                         </tr>
                     </td>
@@ -85,7 +94,8 @@
         </div>
 
         <div style="padding-top: 10px">
-            <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+            <asp:Button ID="btnSearch" runat="server" Text=" Save & Print " Width="120px" OnClick="btnSearch_Click" Height="30px" />
+            <asp:Button ID="btnReset" runat="server" Text=" Reset " Width="120px" OnClick="btnReset_Click" Height="30px" />
         </div>
 
     </asp:Panel>
