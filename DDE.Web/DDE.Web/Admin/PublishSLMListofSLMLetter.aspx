@@ -8,8 +8,7 @@
      <link href="../CSS/DDE.css" type="text/css" rel="Stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-      <form id="form2" runat="server">
+          <form id="form2" runat="server">
     <div align="center" class="heading">
     List of SLM Issued
     </div>
