@@ -23,7 +23,7 @@ namespace DDE.Web.Admin
         StringBuilder SB2 = new StringBuilder(90000000);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 95))
+            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 131))
             {
                 if (!IsPostBack)
                 {
@@ -124,7 +124,7 @@ namespace DDE.Web.Admin
             string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
 
             SB.Append("<td rowspan=2 align=right width=625 colspan=2>");
-            SB.Append("<img src='data:image/jpg;base64," + base64String + "' />");
+            SB.Append("<img height=100 width=120 src='data:image/jpg;base64," + base64String + "' />");
             SB.Append("</td>");
             SB.Append("</tr>");
 

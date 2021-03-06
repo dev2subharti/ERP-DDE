@@ -440,7 +440,7 @@
                                                             <td>
                                                                 <asp:TextBox ID="tbMNo" runat="server" Width="150px"></asp:TextBox>
                                                                 <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Please Enter A Valid Mobile No."
-                                                                    MaximumValue="99999999999" MinimumValue="7000000000" ControlToValidate="tbMNo"></asp:RangeValidator>
+                                                                    MaximumValue="99999999999" MinimumValue="6000000000" ControlToValidate="tbMNo"></asp:RangeValidator>
                                                             </td>
                                                         </tr>
                                                         <tr>

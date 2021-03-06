@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DDE.Web {
-    
-    
-    public partial class _Default {
-        
+namespace DDE.Web
+{
+
+
+    public partial class _Default
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DDE.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// lnkbtnAdmin control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DDE.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkbtnAdmin;
-        
+
         /// <summary>
         /// lnkbtnSC control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DDE.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkbtnSC;
-        
+
         /// <summary>
         /// lnkbtnUsers control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DDE.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkbtnUsers;
-        
+
         /// <summary>
         /// lnkbtnStudents control.
         /// </summary>

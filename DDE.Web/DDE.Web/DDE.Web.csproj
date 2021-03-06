@@ -286,6 +286,7 @@
     <Content Include="CSS\images\main2.png" />
     <Content Include="CSS\menu.css" />
     <Content Include="Default.aspx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AddExamCentres.aspx.cs">
@@ -2276,6 +2277,13 @@
     </Compile>
     <Compile Include="Admin\WelcomeSC.aspx.designer.cs">
       <DependentUpon>WelcomeSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
