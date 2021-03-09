@@ -44,7 +44,8 @@
                                              <asp:ListItem Value="B18">DECEMBER 2018</asp:ListItem>
                                              <asp:ListItem Value="W10">JUNE 2019</asp:ListItem>
                                              <asp:ListItem Value="Z10">DECEMBER 2019</asp:ListItem>
-                                             <asp:ListItem Value="W11" Selected="True">JUNE 2020</asp:ListItem>
+                                             <asp:ListItem Value="W11">JUNE 2020</asp:ListItem>
+                                             <asp:ListItem Value="Z11" Selected="True">DECEMBER 2020</asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
                                     <td>

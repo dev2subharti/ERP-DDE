@@ -334,7 +334,7 @@ namespace DDE.Web.Admin
         private void populateSubjectInfo(int srid,string exam,string moe)
         {
             string ssession = "";
-            if (ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17" || ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11")
+            if (ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17" || ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11" || ddlistExamination.SelectedItem.Value == "Z11")
             {
                 ssession = lblSSession.Text;
             }
@@ -645,7 +645,7 @@ namespace DDE.Web.Admin
                                     cmd.ExecuteNonQuery();
                                     con.Close();
                                 }
-                                else if (ddlistExamination.SelectedItem.Value == "B13" || ddlistExamination.SelectedItem.Value == "A14" || ddlistExamination.SelectedItem.Value == "B14" || ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17"|| ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11")
+                                else if (ddlistExamination.SelectedItem.Value == "B13" || ddlistExamination.SelectedItem.Value == "A14" || ddlistExamination.SelectedItem.Value == "B14" || ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17"|| ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11" || ddlistExamination.SelectedItem.Value == "Z11")
                                 {
                                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
                                     SqlCommand cmd = new SqlCommand("insert into DDEAnswerSheetRecord_" + ddlistExamination.SelectedItem.Value + " values(@SRID,@SubjectID,@MOA,@Received,@ReceivedBy,@TOR,@ASPRID)", con);
@@ -663,7 +663,7 @@ namespace DDE.Web.Admin
                                     cmd.ExecuteNonQuery();
                                     con.Close();
 
-                                    if (ddlistExamination.SelectedItem.Value == "A14" || ddlistExamination.SelectedItem.Value == "B14" || ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17"|| ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11")
+                                    if (ddlistExamination.SelectedItem.Value == "A14" || ddlistExamination.SelectedItem.Value == "B14" || ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17"|| ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11" || ddlistExamination.SelectedItem.Value == "Z11")
                                     {
                                         if (rblRec.SelectedItem.Value == "0")
                                         {
@@ -671,9 +671,9 @@ namespace DDE.Web.Admin
                                         }
                                     }
 
-                                    if(ddlistExamination.SelectedItem.Value == "W11")
+                                    if(ddlistExamination.SelectedItem.Value == "W11" || ddlistExamination.SelectedItem.Value == "Z11")
                                     {
-                                        int thm = uploadTHMarks(Convert.ToInt32(lblSRID.Text), Convert.ToInt32(lblSubID.Text),lblSCCode.Text, ddlistMOE.SelectedItem.Value);
+                                        int thm = uploadTHMarks(Convert.ToInt32(lblSRID.Text), Convert.ToInt32(lblSubID.Text),lblSCCode.Text, ddlistExamination.SelectedItem.Value, ddlistMOE.SelectedItem.Value);
                                         //int pm = uploadPRMarks(Convert.ToInt32(lblSRID.Text), Convert.ToInt32(lblSubID.Text),lblSCCode.Text, ddlistMOE.SelectedItem.Value);
                                     }
                                 }
@@ -719,7 +719,7 @@ namespace DDE.Web.Admin
                                 cmd.ExecuteNonQuery();
                                 con.Close();
 
-                                if (ddlistExamination.SelectedItem.Value == "A14" || ddlistExamination.SelectedItem.Value == "B14" || ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17"|| ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11")
+                                if (ddlistExamination.SelectedItem.Value == "A14" || ddlistExamination.SelectedItem.Value == "B14" || ddlistExamination.SelectedItem.Value == "A15" || ddlistExamination.SelectedItem.Value == "B15" || ddlistExamination.SelectedItem.Value == "A16" || ddlistExamination.SelectedItem.Value == "B16" || ddlistExamination.SelectedItem.Value == "A17" || ddlistExamination.SelectedItem.Value == "B17"|| ddlistExamination.SelectedItem.Value == "A18" || ddlistExamination.SelectedItem.Value == "B18" || ddlistExamination.SelectedItem.Value == "W10" || ddlistExamination.SelectedItem.Value == "Z10" || ddlistExamination.SelectedItem.Value == "W11" || ddlistExamination.SelectedItem.Value == "Z11")
                                 {
                                     if (rblRec.SelectedItem.Value == "0")
                                     {
@@ -748,18 +748,18 @@ namespace DDE.Web.Admin
             
         }     
 
-        private int uploadTHMarks(int srid, int subjectid,string sccode, string moe)
+        private int uploadTHMarks(int srid, int subjectid,string sccode, string exam, string moe)
         {
             string thmarks;
             int counter = 0;
 
-            if (isTHEntryExist(srid, subjectid, moe, out thmarks))
+            if (isTHEntryExist(srid, subjectid,exam, moe, out thmarks))
             {
                 if (thmarks == "")
                 {
                     Random rd = new Random();
                     SqlConnection con2 = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                    SqlCommand cmd2 = new SqlCommand("update DDEMarkSheet_W11 set Theory=@Theory where SRID='" + srid + "' and SubjectID='" + subjectid + "'", con2);
+                    SqlCommand cmd2 = new SqlCommand("update DDEMarkSheet_"+exam+" set Theory=@Theory where SRID='" + srid + "' and SubjectID='" + subjectid + "'", con2);
 
                     cmd2.Parameters.AddWithValue("@Theory", rd.Next(55, 70));
 
@@ -774,7 +774,7 @@ namespace DDE.Web.Admin
             {
                 Random rd = new Random();
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                SqlCommand cmd = new SqlCommand("insert into DDEMarkSheet_W11 values(@SRID,@SubjectID,@StudyCentreCode,@Theory,@IA,@AW,@MOE)", con);
+                SqlCommand cmd = new SqlCommand("insert into DDEMarkSheet_"+exam+" values(@SRID,@SubjectID,@StudyCentreCode,@Theory,@IA,@AW,@MOE)", con);
 
                 cmd.Parameters.AddWithValue("@SRID", srid);
                 cmd.Parameters.AddWithValue("@SubjectID", subjectid);
@@ -795,13 +795,13 @@ namespace DDE.Web.Admin
             return counter;
         }
 
-        private bool isTHEntryExist(int srid, int subjectid, string moe, out string thmarks)
+        private bool isTHEntryExist(int srid, int subjectid,string exam, string moe, out string thmarks)
         {
             bool exist = false;
             thmarks = "";
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-            SqlCommand scmd = new SqlCommand("Select RID,Theory from DDEMarkSheet_W11 where SRID ='" + srid + "' and SubjectID='" + subjectid + "' and MOE='"+moe+"'", con);
+            SqlCommand scmd = new SqlCommand("Select RID,Theory from DDEMarkSheet_"+exam+" where SRID ='" + srid + "' and SubjectID='" + subjectid + "' and MOE='"+moe+"'", con);
             SqlDataReader dr;
 
             con.Open();

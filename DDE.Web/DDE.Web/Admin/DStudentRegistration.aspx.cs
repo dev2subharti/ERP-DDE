@@ -1922,6 +1922,7 @@ namespace DDE.Web.Admin
 
             if(Convert.ToInt32(ddlistSession.SelectedItem.Value)>=25)
             {
+                ddlistSySession.SelectedItem.Selected = false;
                 ddlistSySession.Items.FindByText("A 2020-21").Selected = true;
                 ddlistSySession.Enabled = false;
             }
@@ -1936,6 +1937,7 @@ namespace DDE.Web.Admin
             ddlistExamination.Enabled = true;
             ddlistExamination.SelectedItem.Selected = false;
             ddlistExamination.Items.FindByValue(exam).Selected = true;
+            ddlistExamination.SelectedValue = exam;
             ddlistExamination.Enabled = false;
         }
 
@@ -2283,14 +2285,22 @@ namespace DDE.Web.Admin
         private void setSySession(int cid)
         {
             ddlistSySession.SelectedItem.Selected = false;
-            if (cid == 12 || cid == 27 || (FindInfo.findCourseShortNameByID(cid) == "MBA"))
+
+            if(Convert.ToInt32(ddlistSession.SelectedItem.Value)>=25)
             {
-                ddlistSySession.Items.FindByText("A 2013-14").Selected = true;
+                ddlistSySession.Items.FindByText("A 2020-21").Selected = true;
             }
-            else
             {
-                ddlistSySession.Items.FindByText("A 2010-11").Selected = true;
+                if (cid == 12 || cid == 27 || (FindInfo.findCourseShortNameByID(cid) == "MBA"))
+                {
+                    ddlistSySession.Items.FindByText("A 2013-14").Selected = true;
+                }
+                else
+                {
+                    ddlistSySession.Items.FindByText("A 2010-11").Selected = true;
+                }
             }
+           
         }
 
         private void setYearList(int cid)
