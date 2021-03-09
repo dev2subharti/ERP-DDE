@@ -17,6 +17,9 @@
                             <asp:DropDownList ID="ddlistBatch"  AutoPostBack="true"
                                 runat="server" OnSelectedIndexChanged="ddlistBatch_SelectedIndexChanged">
                                 <asp:ListItem>--SELECT ONE--</asp:ListItem>
+                                <asp:ListItem>C 2021</asp:ListItem>
+                                <asp:ListItem>Q 2020-21</asp:ListItem>
+                                <asp:ListItem>A 2020-21</asp:ListItem>
                                 <asp:ListItem>Q 2020</asp:ListItem>
                                 <asp:ListItem>C 2020</asp:ListItem>
                                 <asp:ListItem>Q 2019-20</asp:ListItem>
@@ -67,7 +70,7 @@
                                     <%#Eval("SNo")%>
                                 </td>
                                 <td align="left" style="width: 200px">
-                                   <asp:Label ID="lblExID" runat="server" Visible="false" Text=' <%#Eval("ExID")%>'></asp:Label>
+                                   <asp:Label ID="lblExID" runat="server" Visible="false" Text='<%#Eval("ExID")%>'></asp:Label>
                                 <%#Eval("Name")%>
                                 </td>
                                 
