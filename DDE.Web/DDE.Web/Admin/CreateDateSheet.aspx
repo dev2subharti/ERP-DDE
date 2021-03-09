@@ -30,19 +30,24 @@
                             </td>
                             <td>
                                 <asp:DropDownList ID="ddlistSySession" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlistSySession_SelectedIndexChanged">
-                                    <asp:ListItem>A 2010-11</asp:ListItem>
+                                      <asp:ListItem>A 2020-21</asp:ListItem>
                                     <asp:ListItem>A 2013-14</asp:ListItem>
+                                    <asp:ListItem>A 2010-11</asp:ListItem>
+                                   
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <b>Year</b>
+                                <b>Year/Sem.</b>
                             </td>
                             <td>
                                 <asp:DropDownList ID="ddlistYear" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlistYear_SelectedIndexChanged">
                                     <asp:ListItem Value="0">--SELECT ONE--</asp:ListItem>
-                                    <asp:ListItem Value="1">1ST YEAR</asp:ListItem>
-                                    <asp:ListItem Value="2">2ND YEAR</asp:ListItem>
-                                    <asp:ListItem Value="3">3RD YEAR</asp:ListItem>
+                                    <asp:ListItem Value="1">1</asp:ListItem>
+                                    <asp:ListItem Value="2">2</asp:ListItem>
+                                    <asp:ListItem Value="3">3</asp:ListItem>
+                                    <asp:ListItem Value="4">4</asp:ListItem>
+                                    <asp:ListItem Value="5">5</asp:ListItem>
+                                    <asp:ListItem Value="6">6</asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
