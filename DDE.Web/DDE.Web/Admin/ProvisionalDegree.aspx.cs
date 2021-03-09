@@ -23,7 +23,7 @@ namespace DDE.Web.Admin
         StringBuilder SB2 = new StringBuilder(90000000);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 95))
+            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 131))
             {
                 if (!IsPostBack)
                 {
