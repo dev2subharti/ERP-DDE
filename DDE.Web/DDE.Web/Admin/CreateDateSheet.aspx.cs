@@ -21,7 +21,7 @@ namespace DDE.Web.Admin
                 {
                     
                     PopulateDDList.populateExam(ddlistExamination);
-                    ddlistExamination.Items.FindByValue("Z11").Selected = true;
+                    ddlistExamination.Items.FindByValue("G10").Selected = true;
                     ddlistExamination.Enabled = false;
 
                     if (Request.QueryString["DSID"] != null)

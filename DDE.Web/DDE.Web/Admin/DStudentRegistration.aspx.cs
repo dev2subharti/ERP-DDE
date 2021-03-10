@@ -434,7 +434,15 @@ namespace DDE.Web.Admin
                         revAaNo.Enabled = false;
                     }
                    
-                    setCorrectText(ddlistSySession, dr["SyllabusSession"].ToString().TrimEnd());
+                    if(Convert.ToInt32(ddlistSession.SelectedItem.Value) >= 25 && Convert.ToInt16(ddlistAdmissionType.SelectedItem.Value)==1)
+                    {
+                        ddlistSySession.Items.FindByText("A 2020-21").Selected = true;
+                    }
+                    else
+                    {
+                       setCorrectText(ddlistSySession, dr["SyllabusSession"].ToString().TrimEnd());
+                    }
+                  
                     tbENo.Text = "";
                     tbICNo.Text = "";
                     if (Convert.ToInt32(ddlistSession.SelectedItem.Value) == 6)
@@ -2290,6 +2298,7 @@ namespace DDE.Web.Admin
             {
                 ddlistSySession.Items.FindByText("A 2020-21").Selected = true;
             }
+            else
             {
                 if (cid == 12 || cid == 27 || (FindInfo.findCourseShortNameByID(cid) == "MBA"))
                 {
