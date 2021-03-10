@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DDE.Web.Admin {
-    
-    
-    public partial class FillDegreeInfo {
-        
+namespace DDE.Web.Admin
+{
+
+
+    public partial class FillDegreeInfo
+    {
+
         /// <summary>
         /// pnlData control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlData;
-        
+
         /// <summary>
         /// pnlSearch control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSearch;
-        
+
         /// <summary>
         /// tbENo control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbENo;
-        
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
         /// <summary>
         /// pnlStudentDetails control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlStudentDetails;
-        
+
         /// <summary>
         /// imgStudent control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgStudent;
-        
+
         /// <summary>
         /// tbEnNo control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbEnNo;
-        
+
         /// <summary>
         /// lblSRID control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSRID;
-        
+
         /// <summary>
         /// tbSName control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbSName;
-        
+
         /// <summary>
         /// tbFName control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbFName;
-        
+
         /// <summary>
         /// tbSCCode control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbSCCode;
-        
+
         /// <summary>
         /// tbCourse control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbCourse;
-        
+
         /// <summary>
         /// ddlistRDay control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlistRDay;
-        
+
         /// <summary>
         /// ddlistRMonth control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlistRMonth;
-        
+
         /// <summary>
         /// ddlistRYear control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlistRYear;
-        
+
         /// <summary>
         /// tbSNo control.
         /// </summary>
@@ -155,7 +157,16 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbSNo;
-        
+
+        /// <summary>
+        /// btnPrint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPrint;
+
         /// <summary>
         /// btnSubmit control.
         /// </summary>
@@ -164,7 +175,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
+
         /// <summary>
         /// pnlMSG control.
         /// </summary>
@@ -173,7 +184,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlMSG;
-        
+
         /// <summary>
         /// lblMSG control.
         /// </summary>
@@ -182,7 +193,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMSG;
-        
+
         /// <summary>
         /// btnOK control.
         /// </summary>

@@ -15,11 +15,11 @@ namespace DDE.Web.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 85))
-            {         
+            {
                 pnlSearch.Visible = true;
                 pnlStudentDetails.Visible = false;
                 btnSubmit.Visible = false;
-                   
+
                 pnlData.Visible = true;
                 pnlMSG.Visible = false;
             }
@@ -33,12 +33,12 @@ namespace DDE.Web.Admin
 
         }
 
-     
+
 
         protected void btnsearch_Click(object sender, EventArgs e)
         {
-            int srid = FindInfo.findSRIDByENo(tbENo.Text);                  
-          
+            int srid = FindInfo.findSRIDByENo(tbENo.Text);
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
             SqlCommand cmd = new SqlCommand("select * from DDEDegreeInfo where SRID='" + srid + "'", con);
             SqlDataReader dr;
@@ -83,22 +83,25 @@ namespace DDE.Web.Admin
                     pnlSearch.Visible = false;
                     pnlStudentDetails.Visible = true;
                     btnSubmit.Visible = false;
+
+                    if (srid.ToString().Trim().Length > 0)
+                        Session["Srid"] = srid.ToString();
                 }
-                    
+
             }
             else
             {
-               
+
                 pnlData.Visible = false;
                 lblMSG.Text = "Sorry !! No Degree request record found of the Student.";
                 pnlMSG.Visible = true;
                 btnOK.Visible = true;
-               
+
             }
 
             con.Close();
-                      
- 
+
+
         }
 
         private void setTodayDate()
@@ -123,7 +126,7 @@ namespace DDE.Web.Admin
 
             while (dr.Read())
             {
-                 imgStudent.ImageUrl = "StudentImgHandler.ashx?SRID=" + srid.ToString();
+                imgStudent.ImageUrl = "StudentImgHandler.ashx?SRID=" + srid.ToString();
                 tbEnNo.Text = dr["EnrollmentNo"].ToString();
                 lblSRID.Text = srid.ToString();
                 tbSName.Text = dr["StudentName"].ToString();
@@ -182,30 +185,33 @@ namespace DDE.Web.Admin
 
         }
 
-      
+
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string rdate = ddlistRYear.SelectedItem.Value + "-" + ddlistRMonth.SelectedItem.Value + "-" + ddlistRDay.SelectedItem.Value;
-           
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                SqlCommand cmd = new SqlCommand("update DDEDegreeInfo set DegreeReceived=@DegreeReceived,SNo=@SNo,ReceivedOn=@ReceivedOn where SRID='" + lblSRID.Text + "'", con);
 
-                cmd.Parameters.AddWithValue("@DegreeReceived", "True");
-                cmd.Parameters.AddWithValue("@SNo", tbSNo.Text);
-                cmd.Parameters.AddWithValue("@ReceivedOn", rdate);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
 
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
+            String sqlRecDegree = "update DDEDegreeInfo set DegreeReceived=@DegreeReceived,SNo=@SNo,ReceivedOn=@ReceivedOn,prstatus=1,ndstatus=1,dpstatus=1,notprinted=1 ";
+            sqlRecDegree+=" where SRID ='" + lblSRID.Text + "'";
+            SqlCommand cmd = new SqlCommand(sqlRecDegree, con);
 
-                Log.createLogNow("Degree Info", "Received Degree for Enrollment No '" + tbENo.Text + "'", Convert.ToInt32(Session["ERID"].ToString()));
+            cmd.Parameters.AddWithValue("@DegreeReceived", "True");
+            cmd.Parameters.AddWithValue("@SNo", tbSNo.Text);
+            cmd.Parameters.AddWithValue("@ReceivedOn", rdate);
 
-                pnlData.Visible = false;
-                lblMSG.Text = "Record has been updated successfully";
-                pnlMSG.Visible = true;
-           
-           
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            Log.createLogNow("Degree Info", "Received Degree for Enrollment No '" + tbENo.Text + "'", Convert.ToInt32(Session["ERID"].ToString()));
+
+            pnlData.Visible = false;
+            lblMSG.Text = "Record has been updated successfully";
+            pnlMSG.Visible = true;
+
+
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -215,6 +221,10 @@ namespace DDE.Web.Admin
             pnlSearch.Visible = true;
         }
 
-      
+        protected void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (Session["Srid"].ToString().Trim().Length > 0)
+                Response.Redirect("showaddress1.aspx");
+        }
     }
 }

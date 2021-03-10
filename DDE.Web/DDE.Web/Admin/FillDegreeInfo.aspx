@@ -18,8 +18,7 @@
                                 <asp:TextBox ID="tbENo" runat="server"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnsearch_Click"
-                                    Width="75px" Height="26px" />
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnsearch_Click" Width="75px" Height="26px" />
                             </td>
                         </tr>
                     </table>
@@ -104,96 +103,101 @@
                                 <td style="padding: 5px">
                                     <table width="100%" cellpadding="10px" cellspacing="10px">
                                         <tbody align="left">
-                                          <tr>
-                                                <td>
-                                                    Received on
+                                            <tr>
+                                                <td>Received on
                                                 </td>
                                                 <td>
                                                     <table>
-                                                            <tr>
-                                                                <td>
-                                                                    <asp:DropDownList ID="ddlistRDay" runat="server" ForeColor="Black">
-                                                                        <asp:ListItem>01</asp:ListItem>
-                                                                        <asp:ListItem>02</asp:ListItem>
-                                                                        <asp:ListItem>03</asp:ListItem>
-                                                                        <asp:ListItem>04</asp:ListItem>
-                                                                        <asp:ListItem>05</asp:ListItem>
-                                                                        <asp:ListItem>06</asp:ListItem>
-                                                                        <asp:ListItem>07</asp:ListItem>
-                                                                        <asp:ListItem>08</asp:ListItem>
-                                                                        <asp:ListItem>09</asp:ListItem>
-                                                                        <asp:ListItem>10</asp:ListItem>
-                                                                        <asp:ListItem>11</asp:ListItem>
-                                                                        <asp:ListItem>12</asp:ListItem>
-                                                                        <asp:ListItem>13</asp:ListItem>
-                                                                        <asp:ListItem>14</asp:ListItem>
-                                                                        <asp:ListItem>15</asp:ListItem>
-                                                                        <asp:ListItem>16</asp:ListItem>
-                                                                        <asp:ListItem>17</asp:ListItem>
-                                                                        <asp:ListItem>18</asp:ListItem>
-                                                                        <asp:ListItem>19</asp:ListItem>
-                                                                        <asp:ListItem>20</asp:ListItem>
-                                                                        <asp:ListItem>21</asp:ListItem>
-                                                                        <asp:ListItem>22</asp:ListItem>
-                                                                        <asp:ListItem>23</asp:ListItem>
-                                                                        <asp:ListItem>24</asp:ListItem>
-                                                                        <asp:ListItem>25</asp:ListItem>
-                                                                        <asp:ListItem>26</asp:ListItem>
-                                                                        <asp:ListItem>27</asp:ListItem>
-                                                                        <asp:ListItem>28</asp:ListItem>
-                                                                        <asp:ListItem>29</asp:ListItem>
-                                                                        <asp:ListItem>30</asp:ListItem>
-                                                                        <asp:ListItem>31</asp:ListItem>
-                                                                    </asp:DropDownList>
-                                                                </td>
-                                                                <td>
-                                                                    <asp:DropDownList ID="ddlistRMonth" runat="server" ForeColor="Black">
-                                                                        <asp:ListItem Value="01">JANUARY</asp:ListItem>
-                                                                        <asp:ListItem Value="02">FEBRUARY</asp:ListItem>
-                                                                        <asp:ListItem Value="03">MARCH</asp:ListItem>
-                                                                        <asp:ListItem Value="04">APRIL</asp:ListItem>
-                                                                        <asp:ListItem Value="05">MAY</asp:ListItem>
-                                                                        <asp:ListItem Value="06">JUNE</asp:ListItem>
-                                                                        <asp:ListItem Value="07">JULY</asp:ListItem>
-                                                                        <asp:ListItem Value="08">AUGUST</asp:ListItem>
-                                                                        <asp:ListItem Value="09">SEPTEMBER</asp:ListItem>
-                                                                        <asp:ListItem Value="10">OCTOBER</asp:ListItem>
-                                                                        <asp:ListItem Value="11">NOVEMBER</asp:ListItem>
-                                                                        <asp:ListItem Value="12">DECEMBER</asp:ListItem>
-                                                                    </asp:DropDownList>
-                                                                </td>
-                                                                <td>
-                                                                    <asp:DropDownList ID="ddlistRYear" runat="server" ForeColor="Black">
-                                                                        <asp:ListItem>2009</asp:ListItem>
-                                                                        <asp:ListItem>2010</asp:ListItem>
-                                                                        <asp:ListItem>2011</asp:ListItem>
-                                                                        <asp:ListItem>2012</asp:ListItem>
-                                                                        <asp:ListItem>2013</asp:ListItem>
-                                                                        <asp:ListItem>2014</asp:ListItem>  
-                                                                        <asp:ListItem>2015</asp:ListItem>
-                                                                        <asp:ListItem>2016</asp:ListItem>                                                                     
-                                                                        <asp:ListItem>2017</asp:ListItem> 
-                                                                        <asp:ListItem>2018</asp:ListItem>
-                                                                        <asp:ListItem>2019</asp:ListItem> 
-                                                                        <asp:ListItem>2020</asp:ListItem><asp:ListItem>2021</asp:ListItem>
-                                                                    </asp:DropDownList>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:DropDownList ID="ddlistRDay" runat="server" ForeColor="Black">
+                                                                    <asp:ListItem>01</asp:ListItem>
+                                                                    <asp:ListItem>02</asp:ListItem>
+                                                                    <asp:ListItem>03</asp:ListItem>
+                                                                    <asp:ListItem>04</asp:ListItem>
+                                                                    <asp:ListItem>05</asp:ListItem>
+                                                                    <asp:ListItem>06</asp:ListItem>
+                                                                    <asp:ListItem>07</asp:ListItem>
+                                                                    <asp:ListItem>08</asp:ListItem>
+                                                                    <asp:ListItem>09</asp:ListItem>
+                                                                    <asp:ListItem>10</asp:ListItem>
+                                                                    <asp:ListItem>11</asp:ListItem>
+                                                                    <asp:ListItem>12</asp:ListItem>
+                                                                    <asp:ListItem>13</asp:ListItem>
+                                                                    <asp:ListItem>14</asp:ListItem>
+                                                                    <asp:ListItem>15</asp:ListItem>
+                                                                    <asp:ListItem>16</asp:ListItem>
+                                                                    <asp:ListItem>17</asp:ListItem>
+                                                                    <asp:ListItem>18</asp:ListItem>
+                                                                    <asp:ListItem>19</asp:ListItem>
+                                                                    <asp:ListItem>20</asp:ListItem>
+                                                                    <asp:ListItem>21</asp:ListItem>
+                                                                    <asp:ListItem>22</asp:ListItem>
+                                                                    <asp:ListItem>23</asp:ListItem>
+                                                                    <asp:ListItem>24</asp:ListItem>
+                                                                    <asp:ListItem>25</asp:ListItem>
+                                                                    <asp:ListItem>26</asp:ListItem>
+                                                                    <asp:ListItem>27</asp:ListItem>
+                                                                    <asp:ListItem>28</asp:ListItem>
+                                                                    <asp:ListItem>29</asp:ListItem>
+                                                                    <asp:ListItem>30</asp:ListItem>
+                                                                    <asp:ListItem>31</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="ddlistRMonth" runat="server" ForeColor="Black">
+                                                                    <asp:ListItem Value="01">JANUARY</asp:ListItem>
+                                                                    <asp:ListItem Value="02">FEBRUARY</asp:ListItem>
+                                                                    <asp:ListItem Value="03">MARCH</asp:ListItem>
+                                                                    <asp:ListItem Value="04">APRIL</asp:ListItem>
+                                                                    <asp:ListItem Value="05">MAY</asp:ListItem>
+                                                                    <asp:ListItem Value="06">JUNE</asp:ListItem>
+                                                                    <asp:ListItem Value="07">JULY</asp:ListItem>
+                                                                    <asp:ListItem Value="08">AUGUST</asp:ListItem>
+                                                                    <asp:ListItem Value="09">SEPTEMBER</asp:ListItem>
+                                                                    <asp:ListItem Value="10">OCTOBER</asp:ListItem>
+                                                                    <asp:ListItem Value="11">NOVEMBER</asp:ListItem>
+                                                                    <asp:ListItem Value="12">DECEMBER</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="ddlistRYear" runat="server" ForeColor="Black">
+                                                                    <asp:ListItem>2009</asp:ListItem>
+                                                                    <asp:ListItem>2010</asp:ListItem>
+                                                                    <asp:ListItem>2011</asp:ListItem>
+                                                                    <asp:ListItem>2012</asp:ListItem>
+                                                                    <asp:ListItem>2013</asp:ListItem>
+                                                                    <asp:ListItem>2014</asp:ListItem>
+                                                                    <asp:ListItem>2015</asp:ListItem>
+                                                                    <asp:ListItem>2016</asp:ListItem>
+                                                                    <asp:ListItem>2017</asp:ListItem>
+                                                                    <asp:ListItem>2018</asp:ListItem>
+                                                                    <asp:ListItem>2019</asp:ListItem>
+                                                                    <asp:ListItem>2020</asp:ListItem>
+                                                                    <asp:ListItem>2021</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </td>
                                             </tr>
-                                            
+
                                             <tr>
-                                                <td>
-                                                    Serial No.
+                                                <td>Serial No.
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="tbSNo" runat="server" ForeColor="Black"></asp:TextBox>
                                                 </td>
                                             </tr>
-                                          
+
                                         </tbody>
                                     </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <asp:Button ID="btnPrint" runat="server" Text="Search" OnClick="btnPrint_Click" Width="75px" Height="26px" />
                                 </td>
                             </tr>
                         </table>
@@ -201,8 +205,8 @@
                 </asp:Panel>
             </div>
             <div style="padding: 10px">
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" Visible="false" 
-                    onclick="btnSubmit_Click" />
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" Visible="false"
+                    OnClick="btnSubmit_Click" />
             </div>
         </asp:Panel>
         <asp:Panel ID="pnlMSG" runat="server" CssClass="msgpnl" Visible="false">
