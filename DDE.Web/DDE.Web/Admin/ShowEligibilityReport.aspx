@@ -28,8 +28,6 @@
                                 <asp:ListItem>C 2019</asp:ListItem>
                             </asp:DropDownList>
                         </td>
-                      
-
                         <td>
                             <asp:Button ID="btnFind" runat="server" Visible="true" Text="Search" Style="height: 26px" Width="82px"
                                 OnClick="btnFind_Click" />
@@ -83,9 +81,6 @@
                                 <td align="left" style="width: 200px">
                                     <%#Eval("Pending")%>
                                 </td>
-
-                             
-
                             </tr>
                         </table>
                     </ItemTemplate>
@@ -102,6 +97,5 @@
                 </td>
             </tr>
         </table>
-
     </asp:Panel>
 </asp:Content>
