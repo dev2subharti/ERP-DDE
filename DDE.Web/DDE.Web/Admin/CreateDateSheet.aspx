@@ -71,7 +71,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="center" colspan="4">
+                            <td align="center" colspan="4" class="auto-style1">
                                 <table>
                                     <tr>
                                         <td>
@@ -79,8 +79,9 @@
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="ddlistMOE" runat="server">
-                                                <asp:ListItem Value="B">BACK PAPER</asp:ListItem>
                                                 <asp:ListItem Value="R">REGULAR</asp:ListItem>
+                                              <%--  <asp:ListItem Value="B">BACK PAPER</asp:ListItem>--%>
+                                                
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
@@ -457,3 +458,11 @@
         </div>
     </asp:Panel>
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="cphHead">
+    <style type="text/css">
+        .auto-style1 {
+            height: 39px;
+        }
+    </style>
+</asp:Content>
+
