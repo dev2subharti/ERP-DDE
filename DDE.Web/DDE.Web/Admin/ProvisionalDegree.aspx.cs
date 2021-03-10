@@ -23,8 +23,8 @@ namespace DDE.Web.Admin
         StringBuilder SB2 = new StringBuilder(90000000);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 131))
-            {
+            //if (Authorisation.authorised(Convert.ToInt32(Session["ERID"]), 131))
+            //{
                 if (!IsPostBack)
                 {
                     SB.Length = 0;
@@ -36,14 +36,14 @@ namespace DDE.Web.Admin
 
                 pnlData.Visible = true;
                 pnlMSG.Visible = false;
-            }
-            else
-            {
-                pnlData.Visible = false;
-                lblMSG.Text = "Sorry !! You are not authorised for this control";
-                pnlMSG.Visible = true;
+            //}
+            //else
+            //{
+            //    pnlData.Visible = false;
+            //    lblMSG.Text = "Sorry !! You are not authorised for this control";
+            //    pnlMSG.Visible = true;
 
-            }
+            //}
         }
 
         void printRecord()
