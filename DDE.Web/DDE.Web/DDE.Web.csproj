@@ -50,9 +50,6 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="com">
-      <HintPath>..\..\..\DDE.Web\DDE.Web\bin\AjaxControlToolkit.dll</HintPath>
-    </Reference>
     <Reference Include="com, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\DDE.Web\DDE.Web\bin\com.dll</HintPath>

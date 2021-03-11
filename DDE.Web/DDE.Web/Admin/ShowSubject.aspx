@@ -85,11 +85,11 @@
                                 <td align="center" style="width: 50px">
                                     <asp:LinkButton ID="lnkbtnEdit" runat="server" Text="Edit" CommandName="Edit" CommandArgument='<%#Eval("SubjectID") %>'></asp:LinkButton>
                                 </td>
-                                <%-- <td align="center" style="width: 50px">
+                                 <td align="center" style="width: 50px">
                                 <asp:LinkButton ID="lnkbtnDelete" runat="server" Text="Delete" CommandName="Delete"
                                     OnClientClick="javascript:return confirm('Are you sure!!!\nYou want to delete the record permanently?');"
                                     CommandArgument='<%#Eval("SubjectID") %>'></asp:LinkButton>
-                            </td>--%>
+                            </td>
                             </tr>
                         </table>
                     </ItemTemplate>
