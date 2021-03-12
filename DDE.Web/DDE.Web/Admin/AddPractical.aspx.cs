@@ -121,7 +121,7 @@ namespace DDE.Web.Admin
                 if (!FindInfo.isPracticalExist(ddlistSySession.SelectedItem.Text, ddlistCourse.SelectedItem.Text, tbPracCode.Text))
                 {
                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                    SqlCommand cmd = new SqlCommand("insert into DDEPractical values(@PType,@SyllabusSession,@CourseName,@Year,@PracticalSNo,@PracticalCode,@PracticalName,@PracticalMaxMarks,@MUAllowedForSC,@AllowedForAS)", con);
+                    SqlCommand cmd = new SqlCommand("insert into DDEPractical values(@PType,@SyllabusSession,@CourseName,@Year,@PracticalSNo,@PracticalCode,@PracticalName,@PracticalMaxMarks,@MUAllowedForSC,@AllowedForAS,@NYear,@CourseID)", con);
 
                     cmd.Parameters.AddWithValue("@PType", ddlistPType.SelectedItem.Value);                  
                     cmd.Parameters.AddWithValue("@SyllabusSession", ddlistSySession.SelectedItem.Text);
@@ -133,7 +133,8 @@ namespace DDE.Web.Admin
                     cmd.Parameters.AddWithValue("@PracticalMaxMarks", tbPracMaxMarks.Text);
                     cmd.Parameters.AddWithValue("@MUAllowedForSC", "False");
                     cmd.Parameters.AddWithValue("@AllowedForAS", ddlistAllowAS.SelectedItem.Value);
-
+                    cmd.Parameters.AddWithValue("@NYear", Convert.ToInt32(ddlistYear.SelectedItem.Value));
+                    cmd.Parameters.AddWithValue("@CourseID", Convert.ToInt32(ddlistCourse.SelectedItem.Value));
 
 
                     cmd.Connection = con;
@@ -157,7 +158,7 @@ namespace DDE.Web.Admin
             else if (Request.QueryString["PracticalID"] != null)
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-                SqlCommand cmd = new SqlCommand("update DDEPractical set PType=@PType,SyllabusSession=@SyllabusSession,CourseName=@CourseName,Year=@Year,PracticalSNo=@PracticalSNo,PracticalCode=@PracticalCode,PracticalName=@PracticalName,PracticalMaxMarks=@PracticalMaxMarks,AllowedForAS=@AllowedForAS where PracticalID='" + Request.QueryString["PracticalID"] + "' ", con);
+                SqlCommand cmd = new SqlCommand("update DDEPractical set PType=@PType,SyllabusSession=@SyllabusSession,CourseName=@CourseName,Year=@Year,PracticalSNo=@PracticalSNo,PracticalCode=@PracticalCode,PracticalName=@PracticalName,PracticalMaxMarks=@PracticalMaxMarks,AllowedForAS=@AllowedForAS,NYear=@NYear,CourseID=@CourseID) where PracticalID='" + Request.QueryString["PracticalID"] + "' ", con);
 
                 cmd.Parameters.AddWithValue("@PType", ddlistPType.SelectedItem.Value);  
                 cmd.Parameters.AddWithValue("@SyllabusSession", ddlistSySession.SelectedItem.Text);
@@ -168,7 +169,8 @@ namespace DDE.Web.Admin
                 cmd.Parameters.AddWithValue("@PracticalName", tbPracName.Text);      
                 cmd.Parameters.AddWithValue("@PracticalMaxMarks", tbPracMaxMarks.Text);
                 cmd.Parameters.AddWithValue("@AllowedForAS", ddlistAllowAS.SelectedItem.Value);
-
+                cmd.Parameters.AddWithValue("@NYear", Convert.ToInt32(ddlistYear.SelectedItem.Value));
+                cmd.Parameters.AddWithValue("@CourseID", Convert.ToInt32(ddlistCourse.SelectedItem.Value));
 
 
 

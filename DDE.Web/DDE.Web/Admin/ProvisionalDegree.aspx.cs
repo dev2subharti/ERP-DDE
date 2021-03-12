@@ -72,7 +72,7 @@ namespace DDE.Web.Admin
                 varServer = adp.SelectCommand.ExecuteScalar().ToString();
 
             Int32 varTblWidth = 813;
-            SB.Append("<div>");
+            SB.Append("<div class='Landscape'>");
 
             SB.Append("<table width =" + varTblWidth + ">");
             SB.Append("<tr>");
@@ -95,7 +95,7 @@ namespace DDE.Web.Admin
             SB.Append("</table");
             SB.Append("</div>");
 
-            SB.Append("<div>");
+            SB.Append("<div class='Landscape'>");
             SB.Append("<table width =" + varTblWidth + ">");
             SB.Append("<tr>");
             SB.Append("<td valign = middle height = 70px align = center width = " + varTblWidth + " valign = top colspan=4 style = 'border:none;padding:0in 5.4pt 0in 5.4pt'>");
@@ -107,7 +107,7 @@ namespace DDE.Web.Admin
             SB.Append("</table");
             SB.Append("</div>");
 
-            SB.Append("<div>");
+            SB.Append("<div class='Landscape'>");
 
             SB.Append("<table width =" + varTblWidth + ">");
             SB.Append("<tr>");
@@ -140,7 +140,7 @@ namespace DDE.Web.Admin
             SB.Append("</table");
             SB.Append("</div>");
 
-            SB.Append("<div>");
+            SB.Append("<div class='Landscape'>");
             SB.Append("<table width =" + varTblWidth + ">");
             //SB.Append("<br /><br />");
             SB.Append("<tr>");
@@ -222,7 +222,7 @@ namespace DDE.Web.Admin
 
             SB.Append("<p style='page-break-before:always;'></p>");
 
-            SB.Append("<div>");
+            SB.Append("<div class='Landscape'>");
             SB.Append("<table>");
 
             SB.Append("<tr>");

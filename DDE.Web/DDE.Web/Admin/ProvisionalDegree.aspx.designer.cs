@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DDE.Web.Admin {
-    
-    
-    public partial class ProvisionalDegree {
-        
+namespace DDE.Web.Admin
+{
+
+
+    public partial class ProvisionalDegree
+    {
+
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// pnlData control.
         /// </summary>
@@ -38,7 +40,16 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlData;
-        
+
+        /// <summary>
+        /// btnPrint2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPrint2;
+
         /// <summary>
         /// PanelReport control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelReport;
-        
+
         /// <summary>
         /// lblshow control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblshow;
-        
+
         /// <summary>
         /// pnlMSG control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlMSG;
-        
+
         /// <summary>
         /// lblMSG control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace DDE.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMSG;
-        
+
         /// <summary>
         /// btnOK control.
         /// </summary>

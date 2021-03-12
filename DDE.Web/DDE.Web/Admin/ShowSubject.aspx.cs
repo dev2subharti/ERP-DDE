@@ -198,11 +198,11 @@ namespace DDE.Web.Admin
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
                 SqlCommand cmd = new SqlCommand("delete from DDESubject where SubjectID ='" + Convert.ToString(e.CommandArgument) + "'", con);
 
-
+                Log.createLogNow("Delete", "Delete a subject '" + FindInfo.findSubjectDetailByID(Convert.ToInt32(e.CommandArgument)) + "'", Convert.ToInt32(Session["ERID"].ToString()));
                 con.Open();
                 cmd.ExecuteReader();
                 con.Close();
-                Log.createLogNow("Delete", "Delete a subject '" + FindInfo.findSubjectDetailByID(Convert.ToInt32(e.CommandArgument)) + "'", Convert.ToInt32(Session["ERID"].ToString()));
+                
 
                 populateSubjects();
 

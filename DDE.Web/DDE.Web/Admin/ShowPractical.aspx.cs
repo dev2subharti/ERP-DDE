@@ -125,22 +125,22 @@ namespace DDE.Web.Admin
                 Response.Redirect("AddPractical.aspx?PracticalID=" + Convert.ToString(e.CommandArgument));
             }
 
-            //else if (e.CommandName == "Delete")
-            //{
+            else if (e.CommandName == "Delete")
+            {
 
-            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
-            //    SqlCommand cmd = new SqlCommand("delete from DDEPractical where PracticalID ='" + Convert.ToString(e.CommandArgument) + "'", con);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CSddedb"].ToString());
+                SqlCommand cmd = new SqlCommand("delete from DDEPractical where PracticalID ='" + Convert.ToString(e.CommandArgument) + "'", con);
+                Log.createLogNow("Delete", "Delete a practical '" + FindInfo.findPracticalDetailByID(Convert.ToInt32(e.CommandArgument)) + "'", Convert.ToInt32(Session["ERID"].ToString()));
+
+                con.Open();
+                cmd.ExecuteReader();
+                con.Close();
+                
+
+                populatePracticals();
 
 
-            //    con.Open();
-            //    cmd.ExecuteReader();
-            //    con.Close();
-            //    Log.createLogNow("Delete", "Delete a practical '" + FindInfo.findPracticalDetailByID(Convert.ToInt32(e.CommandArgument)) + "'", Convert.ToInt32(Session["ERID"].ToString()));
-              
-            //    populatePracticals();
-
-
-            //}
+            }
 
         }
 

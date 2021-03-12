@@ -155,6 +155,7 @@
     <Content Include="Admin\LinkRLToInstrument.aspx" />
     <Content Include="Admin\MigrationLetter.aspx" />
     <Content Include="Admin\ProcessSLMLetter.aspx" />
+    <Content Include="Admin\ProvisionalDegree.aspx" />
     <Content Include="Admin\PublishDateSheet.aspx" />
     <Content Include="Admin\PublishListsOfSLMLetter.aspx" />
     <Content Include="Admin\PublishMarkSheetBySC2.aspx" />

@@ -28,10 +28,12 @@
                         </td>
                         <td>
                             <asp:DropDownList ID="ddlistYear" runat="server">
-                                <asp:ListItem>1st Year</asp:ListItem>
-                                <asp:ListItem>2nd Year</asp:ListItem>
-                                <asp:ListItem>3rd Year</asp:ListItem>
-                                <asp:ListItem>4th Year</asp:ListItem>
+                                <asp:ListItem>1</asp:ListItem>
+                                    <asp:ListItem>2</asp:ListItem>
+                                    <asp:ListItem>3</asp:ListItem>
+                                    <asp:ListItem>4</asp:ListItem>
+                                    <asp:ListItem>5</asp:ListItem>
+                                    <asp:ListItem>6</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td>
@@ -81,11 +83,11 @@
                                 <td align="center" style="width: 50px">
                                     <asp:LinkButton ID="lnkbtnEdit" runat="server" Text="Edit" CommandName="Edit" CommandArgument='<%#Eval("PracticalID") %>'></asp:LinkButton>
                                 </td>
-                                <%-- <td align="center" style="width: 50px">
+                                 <td align="center" style="width: 50px">
                                 <asp:LinkButton ID="lnkbtnDelete" runat="server" Text="Delete" CommandName="Delete"
                                     OnClientClick="javascript:return confirm('Are you sure!!!\nYou want to delete the record permanently?');"
                                     CommandArgument='<%#Eval("PracticalID") %>'></asp:LinkButton>
-                            </td>--%>
+                            </td>
                             </tr>
                         </table>
                     </ItemTemplate>
